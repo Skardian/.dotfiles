@@ -11,6 +11,7 @@ syntax on
 set title                " change the terminal's title
 set noerrorbells         " don't beep
 set pastetoggle=<F2>     " F2 to paste large amounts of text
+set wildmenu             " Enable tab
 
 " Dont backup files "
 set nobackup
