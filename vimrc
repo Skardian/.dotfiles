@@ -13,8 +13,14 @@ set noerrorbells         " don't beep
 set pastetoggle=<F2>     " F2 to paste large amounts of text
 set wildmenu             " Enable tab
 
-" Show matching brackets when text indicator is over them
-set showmatch
+" If has 256 colors run custom scheme "
+if &t_Co >= 256 || has("gui_running")
+"    colorscheme mustang
+endif
+
+
+
+set showmatch " Show matching brackets when text indicator is over them
 
 " Dont backup files "
 set nobackup
@@ -27,16 +33,26 @@ set laststatus=2 " Allways show status line
 " Leader is , "
 let mapleader=","
 
-" Maps "
-    " Edit vimrc and source vimrc "
-    nnoremap <leader>ev :split $MYVIMRC<cr>
-    nnoremap <leader>sv :source $MYVIMRC<cr>
+" Searching configs "
+set ignorecase          " Ignore case
+set smartcase           " unless it has caps
+set gdefault            " default global
+set incsearch           " Start searching incremental
+set hlsearch            " Highlight search
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
 
-    " Move from frame to frame
-    nnoremap <c-h> <c-w>h
-    nnoremap <c-j> <c-w>j
-    nnoremap <c-k> <c-w>k
-    nnoremap <c-l> <c-w>l
+" Maps "
+" Edit vimrc and source vimrc "
+nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Move from frame to frame
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 " Tab settings "
 set tabstop=4
