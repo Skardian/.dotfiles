@@ -13,6 +13,9 @@ set noerrorbells         " don't beep
 set pastetoggle=<F2>     " F2 to paste large amounts of text
 set wildmenu             " Enable tab
 
+" Show matching brackets when text indicator is over them
+set showmatch
+
 " Dont backup files "
 set nobackup
 set noswapfile
