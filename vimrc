@@ -38,14 +38,20 @@ let mapleader=","
 " Searching configs "
 set ignorecase          " Ignore case
 set smartcase           " unless it has caps
-set gdefault            " default global
+"set gdefault            " default global
 set incsearch           " Start searching incremental
 set hlsearch            " Highlight search
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-" Maps "
+" Show $ with 'cw' and similar commands "
+set cpoptions=ces$
+
+""""""""
+" Maps " 
+""""""""
+
 " Edit vimrc and source vimrc "
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
