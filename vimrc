@@ -12,6 +12,8 @@ set title                " change the terminal's title
 set noerrorbells         " don't beep
 set pastetoggle=<F2>     " F2 to paste large amounts of text
 set wildmenu             " Enable tab
+set showcmd              " show incomplete cmds down the bottom
+set showmode             " show current mode down the bottom
 
 " If has 256 colors run custom scheme "
 if &t_Co >= 256 || has("gui_running")
