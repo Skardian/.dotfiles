@@ -15,7 +15,9 @@ set wildmenu             " Enable tab
 
 " If has 256 colors run custom scheme "
 if &t_Co >= 256 || has("gui_running")
-"    colorscheme mustang
+    colorscheme badwolf
+else
+    colorscheme default
 endif
 
 
