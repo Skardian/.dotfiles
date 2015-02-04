@@ -1,0 +1,11 @@
+[user]
+	email = jose.carlos.padial@gmail.com
+	name = jcpadial
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[core]
+	editor = vim
+[push]
+	default = simple
