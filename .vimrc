@@ -43,7 +43,7 @@ set smartcase           " unless it has caps
 "set gdefault            " default global
 set incsearch           " Start searching incremental
 set hlsearch            " Highlight search
-nnoremap <leader><space> :noh<cr>
+nnoremap <leader><leader> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
