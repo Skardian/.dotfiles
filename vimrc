@@ -2,12 +2,12 @@
 set nocompatible
 
 " Edit various files without saving or undoing "
-set hidden
+"set hidden
 
 " Misc "
-set nowrap " don't warp lines
-set number " show line numbe
-syntax on
+set nowrap               " don't warp lines
+set number               " show line numbe
+syntax on                " enable syntax
 set title                " change the terminal's title
 set noerrorbells         " don't beep
 set pastetoggle=<F2>     " F2 to paste large amounts of text
