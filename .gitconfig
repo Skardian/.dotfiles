@@ -9,3 +9,5 @@
 	editor = vim
 [difftool]
     prompt = false;
+[push]
+	default = current
