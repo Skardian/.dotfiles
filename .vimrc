@@ -40,7 +40,6 @@ let mapleader=","
 " Searching configs "
 set ignorecase          " Ignore case
 set smartcase           " unless it has caps
-"set gdefault            " default global
 set incsearch           " Start searching incremental
 set hlsearch            " Highlight search
 nnoremap <leader><leader> :noh<cr>
@@ -50,12 +49,23 @@ vnoremap <tab> %
 " Show $ with 'cw' and similar commands "
 set cpoptions=ces$
 
+" Detect filetype
+filetype plugin on
+" Enable syntax highighting
+syntax enable
+augroup filetype
+  au BufRead,BufNewFile *.flex,*.jflex    set filetype=jflex
+  au BufRead,BufNewFile *.cup             set filetype=cup
+augroup END
+au Syntax jflex so ~/.vim/syntax/jflex.vim
+au Syntax cup so ~/.vim/syntax/cup.vim
+
 """"""""
 " Maps " 
 """"""""
 
 " Edit vimrc and source vimrc "
-nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Move from frame to frame
