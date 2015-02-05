@@ -17,7 +17,7 @@ set showmode             " show current mode down the bottom
 
 " If has 256 colors run custom scheme "
 if &t_Co >= 256 || has("gui_running")
-    colorscheme badwolf
+    colorscheme jellybeans
 else
     colorscheme default
 endif
