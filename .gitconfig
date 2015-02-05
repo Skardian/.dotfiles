@@ -7,7 +7,5 @@
 	tool = vimdiff
 [core]
 	editor = vim
-[push]
-	default = simple
 [difftool]
     prompt = false;
