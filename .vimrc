@@ -2,7 +2,7 @@
 set nocompatible
 
 " Edit various files without saving or undoing "
-"set hidden
+set hidden
 
 " Misc "
 set nowrap               " don't warp lines
@@ -53,12 +53,14 @@ set cpoptions=ces$
 filetype plugin on
 " Enable syntax highighting
 syntax enable
+
 augroup filetype
-  au BufRead,BufNewFile *.flex,*.jflex    set filetype=jflex
-  au BufRead,BufNewFile *.cup             set filetype=cup
+  au BufRead,BufNewFile *.flex,*.jflex,*.cup    set filetype=jflex
+"  au BufRead,BufNewFile *.flex,*.jflex    set filetype=jflex
+"  au BufRead,BufNewFile *.cup             set filetype=cup
 augroup END
 au Syntax jflex so ~/.vim/syntax/jflex.vim
-au Syntax cup so ~/.vim/syntax/cup.vim
+"au Syntax cup so ~/.vim/syntax/cup.vim
 
 """"""""
 " Maps " 
@@ -69,10 +71,10 @@ nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Move from frame to frame
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
+nnoremap gh <C-w>h
+nnoremap gj <C-w>j
+nnoremap gk <C-w>k
+nnoremap gl <C-w>l
 
 " Tab settings "
 set tabstop=4
