@@ -11,3 +11,24 @@
     prompt = false;
 [push]
 	default = current
+[alias]
+    s = status
+    ########
+    a = add
+    aa = add --all
+    ########
+    b = branch
+    ba = branch -a
+    bd = branch -d
+    br = branch -r
+    ########
+    cm = commit
+    ########
+    dt = difftool
+    ########
+    l = log
+    l2 = log -2
+    ########
+    co = chekcout
+    ########
+
