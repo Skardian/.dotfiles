@@ -1,2 +1,0 @@
-
-ln -sf vimrc ~/.vimrc
