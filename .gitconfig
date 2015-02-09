@@ -12,7 +12,8 @@
 [push]
     default = current
 [alias]
-    co = chekcout
+    co = checkout
+    b = branch
     s = status
     dt = difftool
     adda = add --all
