@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins "
 Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-surround'
 
 " End of the vundle settings
 call vundle#end()            " required
@@ -64,6 +65,9 @@ vnoremap <tab> %
 " Show $ with 'cw' and similar commands "
 set cpoptions=ces$
 
+"""""""""""""
+" Filetypes "
+"""""""""""""
 " Detect filetype
 filetype plugin on
 " Enable syntax highighting
