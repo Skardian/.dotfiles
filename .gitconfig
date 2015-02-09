@@ -1,16 +1,16 @@
 [user]
-	email = jose.carlos.padial@gmail.com
-	name = jcpadial
+    email = jose.carlos.padial@gmail.com
+    name = jcpadial
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [core]
-	editor = vim
+    editor = vim
 [difftool]
     prompt = false;
 [push]
-	default = current
+    default = current
 [alias]
     s = status
     ########
