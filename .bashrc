@@ -18,7 +18,7 @@ alias l='ls -CF'
 alias triqui3='ssh u120046@triqui3.fi.upm.es'
 alias batman='ssh u120046@batman.fi.upm.es'
 alias laurel='ssh jcpadial@laurel.datsi.fi.upm.es'
-alias espino='ssh jcpadial@espino.datsi.fi.upm.es'
+alias espino='ssh jpadial@espino.datsi.fi.upm.es'
 
 
 # Declarar Variables
