@@ -1,6 +1,22 @@
 " Non compatible with vi "
 set nocompatible
 
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Plugins "
+Bundle 'scrooloose/nerdtree'
+
+" End of the vundle settings
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 " Edit various files without saving or undoing "
 set hidden
 
@@ -10,7 +26,6 @@ set number               " show line numbe
 syntax on                " enable syntax
 set title                " change the terminal's title
 set noerrorbells         " don't beep
-set pastetoggle=<F2>     " F2 to paste large amounts of text
 set wildmenu             " Enable tab
 set showcmd              " show incomplete cmds down the bottom
 set showmode             " show current mode down the bottom
