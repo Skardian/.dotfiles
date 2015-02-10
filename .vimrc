@@ -17,6 +17,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'sirver/ultisnips'       " Snippets
 Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
+Plugin 'matchit.zip'
 
 " End of the vundle settings
 call vundle#end()            " required
