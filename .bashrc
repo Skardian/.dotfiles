@@ -13,6 +13,11 @@ alias la='ls -A'
 alias ll='ls -alF'
 alias l='ls -CF'
 
+# Movement alias
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 # SSH connections
 alias triqui3='ssh u120046@triqui3.fi.upm.es'
@@ -22,7 +27,6 @@ alias espino='ssh jpadial@espino.datsi.fi.upm.es'
 
 
 # Declarar Variables
-export PATH=$PATH:/usr/jdk1.7.0_71/bin
 
 
 # Scripts
