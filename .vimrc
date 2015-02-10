@@ -16,7 +16,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'sirver/ultisnips'       " Snippets
 Plugin 'honza/vim-snippets'
-"Plugin 'tpope/vim-repeat.git'
 
 " End of the vundle settings
 call vundle#end()            " required
@@ -43,7 +42,6 @@ else
 endif
 
 
-
 set showmatch " Show matching brackets when text indicator is over them
 
 " Dont backup files
@@ -52,6 +50,7 @@ set noswapfile
 
 " Status line
 set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
+
 set laststatus=2 " Allways show status line
 
 " Leader is ,
@@ -66,6 +65,13 @@ nnoremap <leader><leader> :noh<cr>
 
 " Show $ with 'cw' and similar commands
 set cpoptions=ces$
+
+" Tab settings
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set autoindent
 
 """""""""""""
 " Filetypes "
@@ -83,26 +89,18 @@ augroup END
 au Syntax jflex so ~/.vim/syntax/jflex.vim
 "au Syntax cup so ~/.vim/syntax/cup.vim
 
-"""""""""""""
-" UltiSnips "
-"""""""""""""
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<tab>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-
 """"""""
 " Maps " 
 """"""""
-
 " Edit vimrc and source vimrc
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Buffers
+nnoremap <leader>bc :bd<cr>
+nnoremap <leader>bd :bd<cr>
+nnoremap <leader>bn :bn<cr>
+nnoremap <leader>ls :ls<cr>
 
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<cr>
@@ -112,12 +110,6 @@ nnoremap gh <C-w>h
 nnoremap gj <C-w>j
 nnoremap gk <C-w>k
 nnoremap gl <C-w>l
-
-" Tab settings
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
 
 " Force myself to use hjkl
 nnoremap <up> <nop>
@@ -132,3 +124,15 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+"""""""""""""
+" UltiSnips "
+"""""""""""""
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
