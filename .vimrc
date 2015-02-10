@@ -16,6 +16,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'sirver/ultisnips'       " Snippets
 Plugin 'honza/vim-snippets'
+Plugin 'bling/vim-airline'
 
 " End of the vundle settings
 call vundle#end()            " required
@@ -136,3 +137,8 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+"""""""""""""
+"  Airline  "
+"""""""""""""
+let g:airline#extensions#tabline#enabled = 1
