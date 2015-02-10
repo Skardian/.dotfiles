@@ -63,8 +63,6 @@ set smartcase           " unless it has caps
 set incsearch           " Start searching incremental
 set hlsearch            " Highlight search
 nnoremap <leader><leader> :noh<cr>
-nnoremap <tab> %
-vnoremap <tab> %
 
 " Show $ with 'cw' and similar commands
 set cpoptions=ces$
@@ -91,8 +89,8 @@ au Syntax jflex so ~/.vim/syntax/jflex.vim
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
