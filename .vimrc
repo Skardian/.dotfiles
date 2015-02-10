@@ -8,13 +8,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
 " Plugins
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-commentary'
-"Bundle 'tpope/vim-repeat.git'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'sirver/ultisnips'       " Snippets
+Plugin 'honza/vim-snippets'
+"Plugin 'tpope/vim-repeat.git'
 
 " End of the vundle settings
 call vundle#end()            " required
@@ -82,6 +84,19 @@ augroup filetype
 augroup END
 au Syntax jflex so ~/.vim/syntax/jflex.vim
 "au Syntax cup so ~/.vim/syntax/cup.vim
+
+"""""""""""""
+" UltiSnips "
+"""""""""""""
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 
 """"""""
 " Maps " 
