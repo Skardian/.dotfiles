@@ -35,6 +35,7 @@ set noerrorbells         " don't beep
 set wildmenu             " Enable tab
 set showcmd              " show incomplete cmds down the bottom
 set showmode             " show current mode down the bottom
+set virtualedit=block
 
 " If has 256 colors run custom scheme
 if &t_Co >= 256 || has("gui_running")
@@ -100,8 +101,6 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Exit insert mode
 inoremap jj <ESC>
-inoremap jk <ESC>
-inoremap kj <ESC>
 
 " Buffers
 nnoremap <leader>bd :bd<cr>
