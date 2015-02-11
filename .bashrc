@@ -26,7 +26,7 @@ alias laurel='ssh jcpadial@laurel.datsi.fi.upm.es'
 alias espino='ssh jpadial@espino.datsi.fi.upm.es'
 
 
-# Declarar Variables
+export PS1='[\u@\h:\W]$ '
 
 
 # Scripts
