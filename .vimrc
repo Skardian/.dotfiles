@@ -98,6 +98,11 @@ au Syntax jflex so ~/.vim/syntax/jflex.vim
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Exit insert mode
+inoremap jj <ESC>
+inoremap jk <ESC>
+inoremap kj <ESC>
+
 " Buffers
 nnoremap <leader>bd :bd<cr>
 nnoremap <leader>bn :bn<cr>
