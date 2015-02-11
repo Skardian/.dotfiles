@@ -51,7 +51,7 @@ set nobackup
 set noswapfile
 
 " Status line
-set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
+" set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
 
 set laststatus=2 " Allways show status line
 
@@ -99,9 +99,9 @@ nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Buffers
-nnoremap <leader>bc :bd<cr>
 nnoremap <leader>bd :bd<cr>
 nnoremap <leader>bn :bn<cr>
+nnoremap <leader>bp :bp<cr>
 nnoremap <leader>ls :ls<cr>
 
 " NERDTree
