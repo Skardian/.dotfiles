@@ -19,3 +19,5 @@
     s = status
     dt = difftool
     adda = add --all
+[color]
+	ui = auto
