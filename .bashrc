@@ -26,7 +26,7 @@ alias laurel='ssh jcpadial@laurel.datsi.fi.upm.es'
 alias espino='ssh jpadial@espino.datsi.fi.upm.es'
 
 
-export PS1='[\u@\h:\W]$ '
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 
 # Scripts
