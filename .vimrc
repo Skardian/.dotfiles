@@ -147,3 +147,4 @@ let g:UltiSnipsEditSplit="vertical"
 "  Airline  "
 """""""""""""
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_detect_whitespace = 0
