@@ -30,7 +30,6 @@ set hidden
 set nowrap               " don't warp lines
 set number               " show line numbe
 syntax on                " enable syntax
-set title                " change the terminal's title
 set noerrorbells         " don't beep
 set wildmenu             " Enable tab
 set showcmd              " show incomplete cmds down the bottom
