@@ -103,12 +103,14 @@ inoremap jj <ESC>
 
 " Buffers
 nnoremap <leader>bd :bd<cr>
-nnoremap <leader>bn :bn<cr>
-nnoremap <leader>bp :bp<cr>
+nnoremap <leader>n :bn<cr>
+nnoremap <leader>p :bp<cr>
 nnoremap <leader>ls :ls<cr>
 
-" NERDTree
-nnoremap <leader>n :NERDTreeToggle<cr>
+""""""""""""""
+"  NERDTree  "
+""""""""""""""
+nnoremap <leader>t :NERDTreeToggle<cr>
 
 " Move from frame to frame
 nnoremap gh <C-w>h
