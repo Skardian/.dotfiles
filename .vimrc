@@ -107,11 +107,6 @@ nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 nnoremap <leader>ls :ls<cr>
 
-""""""""""""""
-"  NERDTree  "
-""""""""""""""
-nnoremap <leader>t :NERDTreeToggle<cr>
-
 " Move from frame to frame
 nnoremap gh <C-w>h
 nnoremap gj <C-w>j
@@ -131,6 +126,11 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+""""""""""""""
+"  NERDTree  "
+""""""""""""""
+nnoremap <leader>t :NERDTreeToggle<cr>
 
 """""""""""""
 " UltiSnips "
