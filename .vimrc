@@ -18,6 +18,9 @@ Plugin 'sirver/ultisnips'       " Snippets
 Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
 Plugin 'matchit.zip'
+" Ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-endwise'
 
 " End of the vundle settings
 call vundle#end()            " required
@@ -63,7 +66,8 @@ set ignorecase          " Ignore case
 set smartcase           " unless it has caps
 set incsearch           " Start searching incremental
 set hlsearch            " Highlight search
-nnoremap <leader><leader> :noh<cr>
+nnoremap <silent> <leader><CR> :set hlsearch!<cr>
+nnoremap <silent> <CR><leader> :set hlsearch!<cr>
 
 " Show $ with 'cw' and similar commands
 set cpoptions=ces$
@@ -97,6 +101,9 @@ au Syntax cup so ~/.vim/syntax/cup.vim
 " Edit vimrc and source vimrc
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Quick save
+nnoremap <leader>w :w!<cr>
 
 " Exit insert mode
 inoremap jj <ESC>
