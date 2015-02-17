@@ -36,7 +36,7 @@ syntax on                " enable syntax
 set noerrorbells         " don't beep
 set wildmenu             " Enable tab
 set showcmd              " show incomplete cmds down the bottom
-set showmode             " show current mode down the bottom
+set noshowmode           " dont show current mode down the bottom
 set virtualedit=block
 
 " If has 256 colors run custom scheme
@@ -94,6 +94,7 @@ augroup filetype
 augroup END
 au Syntax jflex so ~/.vim/syntax/jflex.vim
 au Syntax cup so ~/.vim/syntax/cup.vim
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
 """"""""
 " Maps " 
