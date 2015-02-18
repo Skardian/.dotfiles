@@ -19,5 +19,6 @@
     s = status
     dt = difftool
     adda = add --all
+    tree = log --graph --decorate --oneline --all
 [color]
 	ui = auto
