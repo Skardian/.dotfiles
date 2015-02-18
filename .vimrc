@@ -30,14 +30,15 @@ filetype plugin indent on    " required
 set hidden
 
 " Misc
-set nowrap               " don't warp lines
-set number               " show line numbe
-syntax on                " enable syntax
-set noerrorbells         " don't beep
-set wildmenu             " Enable tab
-set showcmd              " show incomplete cmds down the bottom
-set noshowmode           " dont show current mode down the bottom
+set nowrap              " don't warp lines
+set number              " show line numbe
+syntax on               " enable syntax
+set noerrorbells        " don't beep
+set wildmenu            " Enable tab
+set showcmd             " show incomplete cmds down the bottom
+set noshowmode          " dont show current mode down the bottom
 set virtualedit=block
+set so=5                " Dont go to the edges when moving vertically
 
 " If has 256 colors run custom scheme
 if &t_Co >= 256 || has("gui_running")
@@ -54,7 +55,7 @@ set nobackup
 set noswapfile
 
 " Status line
-" set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
+set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
 
 set laststatus=2 " Allways show status line
 
@@ -109,6 +110,9 @@ nnoremap <leader>w :w!<cr>
 " Exit insert mode
 inoremap jj <ESC>
 
+" Toggle wrap
+nnoremap <silent> <leader>lw :set wrap!<CR>
+
 " Buffers
 nnoremap <leader>bd :bd<cr>
 nnoremap <leader>n :bn<cr>
@@ -116,10 +120,10 @@ nnoremap <leader>p :bp<cr>
 nnoremap <leader>ls :ls<cr>
 
 " Move from frame to frame
-nnoremap gh <C-w>h
-nnoremap gj <C-w>j
-nnoremap gk <C-w>k
-nnoremap gl <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Force myself to use hjkl
 nnoremap <up> <nop>
