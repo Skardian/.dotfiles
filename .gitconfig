@@ -21,6 +21,7 @@
     cm = commit
     co = checkout
     dt = difftool
+    files = diff --name-status
     s = status
     tree = log --graph --decorate --oneline --all
 [color]
