@@ -5,6 +5,7 @@
     tool = vimdiff
 [merge]
     tool = vimdiff
+	ff = false
 [core]
     editor = vim
 [difftool]
@@ -12,13 +13,15 @@
 [push]
     default = current
 [alias]
-    co = checkout
+    adda = add --all
     b = branch
     ba = branch -a
     br = branch -r
-    s = status
+    ca = commit -a
+    cm = commit
+    co = checkout
     dt = difftool
-    adda = add --all
+    s = status
     tree = log --graph --decorate --oneline --all
 [color]
 	ui = auto
