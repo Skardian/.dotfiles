@@ -11,17 +11,17 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
+Plugin 'bling/vim-airline'
+Plugin 'honza/vim-snippets'
+Plugin 'matchit.zip'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
+Plugin 'sirver/ultisnips'       " Snippets
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
-Plugin 'sirver/ultisnips'       " Snippets
-Plugin 'honza/vim-snippets'
-Plugin 'bling/vim-airline'
-Plugin 'matchit.zip'
+Plugin 'tpope/vim-surround'
 " Ruby
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-endwise'
+Plugin 'vim-ruby/vim-ruby'
 
 " End of the vundle settings
 call vundle#end()            " required
@@ -31,15 +31,15 @@ filetype plugin indent on    " required
 set hidden
 
 " Misc
+set noerrorbells        " don't beep
+set noshowmode          " dont show current mode down the bottom
 set nowrap              " don't warp lines
 set number              " show line numbe
-syntax on               " enable syntax
-set noerrorbells        " don't beep
-set wildmenu            " Enable tab
 set showcmd             " show incomplete cmds down the bottom
-set noshowmode          " dont show current mode down the bottom
-set virtualedit=block
 set so=5                " Dont go to the edges when moving vertically
+set virtualedit=block
+set wildmenu            " Enable tab
+syntax on               " enable syntax
 
 " If has 256 colors run custom scheme
 if &t_Co >= 256 || has("gui_running")
@@ -64,10 +64,10 @@ set laststatus=2 " Allways show status line
 let mapleader=","
 
 " Searching configs
-set ignorecase          " Ignore case
-set smartcase           " unless it has caps
-set incsearch           " Start searching incremental
 set hlsearch            " Highlight search
+set ignorecase          " Ignore case
+set incsearch           " Start searching incremental
+set smartcase           " unless it has caps
 nnoremap <silent> <leader><CR> :set hlsearch!<cr>
 nnoremap <silent> <CR><leader> :set hlsearch!<cr>
 
@@ -75,9 +75,9 @@ nnoremap <silent> <CR><leader> :set hlsearch!<cr>
 set cpoptions=ces$
 
 " Tab settings
-set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set tabstop=4
 set expandtab
 set autoindent
 
