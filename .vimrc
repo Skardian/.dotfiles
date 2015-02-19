@@ -14,6 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
 Plugin 'sirver/ultisnips'       " Snippets
 Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
@@ -160,4 +161,4 @@ let g:UltiSnipsEditSplit="vertical"
 "  Airline  "
 """""""""""""
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_detect_whitespace = 0
+let g:airline#extensions#whitespace#enabled = 0
