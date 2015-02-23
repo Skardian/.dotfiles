@@ -1,4 +1,4 @@
 " Ignore
 .netrwhist
 .old
-.vim/bundle/
+.vim/bundle/*
