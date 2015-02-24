@@ -1,0 +1,17 @@
+snippet mod "Module init" b
+:- module(_,_).
+endsnippet
+
+snippet a "Atomo" b
+${1:nombre}(${2:X}).
+${0}
+endsnippet
+
+snippet r "Regla" b
+${1:nombre}(${2:X}) :- 
+	${0}
+endsnippet
+
+snippet ri "Regla" b
+${1:nombre}(${2:X}) :- ${0}
+endsnippet
