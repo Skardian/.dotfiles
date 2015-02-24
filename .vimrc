@@ -110,7 +110,8 @@ nnoremap <silent> <leader>ev :edit $MYVIMRC<cr>
 nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:AirlineRefresh<cr>
 
 " Toggle paste mode
-nmap <silent> <F2> :set paste!<cr>:set paste?<cr>
+nmap <silent> <F2> :set paste!<cr>
+set pastetoggle=<F2>
 
 " Toggle line wrap
 nnoremap <silent> <leader>lw :set wrap!<cr>:set wrap?<cr>
