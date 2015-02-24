@@ -93,10 +93,11 @@ augroup filetype
   " au BufRead,BufNewFile *.flex,*.jflex,*.cup    set filetype=jflex
  au BufRead,BufNewFile *.flex,*.jflex    set filetype=jflex
  au BufRead,BufNewFile *.cup             set filetype=cup
+ au BufRead,BufNewFile *.pl              set filetype=ciao
 augroup END
 au Syntax jflex so ~/.vim/syntax/jflex.vim
 au Syntax cup so ~/.vim/syntax/cup.vim
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+au FileType ruby setlocal shiftwidth=2 tabstop=2
 
 """"""""
 " Maps " 
