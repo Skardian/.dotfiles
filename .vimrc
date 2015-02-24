@@ -114,6 +114,9 @@ inoremap jj <ESC>
 " Toggle wrap
 nnoremap <silent> <leader>lw :set wrap!<CR>
 
+" Split line
+nnoremap K hf<space>r<CR>
+
 " Buffers
 nnoremap <leader>bd :bd<cr>
 nnoremap <leader>n :bn<cr>
