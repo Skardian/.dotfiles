@@ -106,14 +106,17 @@ au FileType ruby setlocal shiftwidth=2 tabstop=2
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Toggle paste mode
+nmap <silent> <F2> :set paste!<CR>:set paste?<CR>
+
+" Toggle line wrap
+nnoremap <silent> <leader>lw :set wrap!<CR>:set wrap?<CR>
+
 " Quick save
 nnoremap <leader>w :w!<cr>
 
 " Exit insert mode
 inoremap jj <ESC>
-
-" Toggle wrap
-nnoremap <silent> <leader>lw :set wrap!<CR>
 
 " Split line
 nnoremap K hf<space>r<CR>
