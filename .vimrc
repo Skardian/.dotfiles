@@ -90,11 +90,11 @@ filetype plugin on
 syntax enable
 
 augroup filetype
-  " au BufRead,BufNewFile *.flex,*.jflex,*.cup    set filetype=jflex
  au BufRead,BufNewFile *.flex,*.jflex    set filetype=jflex
  au BufRead,BufNewFile *.cup             set filetype=cup
- au BufRead,BufNewFile *.pl              set filetype=ciao
+ au BufRead,BufNewFile *.pl              set filetype=prolog
 augroup END
+
 au Syntax jflex so ~/.vim/syntax/jflex.vim
 au Syntax cup so ~/.vim/syntax/cup.vim
 au FileType ruby setlocal shiftwidth=2 tabstop=2
