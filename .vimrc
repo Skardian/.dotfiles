@@ -11,15 +11,17 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
+Plugin 'Raimondi/delimitMate'
 Plugin 'bling/vim-airline'
+Plugin 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
 Plugin 'matchit.zip'
 Plugin 'scrooloose/nerdtree'
-Plugin 'sirver/ultisnips'       " Snippets
+Plugin 'sirver/ultisnips'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'ervandew/supertab'
+
 " Ruby
 Plugin 'tpope/vim-endwise'
 Plugin 'vim-ruby/vim-ruby'
@@ -69,8 +71,8 @@ set hlsearch            " Highlight search
 set ignorecase          " Ignore case
 set incsearch           " Start searching incremental
 set smartcase           " unless it has caps
-nnoremap <silent> <leader><CR> :set hlsearch!<cr>
-nnoremap <silent> <CR><leader> :set hlsearch!<cr>
+nnoremap <silent> <leader><cr> :set hlsearch!<cr>
+nnoremap <silent> <cr><leader> :set hlsearch!<cr>
 
 " Show $ with 'cw' and similar commands
 set cpoptions=ces$
@@ -104,14 +106,14 @@ au FileType ruby setlocal shiftwidth=2 tabstop=2
 " Maps " 
 """"""""
 " Edit vimrc and source vimrc
-nnoremap <leader>ev :edit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <silent> <leader>ev :edit $MYVIMRC<cr>
+nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:AirlineRefresh<cr>
 
 " Toggle paste mode
-nmap <silent> <F2> :set paste!<CR>:set paste?<CR>
+nmap <silent> <F2> :set paste!<cr>:set paste?<cr>
 
 " Toggle line wrap
-nnoremap <silent> <leader>lw :set wrap!<CR>:set wrap?<CR>
+nnoremap <silent> <leader>lw :set wrap!<cr>:set wrap?<cr>
 
 " Quick save
 nnoremap <leader>w :w!<cr>
@@ -119,8 +121,8 @@ nnoremap <leader>w :w!<cr>
 " Exit insert mode
 inoremap jj <ESC>
 
-" Split line
-nnoremap K hf<space>r<CR>
+" Split line on this or next space
+nnoremap K hf<space>r<cr>
 
 " Buffers
 nnoremap <leader>bd :bd<cr>
