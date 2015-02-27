@@ -11,7 +11,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
-Plugin 'Raimondi/delimitMate'
 Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
