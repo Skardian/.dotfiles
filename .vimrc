@@ -12,7 +12,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 Plugin 'bling/vim-airline'
-Plugin 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
 Plugin 'matchit.zip'
 Plugin 'scrooloose/nerdtree'
@@ -125,10 +124,8 @@ inoremap jj <ESC>
 nnoremap K hf<space>r<cr>
 
 " Buffers
-nnoremap <leader>bd :bd<cr>
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
-nnoremap <leader>ls :ls<cr>
 
 " Emacs bindings (AGGG)
 inoremap <C-a> <ESC>I
@@ -183,9 +180,3 @@ let g:UltiSnipsEditSplit="vertical"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts=1
-
-""""""""""""""
-"  Supertab  "
-""""""""""""""
-let g:SuperTabDefaultCompletionType = "<c-n>"
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
