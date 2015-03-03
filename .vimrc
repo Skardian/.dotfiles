@@ -130,6 +130,16 @@ nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 nnoremap <leader>ls :ls<cr>
 
+" Emacs bindings (AGGG)
+inoremap <C-a> <ESC>I
+inoremap <C-e> <ESC>A
+cnoremap <C-A> <Home>
+cnoremap <C-B> <Left>
+cnoremap <C-E> <End>
+cnoremap <C-F> <Right>
+cnoremap <C-N> <End>
+cnoremap <C-P> <Up>
+
 " Move from frame to frame
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
