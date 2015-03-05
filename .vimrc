@@ -1,3 +1,4 @@
+" Bundle {{{
 " Non compatible with vi
 set nocompatible
 
@@ -27,8 +28,8 @@ Plugin 'vim-ruby/vim-ruby'
 
 " End of the vundle settings
 call vundle#end()            " required
-filetype plugin indent on    " required
-
+filetype plugin indent on    " required }}}
+" Misc {{{
 " Edit various files without saving or undoing
 set hidden
 
@@ -82,10 +83,8 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 set autoindent
-
-"""""""""""""
-" Filetypes "
-"""""""""""""
+" }}}
+" Filetypes {{{
 " Detect filetype
 filetype plugin on
 " Enable syntax highighting
@@ -100,10 +99,8 @@ augroup END
 au Syntax jflex so ~/.vim/syntax/jflex.vim
 au Syntax cup so ~/.vim/syntax/cup.vim
 au FileType ruby setlocal shiftwidth=2 tabstop=2
-
-""""""""
-" Maps " 
-""""""""
+" end Filetpyes }}}
+" Maps {{{
 " Edit vimrc and source vimrc
 nnoremap <silent> <leader>ev :edit $MYVIMRC<cr>
 nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:AirlineRefresh<cr>
@@ -115,6 +112,8 @@ set pastetoggle=<F2>
 " Toggle line wrap
 nnoremap <silent> <leader>lw :set wrap!<cr>:set wrap?<cr>
 
+" Open and close folds with <space>
+nnoremap <space> za
 " Quick save
 nnoremap <leader>w :w!<cr>
 
@@ -157,15 +156,13 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-
-""""""""""""""
-"  NERDTree  "
-""""""""""""""
+" }}}
+" Plugin Config {{{1
+ 
+" NERDTree {{{2
 nnoremap <leader>t :NERDTreeToggle<cr>
-
-"""""""""""""
-" UltiSnips "
-"""""""""""""
+" }}}2
+" UltiSnips {{{2
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -174,10 +171,11 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
-"""""""""""""
-"  Airline  "
-"""""""""""""
+" }}}2
+"  Airline {{{2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts=1
+" }}}2
+
+" }}}1
