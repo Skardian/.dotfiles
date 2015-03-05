@@ -18,6 +18,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'sirver/ultisnips'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 
 " Ruby
