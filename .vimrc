@@ -17,6 +17,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'matchit.zip'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sirver/ultisnips'
+Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
@@ -99,6 +100,7 @@ augroup END
 au Syntax jflex so ~/.vim/syntax/jflex.vim
 au Syntax cup so ~/.vim/syntax/cup.vim
 au FileType ruby setlocal shiftwidth=2 tabstop=2
+au FileType markdown setlocal shiftwidth=2 tabstop=2
 " end Filetpyes }}}
 " Maps {{{
 " Edit vimrc and source vimrc
@@ -177,5 +179,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts=1
 " }}}2
-
+" Instant Markdown {{{2
+let g:instant_markdown_autostart = 0
+"  }}}2
 " }}}1
