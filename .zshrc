@@ -4,8 +4,9 @@ export ZSH=/home/jcpadial/.oh-my-zsh
 # Set name of the theme to load.
 ZSH_THEME="murilasso"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
+# ZSH Configs
 COMPLETION_WAITING_DOTS="true"
+DISABLE_AUTO_TITLE="true"
 
 plugins=(zsh-syntax-highlighting)
 
