@@ -17,6 +17,10 @@ export PATH="/usr/lib/jvm/jdk1.7.0_75/bin":$PATH
 # Apache ANT
 export ANT_HOME="/usr/lib/apache-ant-1.9.4"
 export PATH="/usr/lib/apache-ant-1.9.4/bin":$PATH
+# Apache TOMCAT
+export CATALINA_HOME="/home/jcpadial/apache-tomcat-7.0.59"
+# Axix2
+export AXIS2_HOME="/home/jcpadial/axis2-1.6.2"
 
 
 source $ZSH/oh-my-zsh.sh
