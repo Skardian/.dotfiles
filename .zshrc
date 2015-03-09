@@ -22,7 +22,7 @@ export PATH="/usr/lib/apache-ant-1.9.4/bin":$PATH
 export CATALINA_HOME="/home/jcpadial/apache-tomcat-7.0.59"
 # Axix2
 export AXIS2_HOME="/home/jcpadial/axis2-1.6.2"
-
+export PATH="/home/jcpadial/axis2-1.6.2/bin":$PATH
 
 source $ZSH/oh-my-zsh.sh
 
