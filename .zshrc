@@ -11,7 +11,7 @@ DISABLE_AUTO_TITLE="true"
 plugins=(zsh-syntax-highlighting)
 
 # PATH config
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+# export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # Java
 export JAVA_HOME="/usr/lib/jvm/jdk1.7.0_75"
 export PATH="/usr/lib/jvm/jdk1.7.0_75/bin":$PATH
