@@ -9,7 +9,7 @@ alias rm='rm -i'
 
 # ls alias
 alias ls='ls --color=auto' #Colorize ls
-alias ll='ls -l'      #long list
+alias ll='ls -lh'      #long list
 alias l='ls -1'       #long list
 alias la='ls -lAFh'   #long list,show almost all,show type,human readable
 alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
