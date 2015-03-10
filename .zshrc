@@ -33,6 +33,5 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 source ~/.alias
 
 # Auto tmux
-tmux attach &> /dev/null
-[[ $TMUX = "" ]] && export TERM="xterm-256color" && exec tmux
+[[ $TMUX = "" ]] && export TERM="xterm-256color"
 
