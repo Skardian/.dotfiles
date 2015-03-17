@@ -59,8 +59,8 @@ set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
 
 set laststatus=2 " Allways show status line
 
-" Leader is ,
-let mapleader=","
+" Leader is <space>
+let mapleader=" "
 
 " Searching configs
 set hlsearch            " Highlight search
@@ -106,11 +106,8 @@ nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:AirlineRefresh<cr>
 nmap <silent> <F2> :set paste!<cr>
 set pastetoggle=<F2>
 
-" Toggle line wrap
-nnoremap <silent> <leader>lw :set wrap!<cr>:set wrap?<cr>
-
 " Open and close folds with <space>
-nnoremap <space> za
+nnoremap <space><space> za
 " Quick save
 nnoremap <leader>w :w!<cr>
 
