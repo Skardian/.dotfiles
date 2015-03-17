@@ -94,8 +94,8 @@ augroup END
 
 au Syntax jflex so ~/.vim/syntax/jflex.vim
 au Syntax cup so ~/.vim/syntax/cup.vim
-au FileType ruby setlocal shiftwidth=2 tabstop=2
-au FileType markdown setlocal shiftwidth=2 tabstop=2
+au FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
+au FileType markdown setlocal softtabstop=2 shiftwidth=2 tabstop=2
 " end Filetpyes }}}
 " Maps {{{
 " Edit vimrc and source vimrc
@@ -153,6 +153,13 @@ inoremap <right> <nop>
 " }}}
 " Plugin Config {{{1
  
+
+" Jellybeans {{{2
+let g:jellybeans_overrides = {
+\ 'Cursor': { 'guibg': 'ff00ee', 'guifg': '000000' },
+\ 'Search': { 'guifg': '00ffff', 'attr': 'underline' },
+\}
+" }}}2
 " NERDTree {{{2
 nnoremap <leader>t :NERDTreeToggle<cr>
 " }}}2
