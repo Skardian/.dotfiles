@@ -156,8 +156,8 @@ inoremap <right> <nop>
 
 " Jellybeans {{{2
 let g:jellybeans_overrides = {
-\ 'Cursor': { 'guibg': 'ff00ee', 'guifg': '000000' },
-\ 'Search': { 'guifg': '00ffff', 'attr': 'underline' },
+\ 'Cursor': { 'guibg': 'ff00ee', 'guifg': 'ffffff' },
+\ 'Search': { 'guifg': '00dddd', 'attr': 'underline' },
 \}
 " }}}2
 " NERDTree {{{2
