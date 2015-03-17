@@ -15,6 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'honza/vim-snippets'
 Plugin 'matchit.zip'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-commentary'
@@ -44,12 +45,7 @@ set virtualedit=block
 set wildmenu            " Enable tab
 syntax on               " enable syntax
 
-" If has 256 colors run custom scheme
-if &t_Co >= 256 || has("gui_running")
-    colorscheme jellybeans
-else
-    colorscheme default
-endif
+colorscheme jellybeans
 
 
 set showmatch " Show matching brackets when text indicator is over them
