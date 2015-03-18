@@ -45,6 +45,10 @@ set virtualedit=block
 set wildmenu            " Enable tab
 syntax on               " enable syntax
 
+let g:jellybeans_overrides = {
+\ 'Cursor': { 'guibg': 'ff00ee', 'guifg': 'ffffff' },
+\ 'Search': { 'guifg': '00dddd', 'attr': 'underline' },
+\}
 colorscheme jellybeans
 
 
@@ -153,13 +157,6 @@ inoremap <right> <nop>
 " }}}
 " Plugin Config {{{1
  
-
-" Jellybeans {{{2
-let g:jellybeans_overrides = {
-\ 'Cursor': { 'guibg': 'ff00ee', 'guifg': 'ffffff' },
-\ 'Search': { 'guifg': '00dddd', 'attr': 'underline' },
-\}
-" }}}2
 " NERDTree {{{2
 nnoremap <leader>t :NERDTreeToggle<cr>
 " }}}2
