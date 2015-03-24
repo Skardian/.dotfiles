@@ -126,15 +126,9 @@ nnoremap K hf<space>r<cr>
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 
-" Emacs bindings (AGGG)
-inoremap <C-a> <ESC>I
-inoremap <C-e> <ESC>A
-cnoremap <C-A> <Home>
-cnoremap <C-B> <Left>
-cnoremap <C-E> <End>
-cnoremap <C-F> <Right>
-cnoremap <C-N> <End>
-cnoremap <C-P> <Up>
+" Emacs-like beginning and end of line.
+imap <c-e> <c-o>$
+imap <c-a> <c-o>^
 
 " Move from frame to frame
 nnoremap <C-h> <C-w>h
