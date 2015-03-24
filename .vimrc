@@ -111,6 +111,13 @@ nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:AirlineRefresh<cr>
 nmap <silent> <F2> :set paste!<cr>
 set pastetoggle=<F2>
 
+" Comand line bindings
+command! Q q " Bind :Q to :q
+command! Qall qall
+command! QA qall
+command! E e
+cnoremap jj <esc>
+
 " Open and close folds with <space>
 nnoremap <space><space> za
 " Quick save
