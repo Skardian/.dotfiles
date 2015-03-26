@@ -116,6 +116,7 @@ command! Q q " Bind :Q to :q
 command! Qall qall
 command! QA qall
 command! E e
+command! W w
 cnoremap jj <esc>
 
 " Open and close folds with <space>
