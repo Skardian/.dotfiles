@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 Plugin 'bling/vim-airline'
+Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'matchit.zip'
 Plugin 'nanotech/jellybeans.vim'
@@ -84,6 +85,7 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 set autoindent
+set smartindent
 " }}}
 " Filetypes {{{
 " Detect filetype
@@ -134,6 +136,7 @@ nnoremap K hf<space>r<cr>
 " Buffers
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
+nnoremap <leader>bd :bd<cr>
 
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
