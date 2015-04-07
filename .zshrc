@@ -11,7 +11,6 @@ DISABLE_AUTO_TITLE="true"
 plugins=(zsh-syntax-highlighting)
 
 # PATH config
-# export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # Java
 export JAVA_HOME="/usr/lib/jvm/jdk1.7.0_75"
 export PATH="/usr/lib/jvm/jdk1.7.0_75/bin":$PATH
@@ -19,10 +18,10 @@ export PATH="/usr/lib/jvm/jdk1.7.0_75/bin":$PATH
 export ANT_HOME="/usr/lib/apache-ant-1.9.4"
 export PATH="/usr/lib/apache-ant-1.9.4/bin":$PATH
 # Apache TOMCAT
-export CATALINA_HOME="/home/jcpadial/apache-tomcat-7.0.59"
+export CATALINA_HOME="/home/jcpadial/bin/apache-tomcat-7.0.59"
 # Axix2
-export AXIS2_HOME="/home/jcpadial/axis2-1.6.2"
-export PATH="/home/jcpadial/axis2-1.6.2/bin":$PATH
+export AXIS2_HOME="/home/jcpadial/bin/axis2-1.6.2"
+export PATH="/home/jcpadial/bin/axis2-1.6.2/bin":$PATH
 
 source $ZSH/oh-my-zsh.sh
 
