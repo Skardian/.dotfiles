@@ -99,8 +99,9 @@ augroup END
 
 au Syntax jflex so ~/.vim/syntax/jflex.vim
 au Syntax cup so ~/.vim/syntax/cup.vim
-au FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
+au FileType html setlocal softtabstop=2 shiftwidth=2 tabstop=2
 au FileType markdown setlocal softtabstop=2 shiftwidth=2 tabstop=2
+au FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
 " end Filetpyes }}}
 " Maps {{{
 " Edit vimrc and source vimrc
