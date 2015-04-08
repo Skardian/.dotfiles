@@ -157,6 +157,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Virtual lines are real lines
+nnoremap j gj
+nnoremap k gk
+
 " Force myself to use hjkl
 nnoremap <up> <nop>
 nnoremap <down> <nop>
