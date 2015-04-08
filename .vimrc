@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 Plugin 'bling/vim-airline'
+Plugin 'ervandew/supertab'
 Plugin 'matchit.zip'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'scrooloose/nerdtree'
@@ -128,6 +129,10 @@ cnoremap jj <esc>
 
 " Open and close folds with <space>
 nnoremap <space><space> za
+
+" Toggle line wrap
+nnoremap <leader>lw :set wrap!<cr>
+
 " Quick save
 nnoremap <leader>w :w!<cr>
 
@@ -188,5 +193,9 @@ let g:airline_powerline_fonts=1
 " }}}2
 " Instant Markdown {{{2
 let g:instant_markdown_autostart = 0
+"  }}}2
+" Supertab {{{2
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
 "  }}}2
 " }}}1
