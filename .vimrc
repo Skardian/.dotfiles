@@ -16,6 +16,7 @@ Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
 Plugin 'matchit.zip'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-commentary'
@@ -176,7 +177,7 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 " }}}
 " Plugin Config {{{1
- 
+
 " NERDTree {{{2
 nnoremap <leader>t :NERDTreeToggle<cr>
 " }}}2
