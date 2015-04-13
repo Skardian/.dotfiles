@@ -1,16 +1,3 @@
-[user]
-    email = jose.carlos.padial@gmail.com
-    name = jcpadial
-[diff]
-    tool = vimdiff
-[merge]
-    tool = vimdiff
-[core]
-    editor = vim
-[difftool]
-    prompt = false;
-[push]
-    default = current
 [alias]
     adda = add --all
     b = branch
@@ -25,3 +12,19 @@
     tree = log --graph --decorate --oneline --all
 [color]
 	ui = auto
+[core]
+    editor = vim
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false;
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+[push]
+    default = current
+[user]
+    email = jose.carlos.padial@gmail.com
+    name = jcpadial
