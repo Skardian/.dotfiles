@@ -8,6 +8,7 @@
     co = checkout
     dt = difftool
     files = diff --name-status
+    mt = mergetool
     s = status
     tree = log --graph --decorate --oneline --all
 [color]
