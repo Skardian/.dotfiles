@@ -23,6 +23,9 @@ export CATALINA_HOME="/home/jcpadial/bin/apache-tomcat-7.0.59"
 export AXIS2_HOME="/home/jcpadial/bin/axis2-1.6.2"
 export PATH="/home/jcpadial/bin/axis2-1.6.2/bin":$PATH
 
+# Add local ~/bin to path
+export PATH=$PATH:~/bin
+
 source $ZSH/oh-my-zsh.sh
 
 # Example aliases
