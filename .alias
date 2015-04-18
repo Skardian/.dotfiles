@@ -8,12 +8,12 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 # ls alias
-alias ls='ls -s --color=auto' #Colorize ls
-alias ll='ls -lhs'      #long list
-alias l='ls -1s'       #long list
-alias la='ls -lAFhs'   #long list,show almost all,show type,human readable
-alias lr='ls -tRFhs'   #sorted by date,recursive,show type,human readable
-alias lt='ls -ltFhs'   #long list,sorted by date,show type,human readable
+alias ls='ls --color=auto' #Colorize ls
+alias ll='ls -lh'      #long list
+alias l='ls -1'       #long list
+alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
 
 # Movement alias
 alias ..='cd ..'
