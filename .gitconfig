@@ -10,6 +10,7 @@
     files = diff --name-status
     mt = mergetool
     s = status
+    t = log --graph --decorate --oneline --all
     tree = log --graph --decorate --oneline --all
 [color]
 	ui = auto
