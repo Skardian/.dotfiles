@@ -79,8 +79,12 @@ set hlsearch            " Highlight search
 set ignorecase          " Ignore case
 set incsearch           " Start searching incremental
 set smartcase           " unless it has caps
+set magic               " Magic REGEX
 nnoremap <silent> <leader><cr> :set hlsearch!<cr>
 nnoremap <silent> <cr><leader> :set hlsearch!<cr>
+
+" Fix Y weird behaivour
+nnoremap Y y$
 
 " Show $ with 'cw' and similar commands
 set cpoptions=ces$
