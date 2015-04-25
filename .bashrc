@@ -5,8 +5,8 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\
 
 source ~/.alias
 
-export JAVA_HOME="/usr/lib/jvm/jdk1.7.0_75"
-export PATH="/usr/lib/jvm/jdk1.7.0_75/bin":$PATH
+export JAVA_HOME="/usr/lib/jvm/jdk1.7.0_79"
+export PATH="/usr/lib/jvm/jdk1.7.0_79/bin":$PATH
 
 # Add local ~/bin to path
 export PATH=$PATH:~/bin

@@ -12,8 +12,8 @@ plugins=(zsh-syntax-highlighting)
 
 # PATH config
 # Java
-export JAVA_HOME="/usr/lib/jvm/jdk1.7.0_75"
-export PATH="/usr/lib/jvm/jdk1.7.0_75/bin":$PATH
+export JAVA_HOME="/usr/lib/jvm/jdk1.7.0_79"
+export PATH="/usr/lib/jvm/jdk1.7.0_79/bin":$PATH
 # Apache ANT
 export ANT_HOME="/usr/lib/apache-ant-1.9.4"
 export PATH="/usr/lib/apache-ant-1.9.4/bin":$PATH
