@@ -156,6 +156,9 @@ nnoremap <leader>bd :bd<cr>
 imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
+" Change 0 to act like ^
+nnoremap 0 ^
+
 " Move from frame to frame
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
