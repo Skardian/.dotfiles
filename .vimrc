@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 Plugin 'bling/vim-airline'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
 Plugin 'matchit.zip'
@@ -54,6 +55,7 @@ set so=5                " Dont go to the edges when moving vertically
 set virtualedit=block
 set wildmenu            " Enable tab
 syntax on               " enable syntax
+
 
 " Colorscheme
 let g:jellybeans_overrides = {
@@ -169,12 +171,6 @@ imap <c-a> <c-o>^
 
 " Change 0 to act like ^
 nnoremap 0 ^
-
-" Move from frame to frame
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 " Virtual lines are real lines
 nnoremap j gj
