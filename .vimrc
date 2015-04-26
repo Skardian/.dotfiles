@@ -110,6 +110,7 @@ au FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
 
 " Leader is <space>
 nnoremap <space> <nop>
+vnoremap <space> <nop>
 let mapleader="\<space>"
 
 " Edit vimrc and source vimrc
@@ -147,6 +148,11 @@ nnoremap <leader>w :w<cr>
 
 " Exit insert mode
 inoremap jj <ESC>
+
+" Exit visual mode
+vnoremap <leader><leader> <ESC>
+
+" Select pasted text
 
 " Buffers
 nnoremap <leader>n :bn<cr>
