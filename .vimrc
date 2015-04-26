@@ -14,6 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
+Plugin 'kien/ctrlp.vim'
 Plugin 'matchit.zip'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -188,15 +189,8 @@ inoremap <right> <nop>
 " NERDTree {{{2
 nnoremap <leader>t :NERDTreeToggle<cr>
 " }}}2
-" UltiSnips {{{2
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+" CtrlP {{{2
+nnoremap <leader>o :CtrlP<cr>
 " }}}2
 "  Airline {{{2
 let g:airline#extensions#tabline#enabled = 1
