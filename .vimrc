@@ -19,6 +19,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
@@ -186,19 +187,23 @@ inoremap <right> <nop>
 
 " Plugin Config
 
-" NERDTree
-nnoremap <leader>t :NERDTreeToggle<cr>
-
-" CtrlP
-nnoremap <leader>o :CtrlP<cr>
-
-"  Airline
+" Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts=1
 
+" CtrlP
+nnoremap <leader>o :CtrlP<cr>
+
 " Instant Markdown
 let g:instant_markdown_autostart = 0
+
+" NERDTree
+nnoremap <leader>t :NERDTreeToggle<cr>
+
+" vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
