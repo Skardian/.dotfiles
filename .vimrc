@@ -1,14 +1,13 @@
-" Bundle {{{
+" Bundle
 " Non compatible with vi
 set nocompatible
-
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
+" Let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
@@ -37,8 +36,9 @@ Plugin 'vim-ruby/vim-ruby'
 
 " End of the vundle settings
 call vundle#end()            " required
-filetype plugin indent on    " required }}}
-" Misc {{{
+filetype plugin indent on    " required
+
+" Misc
 " Edit various files without saving or undoing
 set hidden
 
@@ -48,19 +48,18 @@ set noshowmode          " dont show current mode down the bottom
 set nowrap              " don't warp lines
 set number              " show line numbe
 set showcmd             " show incomplete cmds down the bottom
+set showmatch           " Show matching brackets when text indicator is over them
 set so=5                " Dont go to the edges when moving vertically
 set virtualedit=block
 set wildmenu            " Enable tab
 syntax on               " enable syntax
 
+" Colorscheme
 let g:jellybeans_overrides = {
 \ 'Cursor': { 'guibg': 'ff00ee', 'guifg': 'ffffff' },
 \ 'Search': { 'guifg': '00dddd', 'attr': 'underline' },
 \}
 colorscheme jellybeans
-
-
-set showmatch " Show matching brackets when text indicator is over them
 
 " Dont backup files
 set nobackup
@@ -68,12 +67,7 @@ set noswapfile
 
 " Status line
 set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
-
 set laststatus=2 " Allways show status line
-
-" Leader is <space>
-nnoremap <space> <nop>
-let mapleader=" "
 
 " Searching configs
 set hlsearch            " Highlight search
@@ -81,11 +75,6 @@ set ignorecase          " Ignore case
 set incsearch           " Start searching incremental
 set smartcase           " unless it has caps
 set magic               " Magic REGEX
-nnoremap <silent> <leader><cr> :set hlsearch!<cr>
-nnoremap <silent> <cr><leader> :set hlsearch!<cr>
-
-" Fix Y weird behaivour
-nnoremap Y y$
 
 " Show $ with 'cw' and similar commands
 set cpoptions=ces$
@@ -97,8 +86,8 @@ set tabstop=4
 set expandtab
 set autoindent
 set smartindent
-" }}}
-" Filetypes {{{
+
+" Filetypes
 " Detect filetype
 filetype plugin on
 " Enable syntax highighting
@@ -115,8 +104,13 @@ au Syntax cup so ~/.vim/syntax/cup.vim
 au FileType html setlocal softtabstop=2 shiftwidth=2 tabstop=2
 au FileType markdown setlocal softtabstop=2 shiftwidth=2 tabstop=2
 au FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
-" end Filetpyes }}}
-" Maps {{{
+
+" Maps --------------------------------------------------
+
+" Leader is <space>
+nnoremap <space> <nop>
+let mapleader="\<space>"
+
 " Edit vimrc and source vimrc
 nnoremap <silent> <leader>ev :edit $MYVIMRC<cr>
 nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:AirlineRefresh<cr>
@@ -133,20 +127,25 @@ command! E e
 command! W w
 cnoremap jj <esc>
 
+" Toggle hlsearch
+nnoremap <silent> <leader><cr> :set hlsearch!<cr>
+nnoremap <silent> <cr><leader> :set hlsearch!<cr>
+
+" Fix Y weird behaivour
+nnoremap Y y$
+
 " Open and close folds with <space>
-nnoremap <space><space> za
+nnoremap <leader><leader> za
 
 " Toggle line wrap
 nnoremap <leader>lw :set wrap!<cr>
 
-" Quick save
-nnoremap <leader>w :w!<cr>
+" Quick save and quit
+nnoremap <leader>q :q<cr>
+nnoremap <leader>w :w<cr>
 
 " Exit insert mode
 inoremap jj <ESC>
-
-" Split line on this or next space
-nnoremap K hf<space>r<cr>
 
 " Buffers
 nnoremap <leader>n :bn<cr>
@@ -183,25 +182,24 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-" }}}
-" Plugin Config {{{1
 
-" NERDTree {{{2
+
+" Plugin Config
+
+" NERDTree
 nnoremap <leader>t :NERDTreeToggle<cr>
-" }}}2
-" CtrlP {{{2
+
+" CtrlP
 nnoremap <leader>o :CtrlP<cr>
-" }}}2
-"  Airline {{{2
+
+"  Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts=1
-" }}}2
-" Instant Markdown {{{2
+
+" Instant Markdown
 let g:instant_markdown_autostart = 0
-"  }}}2
-" Supertab {{{2
+
+" Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
-"  }}}2
-" }}}1
