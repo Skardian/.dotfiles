@@ -153,6 +153,10 @@ inoremap jj <ESC>
 vnoremap <leader><leader> <ESC>
 
 " Select pasted text
+noremap gV `[V+`]
+
+" Stop popping up window
+noremap q: :q
 
 " Buffers
 nnoremap <leader>n :bn<cr>
