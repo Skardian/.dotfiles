@@ -20,7 +20,6 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'suan/vim-instant-markdown'
-Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
@@ -209,10 +208,6 @@ let g:instant_markdown_autostart = 0
 
 " NERDTree
 nnoremap <leader>t :NERDTreeToggle<cr>
-
-" vim-expand-region
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
