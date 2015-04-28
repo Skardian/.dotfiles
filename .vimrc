@@ -12,7 +12,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 Plugin 'bling/vim-airline'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
 Plugin 'matchit.zip'
@@ -177,6 +176,12 @@ nnoremap 0 ^
 " Virtual lines are real lines
 nnoremap j gj
 nnoremap k gk
+
+" Change pane with C-[hjkl]
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Force myself to use hjkl
 nnoremap <up> <nop>
