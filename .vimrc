@@ -57,6 +57,8 @@ set virtualedit=block
 set wildmenu            " Enable tab
 syntax on               " enable syntax
 
+set timeoutlen=300
+set ttimeoutlen=100
 
 " Colorscheme
 let g:jellybeans_overrides = {
