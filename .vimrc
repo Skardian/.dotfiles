@@ -55,7 +55,7 @@ set virtualedit=block
 set wildmenu            " Enable tab
 syntax on               " enable syntax
 
-set timeoutlen=300
+set timeoutlen=500
 set ttimeoutlen=100
 
 " Colorscheme
