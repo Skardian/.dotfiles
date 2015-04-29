@@ -21,7 +21,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 
