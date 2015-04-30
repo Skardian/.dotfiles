@@ -52,6 +52,7 @@ set showmatch           " Show matching brackets when text indicator is over the
 set so=5                " Dont go to the edges when moving vertically
 set virtualedit=block
 set wildmenu            " Enable tab
+set lazyredraw
 syntax on               " enable syntax
 
 set timeoutlen=500
