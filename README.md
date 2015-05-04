@@ -7,4 +7,4 @@ cd .dotfiles
 ./install.sh
 ```
 
-This will create a backup inside ".dotiles/.old" and apply my own configs.
+This will create a backup inside ".dotfiles/.old" and apply my own configs.
