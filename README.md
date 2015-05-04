@@ -3,7 +3,7 @@
 ## How to install
 ```
 git clone http://github.com/Skardian/.dotfiles.git ~/.dotfiles
-cd .dotfiles
+cd ~/.dotfiles
 ./install.sh
 ```
 
