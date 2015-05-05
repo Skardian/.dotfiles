@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
+Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'kien/ctrlp.vim'
 Plugin 'matchit.zip'
 Plugin 'nanotech/jellybeans.vim'
