@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Files included
-FILES=".alias .bashrc .fonts .gitconfig .tmux.conf .vim .vimrc .zshrc"
+FILES=".alias .bashrc .fonts .gitconfig .tmux.conf .vim .vimrc .vrapper .zshrc"
 
 mkdir -p ~/.dotfiles/.old
 
