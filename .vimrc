@@ -224,3 +224,7 @@ nnoremap <leader>t :NERDTreeToggle<cr>
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
+
+" EasyTag
+set tags=./tags;
+let g:easytags_dynamic_files = 2
