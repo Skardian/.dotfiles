@@ -110,6 +110,10 @@ au FileType html setlocal softtabstop=2 shiftwidth=2 tabstop=2
 au FileType markdown setlocal softtabstop=2 shiftwidth=2 tabstop=2
 au FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
 
+" Color lines over 80
+highlight MyLineTooLongMarker ctermbg=DarkRed guibg=DarkRed
+call matchadd('MyLineTooLongMarker', '\%81v', 100)
+
 " Maps --------------------------------------------------
 
 " Leader is <space>
