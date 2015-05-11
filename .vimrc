@@ -167,12 +167,9 @@ nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 nnoremap <leader>bd :bd<cr>
 
-" Emacs-like beginning and end of line.
-imap <c-e> <c-o>$
-imap <c-a> <c-o>^
-
 " Change 0 to act like ^
-nnoremap 0 ^
+nnoremap H ^
+nnoremap L $
 
 " Virtual lines are real lines
 nnoremap j gj
