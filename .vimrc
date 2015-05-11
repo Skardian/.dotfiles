@@ -23,6 +23,7 @@ Plugin 'shime/vim-livedown'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
 " Tags
@@ -86,7 +87,7 @@ set smartcase           " unless it has caps
 set magic               " Magic REGEX
 
 " Show $ with 'cw' and similar commands
-set cpoptions=ces$
+set cpoptions+=$
 
 " Tab settings
 set shiftwidth=4
