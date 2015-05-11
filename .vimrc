@@ -25,6 +25,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 
+" Tags
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+
 " Snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
