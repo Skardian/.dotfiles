@@ -1,7 +1,6 @@
-" Leader is <space>
+set contentassistmode
 nnoremap <space> <nop>
 vnoremap <space> <nop>
-let mapleader="\<space>"
 
 " Comand line bindings
 command! Q q " Bind :Q to :q
@@ -12,20 +11,21 @@ command! W w
 cnoremap jj <esc>
 
 " Toggle hlsearch
-nnoremap <silent> <leader><cr> :set hlsearch!<cr>
-nnoremap <silent> <cr><leader> :set hlsearch!<cr>
+nnoremap <silent> <space><cr> :set hlsearch!<cr>
+nnoremap <silent> <cr><space> :set hlsearch!<cr>
 
 " Fix Y weird behaivour
 nnoremap Y y$
 
 " Quick save and quit
-nnoremap <leader>w :w<cr>
+nnoremap <space>q :q<cr>
+nnoremap <space>w :w<cr>
 
 " Exit insert mode
 inoremap jj <ESC>
 
 " Exit visual mode
-vnoremap <leader><leader> <ESC>
+vnoremap <space><space> <ESC>
 
 " Select pasted text
 noremap gV `[V+`]
@@ -34,9 +34,9 @@ noremap gV `[V+`]
 noremap q: :q
 
 " Buffers
-nnoremap <leader>n :bn<cr>
-nnoremap <leader>p :bp<cr>
-nnoremap <leader>bd :bd<cr>
+nnoremap <space>n :bn<cr>
+nnoremap <space>p :bp<cr>
+nnoremap <space>bd :bd<cr>
 
 " Change 0 to act like ^
 nnoremap H ^
