@@ -45,6 +45,13 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Misc
+
+if has("gui_running")
+  " Maximize gvim window (on my screen)
+  set lines=40 columns=150
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
+endif
+
 " Edit various files without saving or undoing
 set hidden
 
