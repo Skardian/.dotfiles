@@ -41,7 +41,3 @@ nnoremap <leader>bd :bd<cr>
 " Change 0 to act like ^
 nnoremap H ^
 nnoremap L $
-
-" Virtual lines are real lines
-nnoremap j gj
-nnoremap k gk
