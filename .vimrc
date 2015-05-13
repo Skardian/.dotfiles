@@ -166,6 +166,13 @@ nnoremap <leader><leader> za
 " Toggle line wrap
 nnoremap <leader>lw :set wrap!<cr>
 
+" Show current line
+nnoremap <leader>ll :set cursorline!<cr>
+
+" Scroll the viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
 " Quick save and quit
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w<cr>
