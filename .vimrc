@@ -70,6 +70,7 @@ set virtualedit=block
 set wildmenu            " Enable tab
 set lazyredraw
 syntax on               " enable syntax
+set wildignore+=*/tmp/*,*.so,*.swp     " MacOSX/Linux
 
 set timeoutlen=500
 set ttimeoutlen=100
@@ -223,17 +224,24 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts=1
 
 " CtrlP
-nnoremap <leader>o :CtrlP<cr>
+nnoremap <leader>o :CtrlPMixed<cr>
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
 
 " Instant Markdown
 let g:instant_markdown_autostart = 0
 
 " NERDTree
 nnoremap <leader>t :NERDTreeToggle<cr>
+let g:NERDTreeShowHidden=1
+let g:NERDTreeIgnore=['\~$', '\.git']
 
 " Supertab
-let g:SuperTabDefaultCompletionType = "<c-n>"
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "<c-p>"
+let g:SuperTabContextDefaultCompletionType = "<c-p>"
 
 " EasyTag
 set tags=./tags;
