@@ -1,3 +1,4 @@
+# ZSH Config
 # Path to your oh-my-zsh installation.
 export ZSH=/home/jcpadial/.oh-my-zsh
 
@@ -10,21 +11,8 @@ DISABLE_AUTO_TITLE="true"
 
 plugins=(zsh-syntax-highlighting)
 
-# PATH config
-# Java
-export JAVA_HOME="/usr/lib/jvm/jdk1.7.0_79"
-export PATH="/usr/lib/jvm/jdk1.7.0_79/bin":$PATH
-# Apache ANT
-export ANT_HOME="/usr/lib/apache-ant-1.9.4"
-export PATH="/usr/lib/apache-ant-1.9.4/bin":$PATH
-# Apache TOMCAT
-export CATALINA_HOME="/home/jcpadial/bin/apache-tomcat-7.0.59"
-# Axix2
-export AXIS2_HOME="/home/jcpadial/bin/axis2-1.6.2"
-export PATH="/home/jcpadial/bin/axis2-1.6.2/bin":$PATH
-
-# Add local ~/bin to path
-export PATH=$PATH:~/bin
+# Set 256 colors
+[[ $TMUX = "" ]] && export TERM="xterm-256color"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,6 +22,13 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 source ~/.alias
 
-# Auto tmux
-[[ $TMUX = "" ]] && export TERM="xterm-256color"
+# Source local config
+if [ -f ~/.localrc ]; then
+    source ~/.localrc
+fi
+
+# Add local ~/bin to path
+if [ -d ~/bin ]; then
+    export PATH=~/bin:$PATH
+fi
 
