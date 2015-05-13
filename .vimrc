@@ -55,6 +55,9 @@ endif
 " Edit various files without saving or undoing
 set hidden
 
+" System clipboard
+set clipboard=unnamedplus
+
 " Misc
 set noerrorbells        " don't beep
 set noshowmode          " dont show current mode down the bottom
