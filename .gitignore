@@ -1,7 +1,5 @@
 " Ignore
 .netrwhist
-.old
-.vim/bundle/*
-.vim/bundle/*/
-.vim/bundle/
-tags
+vim/bundle/*
+vim/bundle/*/
+vim/bundle/
