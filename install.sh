@@ -6,11 +6,6 @@ FILES=".alias .bashrc .fonts .gitconfig .tmux.conf .vim .vimrc .vrapper .zshrc"
 mkdir -p ~/.dotfiles/.old
 
 for f in $FILES; do
-    # Remove backup and old files
-    if [ -e ~/$f ]; then
-        rm -rf .old/$f
-        mv -f ~/$f .old/$f
-    fi
     # Link to the corresponding file
     ln -sf ~/.dotfiles/$f ~/$f
 done
