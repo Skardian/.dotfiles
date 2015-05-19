@@ -11,12 +11,10 @@ done
 FOLDERS="fonts vim"
 for f in $FOLDERS; do
     # Link to the corresponding file
-    ln -sf ~/.dotfiles/$f/ ~/.$f/
+    ln -sf ~/.dotfiles/$f/ ~/$f/
 done
 
 # Clone Vundle and install vim scripts
-if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim +BundleInstall +qa
-fi
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +BundleInstall +qa
 
