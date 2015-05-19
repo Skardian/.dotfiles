@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Files included
-FILES="alias bashrc fonts gitconfig tmux.conf vim vimrc vrapper zshrc"
+FILES="alias bashrc fonts gitconfig gitignore tmux.conf vim vimrc vrapper zshrc"
 
 for f in $FILES; do
     # Link to the corresponding file
