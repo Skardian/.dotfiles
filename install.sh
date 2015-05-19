@@ -1,13 +1,11 @@
 #!/usr/bin/env sh
 
 # Files included
-FILES=".alias .bashrc .fonts .gitconfig .tmux.conf .vim .vimrc .vrapper .zshrc"
-
-mkdir -p ~/.dotfiles/.old
+FILES="alias bashrc fonts gitconfig tmux.conf vim vimrc vrapper zshrc"
 
 for f in $FILES; do
     # Link to the corresponding file
-    ln -sf ~/.dotfiles/$f ~/$f
+    ln -sf ~/.dotfiles/$f ~/.$f
 done
 
 # Clone Vundle and install vim scripts
