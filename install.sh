@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Files included
-FILES="alias bashrc gitconfig gitignore tmux.conf vimrc vrapper zshrc"
+FILES="alias bashrc gitconfig gitignore tmux.conf vimrc vrapperrc zshrc"
 for f in $FILES; do
     # Link to the corresponding file
     ln -sf ~/.dotfiles/$f ~/.$f
