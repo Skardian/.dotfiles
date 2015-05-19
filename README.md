@@ -7,4 +7,6 @@ cd ~/.dotfiles
 ./install.sh
 ```
 
-This will create a backup inside ".dotfiles/.old" and apply my own configs.
+## WARNING ##
+
+Doing so will remove your existing files
