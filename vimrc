@@ -69,6 +69,7 @@ set so=5                " Dont go to the edges when moving vertically
 set virtualedit=block
 set wildmenu            " Enable tab
 set lazyredraw
+set ttyfast
 syntax on               " enable syntax
 set wildignore+=*/tmp/*,*.so,*.swp     " MacOSX/Linux
 
