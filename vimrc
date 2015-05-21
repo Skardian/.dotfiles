@@ -13,7 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
-Plugin 'gorodinskiy/vim-coloresque'
+" Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'kien/ctrlp.vim'
 Plugin 'matchit.zip'
 Plugin 'nanotech/jellybeans.vim'
@@ -71,7 +71,7 @@ set wildmenu            " Enable tab
 set lazyredraw
 set ttyfast
 syntax on               " enable syntax
-set wildignore+=*/tmp/*,*.so,*.swp     " MacOSX/Linux
+set wildignore+=*/tmp/*,/tmp/*,*.so,*.swp     " MacOSX/Linux
 
 set timeoutlen=500
 set ttimeoutlen=100
@@ -116,13 +116,9 @@ filetype plugin on
 syntax enable
 
 augroup filetype
- au BufRead,BufNewFile *.flex,*.jflex    set filetype=jflex
- au BufRead,BufNewFile *.cup             set filetype=cup
  au BufRead,BufNewFile *.pl              set filetype=prolog
 augroup END
 
-au Syntax jflex so ~/.vim/syntax/jflex.vim
-au Syntax cup so ~/.vim/syntax/cup.vim
 au FileType html setlocal softtabstop=2 shiftwidth=2 tabstop=2
 au FileType markdown setlocal softtabstop=2 shiftwidth=2 tabstop=2
 au FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
@@ -238,9 +234,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
-
-" Instant Markdown
-let g:instant_markdown_autostart = 0
 
 " NERDTree
 nnoremap <leader>t :NERDTreeToggle<cr>
