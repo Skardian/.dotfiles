@@ -70,6 +70,7 @@ set virtualedit=block
 set wildmenu            " Enable tab
 set lazyredraw
 set ttyfast
+set autoread            " Reload file if changed
 syntax on               " enable syntax
 set wildignore+=*/tmp/*,/tmp/*,*.so,*.swp     " MacOSX/Linux
 
