@@ -16,7 +16,6 @@ Plugin 'ervandew/supertab'
 " Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'kien/ctrlp.vim'
 Plugin 'matchit.zip'
-Plugin 'nanotech/jellybeans.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'shime/vim-livedown'
@@ -39,6 +38,10 @@ Plugin 'honza/vim-snippets'
 " Ruby
 Plugin 'tpope/vim-endwise'
 Plugin 'vim-ruby/vim-ruby'
+
+" Color
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " End of the vundle settings
 call vundle#end()            " required
@@ -83,6 +86,7 @@ let g:jellybeans_overrides = {
 \ 'Search': { 'guifg': '00dddd', 'attr': 'underline' },
 \}
 colorscheme jellybeans
+" colorscheme PaperColor
 
 " Dont backup files
 set nobackup
