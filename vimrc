@@ -2,6 +2,7 @@
 " Non compatible with vi
 set nocompatible
 filetype off                  " required
+set encoding=utf-8
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -76,6 +77,8 @@ set ttyfast
 set autoread            " Reload file if changed
 syntax on               " enable syntax
 set wildignore+=*/tmp/*,/tmp/*,*.so,*.swp     " MacOSX/Linux
+set list listchars=tab:»·
+
 
 set timeoutlen=500
 set ttimeoutlen=100
