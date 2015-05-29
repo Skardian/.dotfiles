@@ -12,8 +12,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 Plugin 'bling/vim-airline'
+Plugin 'christoomey/vim-sort-motion'
 Plugin 'ervandew/supertab'
-" Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'kien/ctrlp.vim'
 Plugin 'matchit.zip'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -129,8 +129,8 @@ au FileType markdown setlocal softtabstop=2 shiftwidth=2 tabstop=2
 au FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
 
 " Color lines over 80
-highlight MyLineTooLongMarker ctermbg=DarkRed guibg=DarkRed
-call matchadd('MyLineTooLongMarker', '\%81v', 100)
+" highlight MyLineTooLongMarker ctermbg=DarkRed guibg=DarkRed
+" call matchadd('MyLineTooLongMarker', '\%81v', 100)
 
 " Maps --------------------------------------------------
 
