@@ -236,8 +236,6 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts=1
 
 " CtrlP
-nnoremap <leader>o :CtrlPMixed<cr>
-
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
