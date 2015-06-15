@@ -60,9 +60,6 @@ endif
 " Edit various files without saving or undoing
 set hidden
 
-" System clipboard
-set clipboard=unnamedplus
-
 " Misc
 set noerrorbells        " don't beep
 set noshowmode          " dont show current mode down the bottom
@@ -200,19 +197,9 @@ nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 nnoremap <leader>bd :bd<cr>
 
-" Change 0 to act like ^
-nnoremap H ^
-nnoremap L $
-
 " Virtual lines are real lines
 nnoremap j gj
 nnoremap k gk
-
-" Change pane with C-[hjkl]
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 " Force myself to use hjkl
 nnoremap <up> <nop>
