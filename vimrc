@@ -241,3 +241,7 @@ let g:SuperTabContextDefaultCompletionType = "<c-p>"
 " EasyTag
 set tags=./tags;
 let g:easytags_dynamic_files = 2
+
+" Vim-gitgutter
+let g:gitgutter_diff_args = '-w'
+let g:gitgutter_sign_column_always = 1
