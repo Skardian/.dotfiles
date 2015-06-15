@@ -1,11 +1,8 @@
 # Alias
 alias RM='rm -rf'
-alias cp='cp -i'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
-alias mv='mv -i'
-alias rm='rm -i'
 
 # ls alias
 alias ls='ls --color=auto' #Colorize ls
