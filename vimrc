@@ -76,7 +76,7 @@ set ttyfast
 set autoread            " Reload file if changed
 syntax on               " enable syntax
 set wildignore+=*/tmp/*,/tmp/*,*.so,*.swp     " MacOSX/Linux
-set list listchars=tab:»·
+" set list listchars=tab:»·
 
 
 set timeoutlen=500
