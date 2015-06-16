@@ -162,6 +162,14 @@ cnoremap jj <esc>
 nnoremap <silent> <leader><cr> :set hlsearch!<cr>
 nnoremap <silent> <cr><leader> :set hlsearch!<cr>
 
+" Keep search terms centered
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
 " Fix Y weird behaivour
 nnoremap Y y$
 
