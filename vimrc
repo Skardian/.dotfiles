@@ -51,7 +51,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Misc
+" GUI
 
 if has("gui_running")
   " Maximize gvim window (on my screen)
@@ -59,10 +59,8 @@ if has("gui_running")
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 endif
 
-" Edit various files without saving or undoing
-set hidden
-
 " Misc
+set hidden " Edit various files without saving or undoing
 set noerrorbells        " don't beep
 set noshowmode          " dont show current mode down the bottom
 set nowrap              " don't warp lines
@@ -71,13 +69,13 @@ set showcmd             " show incomplete cmds down the bottom
 set showmatch           " Show matching brackets when text indicator is over them
 set so=5                " Dont go to the edges when moving vertically
 set virtualedit=block
+set shortmess=a
 set wildmenu            " Enable tab
 set lazyredraw
 set ttyfast
 set autoread            " Reload file if changed
 syntax on               " enable syntax
 set wildignore+=*/tmp/*,/tmp/*,*.so,*.swp     " MacOSX/Linux
-" set list listchars=tab:»·
 
 
 set timeoutlen=500
@@ -182,9 +180,8 @@ nnoremap <leader>lw :set wrap!<cr>
 " Show current line
 nnoremap <leader>ll :set cursorline!<cr>
 
-" Scroll the viewport faster
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
+" Quck call make
+nnoremap <leader>ma :make<cr>
 
 " Quick save and quit
 nnoremap <leader>q :q<cr>
