@@ -233,6 +233,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts=1
 
+" Commentary
+augroup commentstrings
+    autocmd FileType matlab set commentstring=%\ %s
+augroup END
+
+
 " CtrlP
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
