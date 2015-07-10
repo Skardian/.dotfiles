@@ -23,4 +23,4 @@ alias batman='ssh  -XY u120046@batman.fi.upm.es'
 alias espino='ssh  -XY jcpadial@espino.datsi.fi.upm.es'
 alias laurel='ssh  -XY jcpadial@laurel.datsi.fi.upm.es'
 alias triqui3='ssh -XY u120046@triqui3.fi.upm.es'
-
+alias rpi='ssh -XY jcpadial@skardian.ddns.net'
