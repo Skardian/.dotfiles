@@ -69,7 +69,6 @@ set showcmd             " show incomplete cmds down the bottom
 set showmatch           " Show matching brackets when text indicator is over them
 set so=5                " Dont go to the edges when moving vertically
 set virtualedit=block
-set shortmess=a
 set wildmenu            " Enable tab
 set lazyredraw
 set ttyfast
@@ -208,19 +207,19 @@ nnoremap <leader>bd :bd<cr>
 nnoremap j gj
 nnoremap k gk
 
-" Force myself to use hjkl
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-vnoremap <up> <nop>
-vnoremap <down> <nop>
-vnoremap <left> <nop>
-vnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" " Force myself to use hjkl
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" vnoremap <up> <nop>
+" vnoremap <down> <nop>
+" vnoremap <left> <nop>
+" vnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
 
 
 " Plugin Config
