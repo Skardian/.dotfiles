@@ -11,10 +11,9 @@
     files = diff --name-status
     mt = mergetool
     s = status
-    t = log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
+    t = log  --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
     tree = log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
-#   t = log --graph --decorate --oneline --all
-#   tree = log --graph --decorate --oneline --all
+    wt = !watch --color -t -x git log --graph --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %C(white dim)%s%Creset %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
 [color]
 	ui = auto
 [core]
