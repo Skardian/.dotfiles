@@ -51,15 +51,14 @@ Plugin 'NLKNguyen/papercolor-theme'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" GUI
-
+" GUI --------------------------------------------------
 if has("gui_running")
   " Maximize gvim window (on my screen)
   set lines=40 columns=150
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 endif
 
-" Misc
+" Misc --------------------------------------------------
 set hidden " Edit various files without saving or undoing
 set noerrorbells        " don't beep
 set noshowmode          " dont show current mode down the bottom
@@ -67,13 +66,11 @@ set nowrap              " don't warp lines
 set number              " show line numbe
 set showcmd             " show incomplete cmds down the bottom
 set showmatch           " Show matching brackets when text indicator is over them
-set so=5                " Dont go to the edges when moving vertically
 set virtualedit=block
 set wildmenu            " Enable tab
 set lazyredraw
 set ttyfast
 set autoread            " Reload file if changed
-syntax on               " enable syntax
 set wildignore+=*/tmp/*,/tmp/*,*.so,*.swp     " MacOSX/Linux
 
 
@@ -85,8 +82,8 @@ let g:jellybeans_overrides = {
 \ 'Cursor': { 'guibg': 'ff00ee', 'guifg': 'ffffff' },
 \ 'Search': { 'guifg': '00dddd', 'attr': 'underline' },
 \}
-colorscheme jellybeans
-" colorscheme PaperColor
+colorscheme jellybeans " Dark
+" colorscheme PaperColor " Light
 
 " Dont backup files
 set nobackup
@@ -114,26 +111,15 @@ set expandtab
 set autoindent
 set smartindent
 
-" Filetypes
-" Detect filetype
-filetype plugin on
+" Filetypes --------------------------------------------------
 " Enable syntax highighting
 syntax enable
-
-augroup filetype
- au BufRead,BufNewFile *.pl              set filetype=prolog
-augroup END
 
 au FileType html setlocal softtabstop=2 shiftwidth=2 tabstop=2
 au FileType markdown setlocal softtabstop=2 shiftwidth=2 tabstop=2
 au FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
 
-" Color lines over 80
-" highlight MyLineTooLongMarker ctermbg=DarkRed guibg=DarkRed
-" call matchadd('MyLineTooLongMarker', '\%81v', 100)
-
 " Maps --------------------------------------------------
-
 " Leader is <space>
 nnoremap <space> <nop>
 vnoremap <space> <nop>
@@ -164,8 +150,6 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
 nnoremap # #zz
-nnoremap g* g*zz
-nnoremap g# g#zz
 
 " Fix Y weird behaivour
 nnoremap Y y$
@@ -207,23 +191,7 @@ nnoremap <leader>bd :bd<cr>
 nnoremap j gj
 nnoremap k gk
 
-" " Force myself to use hjkl
-" nnoremap <up> <nop>
-" nnoremap <down> <nop>
-" nnoremap <left> <nop>
-" nnoremap <right> <nop>
-" vnoremap <up> <nop>
-" vnoremap <down> <nop>
-" vnoremap <left> <nop>
-" vnoremap <right> <nop>
-" inoremap <up> <nop>
-" inoremap <down> <nop>
-" inoremap <left> <nop>
-" inoremap <right> <nop>
-
-
-" Plugin Config
-
+" Plugin Config --------------------------------------------------
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
