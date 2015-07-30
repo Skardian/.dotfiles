@@ -16,9 +16,16 @@ plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+# Functions
+# source thoughtbot/dotfiles
+g() {
+    if [[ $# > 0 ]]; then
+        git $@
+    else
+        git status
+    fi
+}
+compdef g=git
 
 source ~/.alias
 

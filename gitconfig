@@ -1,19 +1,19 @@
 [alias]
-    adda = add --all
-    b = branch
-    ba = branch -a
-    br = branch -r
-    ca = commit -a
-    cm = commit
-    co = checkout
-    dt = difftool
-    f = fetch
+    adda  = add --all
+    b     = branch
+    ba    = branch -a
+    br    = branch -r
+    ca    = commit --all
+    cm    = commit
+    cma   = commit --amend
+    co    = checkout
+    dt    = difftool
+    f     = fetch
     files = diff --name-status
-    mt = mergetool
-    s = status
-    t = log  --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
-    tree = log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
-    wt = !watch --color -t -x git log --graph --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %C(white dim)%s%Creset %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
+    mt    = mergetool
+    t     = log  --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
+    tree  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
+    wt    = !watch --color -t -x git log --graph --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %C(white dim)%s%Creset %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
 [color]
 	ui = auto
 [core]

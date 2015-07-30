@@ -71,6 +71,7 @@ set wildmenu            " Enable tab
 set lazyredraw
 set ttyfast
 set autoread            " Reload file if changed
+set scrolloff=1
 set wildignore+=*/tmp/*,/tmp/*,*.so,*.swp     " MacOSX/Linux
 
 
