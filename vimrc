@@ -169,9 +169,6 @@ nnoremap <leader>lw :set wrap!<cr>
 " Show current line
 nnoremap <leader>ll :set cursorline!<cr>
 
-" Quck call make
-nnoremap <leader>ma :make<cr>
-
 " Quick save and quit
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w<cr>
@@ -185,8 +182,9 @@ vnoremap <leader><leader> <ESC>
 " Select pasted text
 noremap gV `[V+`]
 
-" Stop popping up window
+" Stop annoying Q things
 noremap q: :q
+noremap Q <nop>
 
 " Buffers
 nnoremap <leader>n :bn<cr>
