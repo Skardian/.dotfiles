@@ -64,7 +64,7 @@ set hidden " Edit various files without saving or undoing
 set noerrorbells        " don't beep
 set noshowmode          " dont show current mode down the bottom
 set nowrap              " don't warp lines
-set number              " show line numbe
+set relativenumber      " show relative line number
 set showcmd             " show incomplete cmds down the bottom
 set showmatch           " Show matching brackets when text indicator is over them
 set virtualedit=block
