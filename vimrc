@@ -18,16 +18,18 @@ Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'matchit.zip'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
 Plugin 'shime/vim-livedown'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'wincent/terminus'
 
 " Tags
 Plugin 'xolox/vim-misc'
@@ -40,7 +42,6 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
 " Ruby
-Plugin 'tpope/vim-endwise'
 Plugin 'vim-ruby/vim-ruby'
 
 " Color
