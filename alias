@@ -1,8 +1,11 @@
 # Alias
 alias RM='rm -rf'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
+
+# Rerun as sudo
+alias fuck='sudo $(fc -ln -1)'
+alias please='sudo $(fc -ln -1)'
+
 
 # ls alias
 alias ls='ls --color=auto' #Colorize ls
