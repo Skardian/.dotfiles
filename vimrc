@@ -51,6 +51,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 
 " Experimental
 Plugin 'AndrewRadev/switch.vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 " End of the vundle settings
 call vundle#end()            " required
@@ -116,6 +117,16 @@ set tabstop=4
 set expandtab
 set autoindent
 set smartindent
+
+" Visual Mode search with */# from Scrooloose
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 " Filetypes --------------------------------------------------
 " Enable syntax highighting
