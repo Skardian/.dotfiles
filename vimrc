@@ -16,9 +16,10 @@ Plugin 'EinfachToll/DidYouMean'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-sort-motion'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'matchit.zip'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdtree'
@@ -47,6 +48,9 @@ Plugin 'vim-ruby/vim-ruby'
 " Color
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'NLKNguyen/papercolor-theme'
+
+" Experimental
+Plugin 'AndrewRadev/switch.vim'
 
 " End of the vundle settings
 call vundle#end()            " required
@@ -204,12 +208,15 @@ augroup commentstrings
     autocmd FileType matlab set commentstring=%\ %s
 augroup END
 
-
 " CtrlP
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
+
+" EasyTag
+set tags=./tags;
+let g:easytags_dynamic_files = 2
 
 " NERDTree
 nnoremap <leader>t :NERDTreeToggle<cr>
@@ -220,10 +227,10 @@ let g:NERDTreeIgnore=['\~$', '\.git']
 let g:SuperTabDefaultCompletionType = "<c-p>"
 let g:SuperTabContextDefaultCompletionType = "<c-p>"
 
-" EasyTag
-set tags=./tags;
-let g:easytags_dynamic_files = 2
+" Switch
+let g:switch_mapping = "-"
 
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
 let g:gitgutter_sign_column_always = 1
+
