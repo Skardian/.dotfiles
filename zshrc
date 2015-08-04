@@ -28,14 +28,15 @@ g() {
 compdef g=git
 
 source ~/.alias
-
-# Source local config
-if [ -f ~/.localrc ]; then
-    source ~/.localrc
-fi
+export EDITOR=vim
+export VISUAL=vim
 
 # Add local ~/bin to path
 if [ -d ~/bin ]; then
     export PATH=~/bin:$PATH
 fi
 
+# Source local config
+if [ -f ~/.localrc ]; then
+    source ~/.localrc
+fi
