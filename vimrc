@@ -168,6 +168,9 @@ nnoremap N Nzz
 nnoremap * *zz
 nnoremap # #zz
 
+" Save a file as root (,W)
+noremap <leader>W :w !sudo tee % > /dev/null<CR>
+
 " Fix Y weird behaivour
 nnoremap Y y$
 
