@@ -31,6 +31,8 @@ export LESS="${less_options[*]}";
 unset less_options;
 export PAGER='less';
 
+export PATH=~/bin:$PATH
+
 # g acts as 'git status' or as git
 # Source: https://github.com/thoughtbot/dotfiles
 g() {
@@ -40,7 +42,8 @@ g() {
         git status
     fi
 }
-source ~/.alias
+
 export EDITOR=vim
 export VISUAL=vim
+source ~/.alias
 
