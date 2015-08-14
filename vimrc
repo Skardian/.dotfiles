@@ -16,13 +16,13 @@ Plugin 'EinfachToll/DidYouMean'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-sort-motion'
+Plugin 'christoomey/vim-g-dot'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'matchit.zip'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'scrooloose/nerdtree'
 Plugin 'shime/vim-livedown'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
@@ -51,7 +51,6 @@ Plugin 'NLKNguyen/papercolor-theme'
 
 " Experimental
 Plugin 'AndrewRadev/switch.vim'
-Plugin 'terryma/vim-multiple-cursors'
 
 " End of the vundle settings
 call vundle#end()            " required
