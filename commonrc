@@ -32,6 +32,9 @@ unset less_options;
 export PAGER='less';
 
 export PATH=~/bin:$PATH
+if which ruby >/dev/null && which gem >/dev/null; then
+    export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
 
 # g acts as 'git status' or as git
 # Source: https://github.com/thoughtbot/dotfiles
