@@ -51,6 +51,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 
 " Experimental
 Plugin 'AndrewRadev/switch.vim'
+Plugin 'majutsushi/tagbar'
 
 " End of the vundle settings
 call vundle#end()            " required
@@ -173,9 +174,6 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 " Fix Y weird behaivour
 nnoremap Y y$
 
-" Open and close folds with <space>
-nnoremap <leader><leader> za
-
 " Toggle line wrap
 nnoremap <leader>lw :set wrap!<cr>
 
@@ -229,10 +227,9 @@ let g:ctrlp_custom_ignore = {
 set tags=./tags;
 let g:easytags_dynamic_files = 2
 
-" NERDTree
-nnoremap <leader>t :NERDTreeToggle<cr>
-let g:NERDTreeShowHidden=1
-let g:NERDTreeIgnore=['\~$', '\.git']
+" Tagbar
+nnoremap <silent> <leader>t :TagbarToggle<CR>
+let g:tagbar_autoclose = 1
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-p>"
