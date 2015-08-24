@@ -19,5 +19,10 @@ compdef g=git # g function as git
 
 # Source common config
 source ~/.commonrc
+
+function chpwd() {
+    ls
+}
+
 # Source local config
 source ~/.localrc
