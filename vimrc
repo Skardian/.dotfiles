@@ -52,6 +52,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 " Experimental
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'tommcdo/vim-exchange'
 
 " End of the vundle settings
 call vundle#end()            " required
