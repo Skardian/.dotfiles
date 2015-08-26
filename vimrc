@@ -18,7 +18,6 @@ Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'christoomey/vim-g-dot'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'matchit.zip'
@@ -35,12 +34,6 @@ Plugin 'wincent/terminus'
 " Tags
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
-
-" Snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
@@ -118,6 +111,18 @@ set tabstop=4
 set expandtab
 set autoindent
 set smartindent
+
+" Temporary tab wrapper
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <S-Tab> <c-n>
 
 " Visual Mode search with */# from Scrooloose
 function! s:VSetSearch()
@@ -231,10 +236,6 @@ let g:easytags_dynamic_files = 2
 " Tagbar
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 let g:tagbar_autoclose = 1
-
-" Supertab
-let g:SuperTabDefaultCompletionType = "<c-p>"
-let g:SuperTabContextDefaultCompletionType = "<c-p>"
 
 " Switch
 let g:switch_mapping = "-"
