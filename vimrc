@@ -63,7 +63,7 @@ set hidden " Edit various files without saving or undoing
 set noerrorbells        " don't beep
 set noshowmode          " dont show current mode down the bottom
 set nowrap              " don't warp lines
-set relativenumber      " show relative line number
+set number              " show relative line number
 set showcmd             " show incomplete cmds down the bottom
 set showmatch           " Show matching brackets when text indicator is over them
 set virtualedit=block
@@ -113,6 +113,7 @@ set autoindent
 set smartindent
 
 " Temporary tab wrapper
+set wildmode=list:longest,list:full
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
@@ -133,6 +134,17 @@ function! s:VSetSearch()
 endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 " Filetypes --------------------------------------------------
 " Enable syntax highighting
