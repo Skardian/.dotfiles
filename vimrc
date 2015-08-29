@@ -204,6 +204,9 @@ nnoremap <leader>w :w<cr>
 
 " Exit insert mode
 inoremap jj <ESC>
+inoremap jk <ESC>
+inoremap kj <ESC>
+inoremap kk <ESC>
 
 " Exit visual mode
 vnoremap <leader><leader> <ESC>
