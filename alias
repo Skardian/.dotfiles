@@ -6,8 +6,6 @@ alias grep='grep --color=auto'
 alias fuck='sudo $(fc -ln -1)'
 alias please='sudo $(fc -ln -1)'
 
-# Quick edit files
-alias v=$VISUAL
 
 # ls alias
 alias ls='ls --color=auto' # Colorize ls
