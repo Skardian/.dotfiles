@@ -7,40 +7,46 @@ set encoding=utf-8
 call plug#begin()
 
 " Plugins
+Plug 'AndrewRadev/switch.vim'
 Plug 'EinfachToll/DidYouMean'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
-Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-g-dot'
+Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
+Plug 'majutsushi/tagbar'
 Plug 'matchit.zip'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'shime/vim-livedown'
+Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'vim-ruby/vim-ruby'
 Plug 'wincent/terminus'
+
+" Text objects
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
+Plug 'whatyouhide/vim-textobj-erb'
+Plug 'tek/vim-textobj-ruby'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-indent'
 
 " Tags
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
-
-" Ruby
-Plug 'vim-ruby/vim-ruby'
 
 " Color
 Plug 'nanotech/jellybeans.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
-Plug 'AndrewRadev/switch.vim'
-Plug 'majutsushi/tagbar'
-Plug 'tommcdo/vim-exchange'
 
 call plug#end()
 
