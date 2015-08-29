@@ -12,7 +12,8 @@ FOLDERS="fonts vim"
 ln -sf ~/.dotfiles/fonts ~/.fonts
 ln -sf ~/.dotfiles/vim ~/.vim
 
-# Clone Vundle and install vim scripts
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qa
+# Get vim-plug and install
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall
 
