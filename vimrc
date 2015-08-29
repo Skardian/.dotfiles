@@ -47,6 +47,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -254,6 +255,13 @@ let g:tagbar_autoclose = 1
 
 " Switch
 let g:switch_mapping = "-"
+
+" UltiSnips
+inoremap <c-j> <nop>
+inoremap <c-k> <nop>
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
