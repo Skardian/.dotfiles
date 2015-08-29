@@ -4,52 +4,45 @@ set nocompatible
 filetype off                  " required
 set encoding=utf-8
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+call plug#begin()
 
 " Plugins
-Plugin 'EinfachToll/DidYouMean'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
-Plugin 'christoomey/vim-sort-motion'
-Plugin 'christoomey/vim-g-dot'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'matchit.zip'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'shime/vim-livedown'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'wincent/terminus'
+Plug 'EinfachToll/DidYouMean'
+Plug 'airblade/vim-gitgutter'
+Plug 'bling/vim-airline'
+Plug 'christoomey/vim-sort-motion'
+Plug 'christoomey/vim-g-dot'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
+Plug 'matchit.zip'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'shime/vim-livedown'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'wincent/terminus'
 
 " Tags
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 
 " Ruby
-Plugin 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby'
 
 " Color
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'NLKNguyen/papercolor-theme'
+Plug 'nanotech/jellybeans.vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
-Plugin 'AndrewRadev/switch.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'tommcdo/vim-exchange'
+Plug 'AndrewRadev/switch.vim'
+Plug 'majutsushi/tagbar'
+Plug 'tommcdo/vim-exchange'
 
-" End of the vundle settings
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
 " GUI --------------------------------------------------
 if has("gui_running")
@@ -73,6 +66,7 @@ set ttyfast
 set autoread            " Reload file if changed
 set scrolloff=1
 set wildignore+=*/tmp/*,/tmp/*,*.so,*.swp     " MacOSX/Linux
+filetype plugin indent on
 
 
 set timeoutlen=500
