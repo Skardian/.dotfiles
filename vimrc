@@ -262,6 +262,7 @@ inoremap <c-k> <nop>
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+nnoremap <leader>es :UltiSnipsEdit<cr>
 
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
