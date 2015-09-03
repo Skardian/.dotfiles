@@ -185,10 +185,10 @@ cnoremap w!! w !sudo tee % >/dev/null
 
 " Toggle hlsearch
 nnoremap <silent> <leader><cr> :set hlsearch!<cr>
-nnoremap <silent> <cr><leader> :set hlsearch!<cr>
 
-" Save a file as root (,W)
-noremap <leader>W :w !sudo tee % > /dev/null<CR>
+" Start and end with <BS> and <CR>
+nnoremap <CR> G
+nnoremap <BS> gg
 
 " Fix Y weird behaivour
 nnoremap Y y$
