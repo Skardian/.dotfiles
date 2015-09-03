@@ -72,7 +72,12 @@ set lazyredraw
 set ttyfast
 set autoread            " Reload file if changed
 set scrolloff=1
-set wildignore+=*/tmp/*,/tmp/*,*.so,*.swp     " MacOSX/Linux
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.DS_Store                       " OSX bullshit
+set wildignore+=*.orig
+
 filetype plugin indent on
 
 
@@ -176,6 +181,7 @@ command! QA qall
 command! E e
 command! W w
 cnoremap jj <esc>
+cnoremap w!! w !sudo tee % >/dev/null
 
 " Toggle hlsearch
 nnoremap <silent> <leader><cr> :set hlsearch!<cr>
