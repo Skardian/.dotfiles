@@ -181,12 +181,6 @@ cnoremap jj <esc>
 nnoremap <silent> <leader><cr> :set hlsearch!<cr>
 nnoremap <silent> <cr><leader> :set hlsearch!<cr>
 
-" Keep search terms centered
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap * *zz
-nnoremap # #zz
-
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
@@ -205,9 +199,6 @@ nnoremap <leader>w :w<cr>
 
 " Exit insert mode
 inoremap jj <ESC>
-inoremap jk <ESC>
-inoremap kj <ESC>
-inoremap kk <ESC>
 
 " Exit visual mode
 vnoremap <leader><leader> <ESC>
