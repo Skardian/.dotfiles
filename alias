@@ -8,7 +8,11 @@ alias please='sudo $(fc -ln -1)'
 
 
 # ls alias
-alias ls='ls --color=auto' # Colorize ls
+if [ `uname` = 'Darwin' ]; then
+    alias ls='ls -G' # Colorize ls
+else
+    alias ls='ls --color=auto' # Colorize ls
+fi
 alias ll='ls -lh'          # long list
 alias l='ls -1'            # long list (names only)
 alias la='ls -lAFh'        # long list, show almost all, show type, human readable
