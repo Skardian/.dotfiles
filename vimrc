@@ -31,12 +31,14 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wincent/terminus'
 
-" Text objects
+" Text objects pre
 Plug 'kana/vim-textobj-user'
+" Text objects
 Plug 'kana/vim-textobj-entire'
 Plug 'whatyouhide/vim-textobj-erb'
 Plug 'tek/vim-textobj-ruby'
 Plug 'kana/vim-textobj-line'
+Plug 'sgur/vim-textobj-parameter'
 Plug 'kana/vim-textobj-indent'
 
 " Tags
