@@ -73,6 +73,7 @@ set wildmenu            " Enable tab
 set lazyredraw
 set ttyfast
 set autoread            " Reload file if changed
+set backspace=indent,eol,start
 set scrolloff=1
 set wildignore+=.hg,.git,.svn                    " Version control
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
@@ -191,6 +192,8 @@ nnoremap <silent> <leader><cr> :set hlsearch!<cr>
 " Start and end with <BS> and <CR>
 nnoremap <CR> G
 nnoremap <BS> gg
+vnoremap <CR> G
+vnoremap <BS> gg
 
 " Fix Y weird behaivour
 nnoremap Y y$
