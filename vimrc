@@ -19,6 +19,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar'
 Plug 'matchit.zip'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'rking/ag.vim'
 Plug 'shime/vim-livedown'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
@@ -222,15 +223,28 @@ nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 nnoremap <leader>bd :bd<cr>
 
+" Quickfix
+nnoremap <leader>cn :cn<cr>
+nnoremap <leader>cp :cp<cr>
+
 " Virtual lines are real lines
 nnoremap j gj
 nnoremap k gk
+
+" Using spanish keyboard this is better
+" , to next f/F/t/T
+" ; to previous f/F/t/T
+nnoremap ; ,
+nnoremap , ;
 
 " Plugin Config --------------------------------------------------
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts=1
+
+" Ag.vim
+nnoremap <leader>a :Ag<space>
 
 " Commentary
 augroup commentstrings
