@@ -76,6 +76,7 @@ set lazyredraw
 set ttyfast
 set autoread            " Reload file if changed
 set backspace=indent,eol,start
+set nrformats-=octal
 set scrolloff=1
 set wildignore+=.hg,.git,.svn                    " Version control
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
