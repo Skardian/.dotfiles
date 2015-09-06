@@ -178,7 +178,13 @@ nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:AirlineRefresh<cr>
 nmap <silent> <F2> :set paste!<cr>
 set pastetoggle=<F2>
 
-" Comand line bindings
+" Remove paste when leaving Insert mode
+augroup my_paste_group
+    autocmd!
+    autocmd InsertLeave * set nopaste
+augroup END
+
+" Command line bindings
 command! Q q " Bind :Q to :q
 command! Qall qall
 command! QA qall
