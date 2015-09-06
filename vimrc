@@ -160,9 +160,12 @@ endif
 " Enable syntax highighting
 syntax enable
 
-au FileType html setlocal softtabstop=2 shiftwidth=2 tabstop=2
-au FileType markdown setlocal softtabstop=2 shiftwidth=2 tabstop=2
-au FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
+augroup my_filetypes
+    autocmd!
+    autocmd FileType html setlocal softtabstop=2 shiftwidth=2 tabstop=2
+    autocmd FileType markdown setlocal softtabstop=2 shiftwidth=2 tabstop=2
+    autocmd FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
+augroup END
 
 " Maps --------------------------------------------------
 " Leader is <space>
