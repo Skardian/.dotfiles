@@ -180,7 +180,6 @@ nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:AirlineRefresh<cr>
 " Toggle paste mode
 nmap <silent> <F2> :set paste!<cr>
 set pastetoggle=<F2>
-
 " Remove paste when leaving Insert mode
 augroup my_paste_group
     autocmd!
@@ -206,7 +205,6 @@ nnoremap Y y$
 
 " Toggle line wrap
 nnoremap <leader>lw :set wrap!<cr>
-
 " Show current line
 nnoremap <leader>ll :set cursorline!<cr>
 
@@ -231,7 +229,6 @@ noremap Q <nop>
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 nnoremap <leader>bd :bd<cr>
-
 " Quickfix
 nnoremap <leader>cn :cn<cr>
 nnoremap <leader>cp :cp<cr>
@@ -246,6 +243,12 @@ nnoremap k gk
 " ; to previous f/F/t/T
 nnoremap ; ,
 nnoremap , ;
+
+" Swap 0/^ and '/`
+nnoremap 0 ^
+nnoremap ^ 0
+nnoremap ` '
+nnoremap ' `
 
 " Plugin Config --------------------------------------------------
 " Airline
