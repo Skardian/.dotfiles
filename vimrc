@@ -142,8 +142,8 @@ function! s:VSetSearch()
   let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
   let @@ = temp
 endfunction
-vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
-vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+vnoremap * :<C-u>call <SID>VSetSearch()<cr>//<cr><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<cr>??<cr><c-o>
 
 if executable('ag')
   " Use Ag over Grep
@@ -190,11 +190,11 @@ cnoremap w!! w !sudo tee % >/dev/null
 " Toggle hlsearch
 nnoremap <silent> <leader><cr> :set hlsearch!<cr>
 
-" Start and end with <BS> and <CR>
-nnoremap <CR> G
-nnoremap <BS> gg
-vnoremap <CR> G
-vnoremap <BS> gg
+" Start and end with <bs> and <cr>
+nnoremap <cr> G
+nnoremap <bs> gg
+vnoremap <cr> G
+vnoremap <bs> gg
 
 " Fix Y weird behaivour
 nnoremap Y y$
@@ -267,7 +267,7 @@ set tags=./tags;
 let g:easytags_dynamic_files = 2
 
 " Tagbar
-nnoremap <silent> <leader>t :TagbarToggle<CR>
+nnoremap <silent> <leader>t :TagbarToggle<cr>
 let g:tagbar_autoclose = 1
 
 " Switch
