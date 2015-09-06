@@ -253,6 +253,7 @@ nnoremap <leader>a :Ag<space>
 
 " Commentary
 augroup commentstrings
+    autocmd!
     autocmd FileType matlab set commentstring=%\ %s
 augroup END
 
@@ -280,6 +281,15 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 nnoremap <leader>es :UltiSnipsEdit<cr>
+
+" Vim-fugitive
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gm :Gmove<space>
+nnoremap <leader>gr :Gremove<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gw :Gwrite<cr>
 
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
