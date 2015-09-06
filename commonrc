@@ -31,10 +31,11 @@ export LESS="${less_options[*]}";
 unset less_options;
 export PAGER='less';
 
-export PATH=~/bin:$PATH
-if which ruby >/dev/null && which gem >/dev/null; then
-    export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
+export PATH="~/bin:$PATH"
+
+# RVM
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # g acts as 'git status' or as git
 # Source: https://github.com/thoughtbot/dotfiles
