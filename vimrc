@@ -230,6 +230,7 @@ nnoremap <leader>bd :bd<cr>
 " Quickfix
 nnoremap <leader>cn :cn<cr>
 nnoremap <leader>cp :cp<cr>
+nnoremap <leader>co :copen<cr>
 
 " Virtual lines are real lines
 nnoremap j gj
