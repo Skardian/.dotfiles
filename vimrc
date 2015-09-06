@@ -185,10 +185,6 @@ augroup my_paste_group
 augroup END
 
 " Command line bindings
-command! Q q " Bind :Q to :q
-command! Qall qall
-command! QA qall
-command! E e
 command! W w
 cnoremap jj <esc>
 cnoremap w!! w !sudo tee % >/dev/null
