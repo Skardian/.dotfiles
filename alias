@@ -1,6 +1,7 @@
 # Alias
 alias RM='rm -rf'
 alias grep='grep --color=auto'
+alias o=xdg-open
 
 # Rerun as sudo
 alias fuck='sudo $(fc -ln -1)'
