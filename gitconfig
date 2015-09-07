@@ -14,6 +14,7 @@
     mt    = mergetool
     pl    = pull
     ps    = push
+    sa    = status --ignored
     t     = log  --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
     tree  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
     wt    = !watch --color -t -x git log --graph --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %C(white dim)%s%Creset %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
