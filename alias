@@ -1,6 +1,6 @@
 # Alias
 alias RM='rm -rf'
-alias dotedit='vim ~/.dotfiles'
+alias dotedit='cd ~/.dotfiles; vim'
 alias grep='grep --color=auto'
 alias o='xdg-open'
 
