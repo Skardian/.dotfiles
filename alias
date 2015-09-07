@@ -1,12 +1,12 @@
 # Alias
 alias RM='rm -rf'
+alias dotedit='vim ~/.dotfiles'
 alias grep='grep --color=auto'
-alias o=xdg-open
+alias o='xdg-open'
 
 # Rerun as sudo
 alias fuck='sudo $(fc -ln -1)'
 alias please='sudo $(fc -ln -1)'
-
 
 # ls alias
 if [ `uname` = 'Darwin' ]; then
