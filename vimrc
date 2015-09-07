@@ -215,6 +215,9 @@ nnoremap <leader>ll :set cursorline!<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w<cr>
 
+" Update diffs
+nnoremap du :diffupdate<cr>
+
 " Exit insert mode
 inoremap jj <ESC>
 
