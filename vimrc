@@ -70,6 +70,8 @@ set nowrap              " don't warp lines
 set number              " show relative line number
 set showcmd             " show incomplete cmds down the bottom
 set showmatch           " Show matching brackets when text indicator is over them
+set splitbelow
+set splitright
 set virtualedit=block
 set wildmenu            " Enable tab
 set lazyredraw
