@@ -109,6 +109,7 @@ set laststatus=2 " Allways show status line
 " Searching configs
 set hlsearch            " Highlight search
 set noignorecase        " Dont ignore case
+set incsearch
 set magic               " Magic REGEX
 
 " Show $ with 'cw' and similar commands
