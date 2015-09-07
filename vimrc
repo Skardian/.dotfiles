@@ -301,9 +301,9 @@ nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gm :Gmove<space>
-nnoremap <leader>gr :Gread<cr>
+nnoremap <leader>gr :Gread<cr>:w<cr>
 nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>gw :Gwrite<cr>:w<cr>
 
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
