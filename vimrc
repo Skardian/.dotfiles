@@ -52,6 +52,7 @@ Plug 'NLKNguyen/papercolor-theme'
 " Experimental
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'tpope/vim-dispatch'
 
 call plug#end()
 
@@ -304,8 +305,8 @@ nnoremap <leader>gm  :Gmove<space>
 nnoremap <leader>gr  :Gread<cr>:w<cr>
 nnoremap <leader>gs  :Gstatus<cr>
 nnoremap <leader>gw  :Gwrite<cr>:w<cr>
-nnoremap <leader>gps :Gpush<cr>
-nnoremap <leader>gpl :Gpull<cr>
+nnoremap <leader>gps :Dispatch :Gpush<cr>
+nnoremap <leader>gpl :Dispatch :Gpull<cr>
 
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
