@@ -54,12 +54,12 @@ end
 endsnippet
 
 snippet "for" "(<from>..<to>).each { |<i>| <block> }" r
+(${1:from}..${2:to}).each { |${3:i}| ${VISUAL}${0} }
+endsnippet
+snippet "ford" "(<from>..<to>).each { |<i>| <block> }" r
 (${1:from}..${2:to}).each do |${3:i}|
 ${VISUAL}${0}
 }
-endsnippet
-snippet "fori" "(<from>..<to>).each { |<i>| <block> }" r
-(${1:from}..${2:to}).each { |${3:i}| ${VISUAL}${0} }
 endsnippet
 
 snippet "\b(case|sw(itch)?)" "case <variable> when <expression> ... end" r
@@ -73,36 +73,25 @@ when ${1:expression}
 ${VISUAL}${0}
 endsnippet
 
-snippet "(\S+)\.selecti" ".select { |<item>| <block>}" r
-`!p snip.rv=match.group(1)`.select { |${1:item}| ${2:block} }
-endsnippet
-snippet "(\S+)\.select" ".select do |<item>| <block> end" r
+snippet "(\S+)\.selectd" ".select do |<item>| <block> end" r
 `!p snip.rv=match.group(1)`.select do |${1:item}|
 	${0:block}
 end
 endsnippet
-
-snippet "(\S+)\.ea(ch)?i" "<elements>.each do |<element>| <block> end" r
-`!p snip.rv=match.group(1)`.each { |${1:e}| ${0} }
+snippet "(\S+)\.select" ".select { |<item>| <block>}" r
+`!p snip.rv=match.group(1)`.select { |${1:item}| ${2:block} }
 endsnippet
-snippet "(\S+)\.ea(ch)" "<elements>.each do |<element>| <block> end" r
+
+snippet "(\S+)\.ea(ch)?d" "<elements>.each do |<element>| <block> end" r
 `!p snip.rv=match.group(1)`.each do |${1:e}|
 	${0}
 end
 endsnippet
-
-snippet "(\S+)\.each_?w(ith)?_?i(ndex)?i" ".each_with_index { |<element>,<i>| <block> }" r
-`!p snip.rv=match.group(1)`.each_with_index { |${1:`!p
-element_name = match.group(1).lstrip('$@')
-ematch = re.search("([A-Za-z][A-Za-z0-9_]+?)s?[^A-Za-z0-9_]*?$", element_name)
-try:
-	wmatch = re.search("([A-Za-z][A-Za-z0-9_]+)$", ematch.group(1))
-	snip.rv = wmatch.group(1).lower()
-except:
-	snip.rv = 'element'
-`},${2:i}| $0 }
+snippet "(\S+)\.ea(ch)?" "<elements>.each do |<element>| <block> end" r
+`!p snip.rv=match.group(1)`.each { |${1:e}| ${0} }
 endsnippet
-snippet "(\S+)\.each_?w(ith)?_?i(ndex)?" ".each_with_index do |<element>,<i>| <block> end" r
+
+snippet "(\S+)\.each_?w(ith)?_?i(ndex)?d" ".each_with_index do |<element>,<i>| <block> end" r
 `!p snip.rv=match.group(1)`.each_with_index do |${1:`!p
 element_name = match.group(1).lstrip('$@')
 ematch = re.search("([A-Za-z][A-Za-z0-9_]+?)s?[^A-Za-z0-9_]*?$", element_name)
@@ -115,36 +104,8 @@ except:
 	$0
 end
 endsnippet
-
-snippet "(\S+)\.each_?k(ey)?i" ".each_key { |<key>| <block> }" r
-`!p snip.rv=match.group(1)`.each_key { |${1:key}| ${0} }
-endsnippet
-snippet "(\S+)\.each_?k(ey)?" ".each_key do |key| <block> end" r
-`!p snip.rv=match.group(1)`.each_key do |${1:key}|
-	${0}
-end
-endsnippet
-
-snippet "(\S+)\.each_?val(ue)?i" ".each_value { |<value>| <block> }" r
-`!p snip.rv=match.group(1)`.each_value { |${1:value}| ${0} }
-endsnippet
-snippet "(\S+)\.each_?val(ue)?" ".each_value do |<value>| <block> end" r
-`!p snip.rv=match.group(1)`.each_value do |${1:value}|
-	${0}
-end
-endsnippet
-
-snippet "(\S+)\.sorti" ".sort { |<a>,<b>| <block> }" r
-`!p snip.rv=match.group(1)`.sort { |${1:a},${2:b}| ${0} }
-endsnippet
-snippet "(\S+)\.sort" ".sort do |<a>,<b>| <block> end" r
-`!p snip.rv=match.group(1)`.sort do |${1:a},${2:b}|
-	${0}
-end
-endsnippet
-
-snippet "(\S+)\.mapi" ".map { |<element>| <block> }" r
-`!p snip.rv=match.group(1)`.map { |${1:`!p
+snippet "(\S+)\.each_?w(ith)?_?i(ndex)?" ".each_with_index { |<element>,<i>| <block> }" r
+`!p snip.rv=match.group(1)`.each_with_index { |${1:`!p
 element_name = match.group(1).lstrip('$@')
 ematch = re.search("([A-Za-z][A-Za-z0-9_]+?)s?[^A-Za-z0-9_]*?$", element_name)
 try:
@@ -152,9 +113,37 @@ try:
 	snip.rv = wmatch.group(1).lower()
 except:
 	snip.rv = 'element'
-`}| ${0} }
+`},${2:i}| $0 }
 endsnippet
-snippet "(\S+)\.map" ".map do |<element>| <block> end" r
+
+snippet "(\S+)\.each_?k(ey)?d" ".each_key do |key| <block> end" r
+`!p snip.rv=match.group(1)`.each_key do |${1:key}|
+	${0}
+end
+endsnippet
+snippet "(\S+)\.each_?k(ey)?" ".each_key { |<key>| <block> }" r
+`!p snip.rv=match.group(1)`.each_key { |${1:key}| ${0} }
+endsnippet
+
+snippet "(\S+)\.each_?val(ue)?d" ".each_value do |<value>| <block> end" r
+`!p snip.rv=match.group(1)`.each_value do |${1:value}|
+	${0}
+end
+endsnippet
+snippet "(\S+)\.each_?val(ue)?" ".each_value { |<value>| <block> }" r
+`!p snip.rv=match.group(1)`.each_value { |${1:value}| ${0} }
+endsnippet
+
+snippet "(\S+)\.sortd" ".sort do |<a>,<b>| <block> end" r
+`!p snip.rv=match.group(1)`.sort do |${1:a},${2:b}|
+	${0}
+end
+endsnippet
+snippet "(\S+)\.sort" ".sort { |<a>,<b>| <block> }" r
+`!p snip.rv=match.group(1)`.sort { |${1:a},${2:b}| ${0} }
+endsnippet
+
+snippet "(\S+)\.mapd" ".map do |<element>| <block> end" r
 `!p snip.rv=match.group(1)`.map do |${1:`!p
 element_name = match.group(1).lstrip('$@')
 ematch = re.search("([A-Za-z][A-Za-z0-9_]+?)s?[^A-Za-z0-9_]*?$", element_name)
@@ -167,9 +156,8 @@ except:
 	${0}
 end
 endsnippet
-
-snippet "(\S+)\.rev(erse)?_?eachi" ".reverse_each { |<element>| <block> }" r
-`!p snip.rv=match.group(1)`.reverse_each { |${1:`!p
+snippet "(\S+)\.map" ".map { |<element>| <block> }" r
+`!p snip.rv=match.group(1)`.map { |${1:`!p
 element_name = match.group(1).lstrip('$@')
 ematch = re.search("([A-Za-z][A-Za-z0-9_]+?)s?[^A-Za-z0-9_]*?$", element_name)
 try:
@@ -177,9 +165,10 @@ try:
 	snip.rv = wmatch.group(1).lower()
 except:
 	snip.rv = 'element'
-`}| $0 }
+`}| ${0} }
 endsnippet
-snippet "(\S+)\.rev(erse)?_?each" ".reverse_each do |<element>| <block> end" r
+
+snippet "(\S+)\.rev(erse)?_?eachd" ".reverse_each do |<element>| <block> end" r
 `!p snip.rv=match.group(1)`.reverse_each do |${1:`!p
 element_name = match.group(1).lstrip('$@')
 ematch = re.search("([A-Za-z][A-Za-z0-9_]+?)s?[^A-Za-z0-9_]*?$", element_name)
@@ -191,6 +180,17 @@ except:
 `}|
 	$0
 end
+endsnippet
+snippet "(\S+)\.rev(erse)?_?each" ".reverse_each { |<element>| <block> }" r
+`!p snip.rv=match.group(1)`.reverse_each { |${1:`!p
+element_name = match.group(1).lstrip('$@')
+ematch = re.search("([A-Za-z][A-Za-z0-9_]+?)s?[^A-Za-z0-9_]*?$", element_name)
+try:
+	wmatch = re.search("([A-Za-z][A-Za-z0-9_]+)$", ematch.group(1))
+	snip.rv = wmatch.group(1).lower()
+except:
+	snip.rv = 'element'
+`}| $0 }
 endsnippet
 
 # Flow control
