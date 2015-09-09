@@ -19,6 +19,12 @@ require_relative '${1}'
 endsnippet
 
 # Definitions
+snippet "cl(ass)?" "Class definition" r
+class ${1}
+	${VISUAL}${0}
+end
+endsnippet
+
 snippet "\b(de)?f" "def <name>..." r
 def ${1:function_name}${2:(${3:*args})}
 	${0}
@@ -44,7 +50,7 @@ endsnippet
 # Blocks
 snippet do "do |<key>| ... end" i
 do |${1:args}|
-	${VISUAL}{0}
+	${VISUAL}${0}
 end
 endsnippet
 snippet Do "do ... end" i
