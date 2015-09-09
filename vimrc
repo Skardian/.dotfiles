@@ -51,7 +51,6 @@ Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'tpope/vim-dispatch'
 
 call plug#end()
