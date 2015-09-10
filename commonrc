@@ -31,7 +31,7 @@ export LESS="${less_options[*]}";
 unset less_options;
 export PAGER='less';
 
-export PATH="~/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
