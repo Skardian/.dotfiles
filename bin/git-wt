@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+# Loop to imitate watch
+while :; do
+    clear;                        # Clear screen
+    LINES=`tput lines`;           # Get screen size
+    git t | head -n $(($LINES-1)) # Draw tree
+    sleep 0.5;                    # Wait
+done
