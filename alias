@@ -14,11 +14,10 @@ if [ `uname` = 'Darwin' ]; then
 else
     alias ls='ls --color=auto' # Colorize ls
 fi
-alias ll='ls -lh'          # long list
-alias l='ls -1'            # long list (names only)
-alias la='ls -lAFh'        # long list, show almost all, show type, human readable
-alias lr='ls -tRFh'        # recursive, sorted by date,  show type, human readable
-alias lt='ls -ltFh'        # long list, sorted by date,  show type, human readable
+alias ll='ls -lh'    # long list
+alias l='ls -1'      # long list (names only)
+alias la='ls -lAFh'  # long list, show almost all, show type, human readable
+alias lt='ls -ltrFh' # long list, sorted by date,  show type, human readable, reversed
 
 # Movement alias
 alias ..='cd ..'
