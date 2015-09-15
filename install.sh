@@ -2,7 +2,7 @@
 
 # Files included
 DOT_DIR="$HOME/.dotfiles"
-DOT_FILES="Xmodmap alias bashrc commonrc fonts gitconfig gitignore tmux.conf vim vimrc vrapperrc zshrc"
+DOT_FILES="Xmodmap alias bashrc commonrc fonts gemrc gitconfig gitignore tmux.conf vim vimrc vrapperrc zshrc"
 
 # Install dotfiles
 for f in $DOT_FILES; do
