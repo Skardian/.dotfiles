@@ -43,7 +43,7 @@ g() {
     if [[ $# > 0 ]]; then
         git $@
     else
-        git status --short # Needs whitespace or comment at the end (Strange behaviour)
+        git status --short --branch # Needs whitespace or comment at the end (Strange behaviour)
     fi
 }
 
