@@ -5,8 +5,8 @@ alias grep='grep --color=auto'
 alias o='xdg-open'
 
 # Rerun as sudo
-alias fuck='sudo $(fc -ln -1)'
-alias please='sudo $(fc -ln -1)'
+alias fuck='sudo -E $(fc -ln -1)'
+alias please='sudo -E $(fc -ln -1)'
 
 # ls alias
 if [ `uname` = 'Darwin' ]; then
