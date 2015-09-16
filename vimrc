@@ -51,6 +51,7 @@ Plug 'NLKNguyen/papercolor-theme'
 " Experimental
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-dispatch'
+Plug 'moll/vim-bbye'
 
 call plug#end()
 
@@ -233,7 +234,7 @@ noremap Q <nop>
 " Buffers
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
-nnoremap <leader>bd :bd<cr>
+nnoremap <leader>bd :Bdelete<cr>
 " Quickfix
 nnoremap <leader>cn :cn<cr>
 nnoremap <leader>cp :cp<cr>
