@@ -31,6 +31,7 @@ export LESS="${less_options[*]}";
 unset less_options;
 export PAGER='less';
 
+export CDPATH="$HOME"
 export PATH="$HOME/bin:$PATH"
 
 # RVM
