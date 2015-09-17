@@ -9,12 +9,18 @@
     cma   = commit --amend
     co    = checkout
     dt    = difftool
+    dtp   = difftool HEAD~1
     f     = fetch
     files = diff --name-status
+    m     = merge
+    ma    = merge --abort
     mt    = mergetool
     pl    = pull
     ps    = push
-    sa    = status --ignored
+    ra    = rebase --abort
+    rc    = rebase --continue
+    ri    = rebase --interactive
+    sa   = status --ignored
     t     = log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
 [color]
 	ui = auto
