@@ -28,7 +28,6 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
-Plug 'wincent/terminus'
 
 " Text objects pre
 Plug 'kana/vim-textobj-user'
@@ -52,6 +51,8 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-dispatch'
 Plug 'moll/vim-bbye'
+
+" Plug 'wincent/terminus'
 
 call plug#end()
 
