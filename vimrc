@@ -208,6 +208,7 @@ nnoremap <leader>ll :set cursorline!<cr>
 
 " Quick save and quit
 nnoremap <leader>q :q<cr>
+nnoremap <leader>Q :qa!<cr>
 nnoremap <leader>w :w<cr>
 
 " Update diffs
