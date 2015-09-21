@@ -198,12 +198,6 @@ cnoremap w!! w !sudo tee % >/dev/null
 " Toggle hlsearch
 nnoremap <silent> <leader><cr> :set hlsearch!<cr>
 
-" Start and end with <bs> and <cr>
-nnoremap <cr> G
-nnoremap <bs> gg
-vnoremap <cr> G
-vnoremap <bs> gg
-
 " Fix Y weird behaivour
 nnoremap Y y$
 
