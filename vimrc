@@ -118,6 +118,13 @@ set magic               " Magic REGEX
 " Show $ with 'cw' and similar commands
 set cpoptions+=$
 
+" Do not continue comments when adding a line with o/O
+augroup no_comments_oO
+    autocmd!
+    autocmd BufEnter * set formatoptions-=o
+augroup END
+
+
 " Tab settings
 set shiftwidth=4
 set softtabstop=4
@@ -166,9 +173,9 @@ syntax enable
 
 augroup my_filetypes
     autocmd!
-    autocmd FileType html setlocal softtabstop=2 shiftwidth=2 tabstop=2
+    autocmd FileType html     setlocal softtabstop=2 shiftwidth=2 tabstop=2
     autocmd FileType markdown setlocal softtabstop=2 shiftwidth=2 tabstop=2
-    autocmd FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
+    autocmd FileType ruby     setlocal softtabstop=2 shiftwidth=2 tabstop=2
 augroup END
 
 " Maps --------------------------------------------------
