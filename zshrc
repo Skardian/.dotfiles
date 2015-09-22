@@ -36,3 +36,4 @@ alias -g T='| tail'            # Pipe to tail
 
 # Source local config
 [ -f ~/.localrc ] && source ~/.localrc
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

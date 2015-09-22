@@ -7,3 +7,4 @@ source ~/.commonrc
 
 # Source local config
 [ -f ~/.localrc ] && source ~/.localrc
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
