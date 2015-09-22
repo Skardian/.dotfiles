@@ -9,6 +9,7 @@ call plug#begin()
 " Plugins
 Plug 'AndrewRadev/switch.vim'
 Plug 'EinfachToll/DidYouMean'
+Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-g-dot'
@@ -22,6 +23,7 @@ Plug 'rking/ag.vim'
 Plug 'shime/vim-livedown'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
@@ -48,9 +50,9 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
-Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-dispatch'
 Plug 'moll/vim-bbye'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf.vim'
 
 " Plug 'wincent/terminus'
 
