@@ -35,6 +35,4 @@ alias -g NE="2> /dev/null"     # Redirect error to null
 alias -g T='| tail'            # Pipe to tail
 
 # Source local config
-if [ -f ~/.localrc ]; then
-    source ~/.localrc
-fi
+[ -f ~/.localrc ] && source ~/.localrc
