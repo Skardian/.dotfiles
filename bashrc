@@ -6,6 +6,4 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\
 source ~/.commonrc
 
 # Source local config
-if [ -f ~/.localrc ]; then
-    source ~/.localrc
-fi
+[ -f ~/.localrc ] && source ~/.localrc
