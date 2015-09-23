@@ -13,9 +13,10 @@ DISABLE_AUTO_TITLE="true"
 plugins=(zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
-
 # Personal config
 compdef g=git # g function as git
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
 
 # Source common config
 source ~/.commonrc
