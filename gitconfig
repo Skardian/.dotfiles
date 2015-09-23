@@ -5,6 +5,7 @@
     ba    = branch -a
     br    = branch -r
     ca    = commit --all
+    ch    = !$EDITOR $(git diff --name-only)
     cm    = commit
     cma   = commit --amend
     co    = checkout
