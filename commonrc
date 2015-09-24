@@ -31,7 +31,13 @@ export LESS="${less_options[*]}";
 unset less_options;
 export PAGER='less';
 
+# The home directories are accesible
 export CDPATH="$HOME"
+
+# Add safe folder inside .git on trusted repos
+export PATH=".git/safe/../../local_bin:.git/safe/../../bin:$PATH"
+
+# Local bin
 export PATH="$HOME/bin:$PATH"
 
 # RVM
