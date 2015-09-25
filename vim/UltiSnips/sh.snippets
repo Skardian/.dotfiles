@@ -7,25 +7,25 @@ endsnippet
 
 snippet if "if ... then (if)"
 if ${2:[ ${1:condition} ]}; then
-	${0:#statements}
+	${0:${VISUAL:#statements }}
 fi
 endsnippet
 
 snippet elif "elif .. (elif)"
 elif ${2:[ ${1:condition} ]}; then
-	${0:#statements}
+	${0:${VISUAL:#statements }}
 endsnippet
 
 snippet case "case .. esac (case)"
 case ${1:word} in
-	${2:pattern} )
+	${2:${VISUAL:pattern }} )
 		$0;;
 esac
 endsnippet
 
 snippet for "for ... in ... done (forin)"
 for ${1:i}${2/.+/ in /}${2:words}; do
-	${0:#statements}
+	${0:${VISUAL:#statements }}
 done
 endsnippet
 
@@ -37,28 +37,28 @@ endsnippet
 
 snippet until "until ... (done)"
 until ${2:[ ${1:condition} ]}; do
-	${0:#statements}
+	${0:${VISUAL:#statements }}
 done
 endsnippet
 
 snippet while "while ... (done)"
 while ${2:[ ${1:condition} ]}; do
-	${0:#statements}
+	${0:${VISUAL:#statements }}
 done
 endsnippet
 
 snippet "^f(un)?" "Function definiton" r
 function ${1:function_name}() {
-	${0:#function_body}
+	${0:${VISUAL:#function_body }}
 }
 endsnippet
 
 snippet "([)}]?)v" "Variable" r
-`!p snip.rv=match.group(1)`${${1:var}}$0
+`!p snip.rv=match.group(1)`${${1:${VISUAL:var}}}$0
 endsnippet
 
 snippet "([)}]?)\$" "Subshell" r
-`!p snip.rv=match.group(1)`$(${1:echo})$0
+`!p snip.rv=match.group(1)`$(${1:${VISUAL:echo}})$0
 endsnippet
 
 # vim:ft=snippets:
