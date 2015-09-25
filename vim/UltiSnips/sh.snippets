@@ -57,4 +57,12 @@ function ${1:function_name}() {
 }
 endsnippet
 
+snippet "([)}]?)v" "Variable" r
+`!p snip.rv=match.group(1)`${${1:var}}$0
+endsnippet
+
+snippet "([)}]?)\$" "Subshell" r
+`!p snip.rv=match.group(1)`$(${1:echo})$0
+endsnippet
+
 # vim:ft=snippets:
