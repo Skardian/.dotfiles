@@ -89,8 +89,16 @@ set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
 set wildignore+=*.DS_Store                       " OSX bullshit
 set wildignore+=*.orig
 
-filetype plugin indent on
+" Use external clipboards
+if has('clipboard')
+    set clipboard=unnamed
+    if has('xterm_clipboard')
+        set clipboard+=unnamedplus,autoselect
+    endif
+endif
 
+
+filetype plugin indent on
 
 set timeoutlen=500
 set ttimeoutlen=100
