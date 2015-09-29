@@ -57,6 +57,8 @@ g() {
 mcd() {
     mkdir "$1" && cd "$1"
 }
+stty start undef
+stty stop undef
 
 export EDITOR=vim
 export VISUAL=vim
