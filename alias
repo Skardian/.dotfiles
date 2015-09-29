@@ -1,5 +1,7 @@
 # Alias
+alias rm='rm -I' # Safer
 alias RM='rm -rf'
+
 alias grep='grep --color=auto'
 alias o='xdg-open'
 
