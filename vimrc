@@ -77,6 +77,7 @@ set splitbelow
 set splitright
 set virtualedit=block
 set wildmenu            " Enable tab
+set wildmode=list:full,full
 set lazyredraw
 set ttyfast
 set autoread            " Reload file if changed
@@ -144,7 +145,6 @@ set autoindent
 set smartindent
 
 " Temporary tab wrapper
-set wildmode=list:longest,list:full
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
