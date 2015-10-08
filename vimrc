@@ -274,7 +274,7 @@ nnoremap <leader>a :Ag<space>
 " Commentary
 augroup commentstrings
     autocmd!
-    autocmd FileType matlab set commentstring=%\ %s
+    autocmd FileType matlab set commentstring=%%s
 augroup END
 
 " CtrlP
