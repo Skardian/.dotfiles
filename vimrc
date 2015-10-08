@@ -67,35 +67,38 @@ if has("gui_running")
 endif
 
 " Misc --------------------------------------------------
-set hidden " Edit various files without saving or undoing
-set noerrorbells        " don't beep
-set noshowmode          " dont show current mode down the bottom
-set nowrap              " don't warp lines
-set number              " show relative line number
-set showcmd             " show incomplete cmds down the bottom
-set showmatch           " Show matching brackets when text indicator is over them
+set autoread                                     " Reload file if changed
+set backspace=indent,eol,start
+set cpoptions+=$                                 " Show $ with 'cw' and similar commands
+set hidden                                       " Edit various files without saving or undoing
+set lazyredraw                                   " Fast macros
+set noerrorbells                                 " Don't beep
+set noshowmode                                   " Don't show current mode down the bottom (airline does)
+set nowrap                                       " Don't warp lines
+set nrformats-=octal
+set number                                       " Show absolute line number
+set scrolloff=1
+set showcmd                                      " Show incomplete cmds down the bottom
+set showmatch                                    " Show matching brackets when text indicator is over them
 set splitbelow
 set splitright
-set virtualedit=block
-set wildmenu            " Enable tab
-set wildmode=list:full,full
-set lazyredraw
 set ttyfast
-set autoread            " Reload file if changed
-set backspace=indent,eol,start
-set nrformats-=octal
-set scrolloff=1
-set wildignore+=.hg,.git,.svn                    " Version control
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set virtualedit=block
 set wildignore+=*.DS_Store                       " OSX bullshit
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " Binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " Compiled object files
 set wildignore+=*.orig
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildmenu                                     " Enable tab
+set wildmode=list:full,full
+
 
 filetype plugin indent on
 
-
+" Reaction time
 set timeoutlen=500
 set ttimeoutlen=100
+
 
 " Colorscheme
 let g:jellybeans_overrides = {
@@ -119,8 +122,6 @@ set noignorecase        " Dont ignore case
 set incsearch
 set magic               " Magic REGEX
 
-" Show $ with 'cw' and similar commands
-set cpoptions+=$
 
 " Do not continue comments when adding a line with o/O
 augroup no_comments_oO
@@ -137,7 +138,7 @@ set expandtab
 set autoindent
 set smartindent
 
-" Temporary tab wrapper
+" Tab wrapper
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
