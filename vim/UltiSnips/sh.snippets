@@ -1,7 +1,8 @@
-priority 0
+priority -45
 
 snippet "^#!" "#!/usr/bin/env bash" r
 #!/usr/bin/env bash
+
 ${0}
 endsnippet
 
@@ -37,28 +38,28 @@ endsnippet
 
 snippet until "until ... (done)"
 until ${2:[ ${1:condition} ]}; do
-	${0:${VISUAL:#statements }}
+	${0:${VISUAL:#statements}}
 done
 endsnippet
 
 snippet while "while ... (done)"
 while ${2:[ ${1:condition} ]}; do
-	${0:${VISUAL:#statements }}
+	${0:${VISUAL:#statements}}
 done
 endsnippet
 
 snippet "^f(un)?" "Function definiton" r
-function ${1:function_name}() {
-	${0:${VISUAL:#function_body }}
+${1:function_name}() {
+	${0:${VISUAL:#function_body}}
 }
 endsnippet
 
 snippet "([)}]?)v" "Variable" r
-`!p snip.rv=match.group(1)`${${1:${VISUAL:var}}}$0
+`!p snip.rv=match.group(1)`${${VISUAL}${1}}$0
 endsnippet
 
 snippet "([)}]?)\$" "Subshell" r
-`!p snip.rv=match.group(1)`$(${1:${VISUAL:echo}})$0
+`!p snip.rv=match.group(1)`$(${VISUAL}${1})$0
 endsnippet
 
 # vim:ft=snippets:
