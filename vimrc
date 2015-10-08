@@ -72,6 +72,7 @@ set backspace=indent,eol,start
 set cpoptions+=$                                 " Show $ with 'cw' and similar commands
 set hidden                                       " Edit various files without saving or undoing
 set lazyredraw                                   " Fast macros
+set listchars=eol:↲,tab:▶\ ,extends:>,precedes:<
 set noerrorbells                                 " Don't beep
 set noshowmode                                   " Don't show current mode down the bottom (airline does)
 set nowrap                                       " Don't warp lines
@@ -216,6 +217,8 @@ nnoremap Y y$
 nnoremap <leader>lw :set wrap!<cr>
 " Show current line
 nnoremap <leader>ll :set cursorline!<cr>
+" Show chars
+nnoremap <leader>lc :set list!<cr>
 
 " Quick save and quit
 nnoremap <leader>q :q<cr>
