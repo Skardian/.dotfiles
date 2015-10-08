@@ -1,12 +1,12 @@
-priority 0
+priority -45
 
 # Preprocessor
-snippet inc "#include local header (inc)"
-#include "${1:`!p snip.rv = snip.basename + '.h'`}"
+snippet inc "#include <> header (inc)"
+#include <${1:}.h>
 endsnippet
 
-snippet Inc "#include <> (Inc)"
-#include <${1:}.h>
+snippet incl "#include local header (incl)"
+#include "${1:`!p snip.rv = snip.basename + '.h'`}"
 endsnippet
 
 snippet def "#define ..."
@@ -71,13 +71,6 @@ for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
 	${VISUAL}${0}
 }
 endsnippet
-
-snippet fori "for int loop (fori)"
-for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
-	${VISUAL}${0}
-}
-endsnippet
-
 
 snippet wh "while loop"
 while(${1:/* condition */}) {
@@ -160,14 +153,14 @@ case ${1:/* variable case */}:
 endsnippet
 
 # Function declarations
-snippet fun "function" b
+snippet "^f(un)?" "Function" r
 ${1:void} ${2:function_name}(${3})
 {
 	${VISUAL}${0}
 }
 endsnippet
 
-snippet fund "function declaration" b
+snippet "^f(un)?d" "Function declaration" r
 ${1:void} ${2:function_name}(${3});
 endsnippet
 
@@ -200,8 +193,8 @@ typedef enum {
 endsnippet
 
 # Misc
-snippet . "Replace . with [${1}]"
-	[${1}]
+snippet "\." "Replace . with [${1}]" r
+[${1}]
 endsnippet
 
 snippet todo "TODO comment"
