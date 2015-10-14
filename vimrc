@@ -35,12 +35,13 @@ Plug 'vim-ruby/vim-ruby'
 " Text objects pre
 Plug 'kana/vim-textobj-user'
 " Text objects
+Plug 'glts/vim-textobj-comment'
 Plug 'kana/vim-textobj-entire'
-Plug 'whatyouhide/vim-textobj-erb'
-Plug 'tek/vim-textobj-ruby'
+Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
 Plug 'sgur/vim-textobj-parameter'
-Plug 'kana/vim-textobj-indent'
+Plug 'tek/vim-textobj-ruby'
+Plug 'whatyouhide/vim-textobj-erb'
 
 " Tags
 Plug 'xolox/vim-misc'
