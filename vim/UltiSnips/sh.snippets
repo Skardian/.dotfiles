@@ -8,25 +8,25 @@ endsnippet
 
 snippet if "if ... then (if)"
 if ${2:[ ${1:condition} ]}; then
-	${0:${VISUAL:#statements }}
+	${0:${VISUAL:#statements}}
 fi
 endsnippet
 
 snippet elif "elif .. (elif)"
 elif ${2:[ ${1:condition} ]}; then
-	${0:${VISUAL:#statements }}
+	${0:${VISUAL:#statements}}
 endsnippet
 
 snippet case "case .. esac (case)"
 case ${1:word} in
-	${2:${VISUAL:pattern }} )
+	${2:${VISUAL:pattern}} )
 		$0;;
 esac
 endsnippet
 
 snippet for "for ... in ... done (forin)"
 for ${1:i}${2/.+/ in /}${2:words}; do
-	${0:${VISUAL:#statements }}
+	${0:${VISUAL:#statements}}
 done
 endsnippet
 
