@@ -55,6 +55,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'honza/vim-snippets'
+Plug 'junegunn/vim-peekaboo'
 
 " Plug 'wincent/terminus'
 
