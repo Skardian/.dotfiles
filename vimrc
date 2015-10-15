@@ -56,6 +56,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/vim-after-object'
 
 " Plug 'wincent/terminus'
 
@@ -307,6 +308,9 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 nnoremap <leader>es :UltiSnipsEdit<cr>
+
+" Vim-after-object
+autocmd VimEnter * call after_object#enable(['A', 'AA'], '=', ':', '-', '#', ' ')
 
 " Vim-fugitive
 nnoremap <leader>gb  :Gblame<cr>
