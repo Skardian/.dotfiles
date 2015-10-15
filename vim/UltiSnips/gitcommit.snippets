@@ -1,0 +1,7 @@
+global !p
+from vimsnippets import complete
+endglobal
+
+snippet "^t" "A commit tag" r
+[$1`!p snip.rv=complete(t[1], ['GIT', 'SH', 'TMUX', 'VIM', 'WIP']).upper()`] $0
+endsnippet
