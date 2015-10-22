@@ -57,6 +57,15 @@ g() {
 mcd() {
     mkdir "$1" && cd "$1"
 }
+
+# Function to convert from seconds to hh:mm:ss
+convertsecs() {
+    (( h=${1}/3600 ))
+    (( m=(${1}%3600)/60 ))
+    (( s=${1}%60 ))
+    printf "%02d:%02d:%02d\n" $h $m $s
+}
+
 stty start undef
 stty stop undef
 
