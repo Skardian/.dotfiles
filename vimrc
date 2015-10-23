@@ -299,7 +299,20 @@ nnoremap <silent> <leader>t :TagbarToggle<cr>
 let g:tagbar_autoclose = 1
 
 " Switch
-let g:switch_mapping = "-"
+let g:switch_mapping = "gS"
+augroup my_switch_group
+    autocmd!
+    autocmd FileType gitrebase let b:switch_custom_definitions =
+        \ [
+        \   {
+        \     'pick': 'reword',
+        \     'reword': 'edit',
+        \     'edit': 'squash',
+        \     'squash': 'fixup',
+        \     'fixup': 'pick',
+        \   },
+        \ ]
+augroup end
 
 " UltiSnips
 inoremap <c-j> <nop>
