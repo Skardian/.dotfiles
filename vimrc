@@ -257,6 +257,10 @@ nnoremap <leader>co :copen<cr>
 nnoremap j gj
 nnoremap k gk
 
+" Start and end of line on command mode
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
+
 " Using spanish keyboard this is better
 " , to next f/F/t/T
 " ; to previous f/F/t/T
