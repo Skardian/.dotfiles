@@ -22,11 +22,7 @@ setopt hist_ignore_space
 # Source common config
 source ~/.commonrc
 
-# chpwd hook
-function chpwd() {
-    ls
-}
-
+# Inline alias
 alias -g A='| ag'              # Pipe to ag
 alias -g G='| grep'            # Pipe to grep
 alias -g H='| head'            # Pipe to head
