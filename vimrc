@@ -190,7 +190,7 @@ augroup END
 " Leader is <space>
 nnoremap <space> <nop>
 vnoremap <space> <nop>
-let mapleader="\<space>"
+let mapleader=" "
 
 " Edit vimrc and source vimrc
 nnoremap <silent> <leader>ev :edit $MYVIMRC<cr>
