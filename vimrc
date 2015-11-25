@@ -184,6 +184,8 @@ augroup my_filetypes
     autocmd FileType html     setlocal softtabstop=2 shiftwidth=2 tabstop=2
     autocmd FileType markdown setlocal softtabstop=2 shiftwidth=2 tabstop=2
     autocmd FileType ruby     setlocal softtabstop=2 shiftwidth=2 tabstop=2
+    autocmd FileType xml      setlocal softtabstop=2 shiftwidth=2 tabstop=2
+    autocmd FileType sql      setlocal softtabstop=2 shiftwidth=2 tabstop=2
 augroup END
 
 " Maps --------------------------------------------------
