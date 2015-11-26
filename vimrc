@@ -333,6 +333,7 @@ autocmd VimEnter * call after_object#enable(['A', 'AA'], '=', ':', '-', '#', ' '
 
 " Vim-easy-align
 xmap ga <Plug>(EasyAlign)
+xmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " Vim-fugitive
