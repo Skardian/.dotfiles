@@ -15,7 +15,6 @@ Plug 'bling/vim-airline'
 Plug 'christoomey/vim-g-dot'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'matchit.zip'
 Plug 'moll/vim-bbye'
@@ -57,6 +56,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-after-object'
+Plug 'junegunn/vim-easy-align'
 
 " Plug 'wincent/terminus'
 
@@ -330,6 +330,10 @@ nnoremap <leader>es :UltiSnipsEdit<cr>
 
 " Vim-after-object
 autocmd VimEnter * call after_object#enable(['A', 'AA'], '=', ':', '-', '#', ' ')
+
+" Vim-easy-align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " Vim-fugitive
 nnoremap <leader>gb  :Gblame<cr>
