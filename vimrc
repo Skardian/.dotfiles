@@ -332,9 +332,9 @@ nnoremap <leader>es :UltiSnipsEdit<cr>
 autocmd VimEnter * call after_object#enable(['A', 'AA'], '=', ':', '-', '#', ' ')
 
 " Vim-easy-align
-xmap ga <Plug>(EasyAlign)
-xmap <Enter> <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(LiveEasyAlign)
+xmap ga <Plug>(LiveEasyAlign)
+xmap <Enter> <Plug>(LiveEasyAlign)
 
 " Vim-fugitive
 nnoremap <leader>gb  :Gblame<cr>
