@@ -300,6 +300,9 @@ let g:ctrlp_custom_ignore = {
 set tags=./tags;
 let g:easytags_dynamic_files = 2
 
+" Fzf
+let g:fzf_command_prefix = 'Fzf'
+
 " Tagbar
 nnoremap <silent> <leader>t :TagbarToggle<cr>
 let g:tagbar_autoclose = 1
