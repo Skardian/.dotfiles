@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#
+# Watch a command, resizing the tmux pane is launched to the size of the output
+#
+# Usage: watchpane command args
+
+if [ "${TMUX}" = "" ]; then
+    echo "Not inside tmux" >&1
+    exit
+fi
+PANE=${TMUX_PANE}
+# Loop to imitate watch
+while :; do
+    clear;                        # Clear screen
+    RET=$($@)
+    LONGEST=$(echo "${RET}" | awk '{ print length, $0 }' | sort -n -r -s | cut -d" " -f2- | head -1)
+    COLUMNS="${#LONGEST}"
+    LINES=$(wc -l <<< "${RET}")
+    tmux resize-pane -t ${PANE} -x ${COLUMNS} -y ${LINES}
+    printf %s "${RET}"
+    sleep 1;                    # Wait
+done
