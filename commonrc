@@ -54,10 +54,6 @@ g() {
     fi
 }
 
-mcd() {
-    mkdir "$1" && cd "$1"
-}
-
 # Function to convert from seconds to hh:mm:ss
 convertsecs() {
     (( h=${1}/3600 ))
