@@ -268,6 +268,8 @@ cnoremap <c-e> <end>
 " ; to previous f/F/t/T
 nnoremap ; ,
 nnoremap , ;
+vnoremap ; ,
+vnoremap , ;
 
 " Swap 0/^ and '/`
 nnoremap 0 ^
