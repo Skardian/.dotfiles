@@ -213,6 +213,11 @@ command! W w
 cnoremap jj <esc>
 cnoremap w!! w !sudo tee % >/dev/null
 
+" Open and close folds
+nnoremap <leader><leader> za
+nnoremap <leader>j zaj
+nnoremap <leader>k zak
+
 " Toggle hlsearch
 nnoremap <silent> <leader><cr> :set hlsearch!<cr>
 
