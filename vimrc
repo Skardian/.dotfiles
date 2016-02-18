@@ -58,6 +58,7 @@ Plug 'honza/vim-snippets'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-after-object'
 Plug 'junegunn/vim-easy-align'
+Plug 'xuhdev/vim-latex-live-preview'
 
 " Plug 'wincent/terminus'
 
