@@ -228,11 +228,11 @@ nnoremap <silent> <leader><cr> :set hlsearch!<cr>
 nnoremap Y y$
 
 " Toggle line wrap
-nnoremap <leader>lw :set wrap!<cr>
+nnoremap <leader>tw :set wrap!<cr>
 " Show current line
-nnoremap <leader>ll :set cursorline!<cr>
+nnoremap <leader>tl :set cursorline!<cr>
 " Show chars
-nnoremap <leader>lc :set list!<cr>
+nnoremap <leader>tc :set list!<cr>
 
 " Quick save and quit
 nnoremap <leader>q :q<cr>
@@ -315,7 +315,7 @@ let g:easytags_dynamic_files = 2
 let g:fzf_command_prefix = 'Fzf'
 
 " Tagbar
-nnoremap <silent> <leader>t :TagbarToggle<cr>
+nnoremap <silent> <leader>tt :TagbarToggle<cr>
 let g:tagbar_autoclose = 1
 
 " Switch
