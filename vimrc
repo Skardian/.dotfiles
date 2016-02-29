@@ -76,6 +76,7 @@ endif
 set autoread                                     " Reload file if changed
 set backspace=indent,eol,start
 set cpoptions+=$                                 " Show $ with 'cw' and similar commands
+set gdefault                                     " Assume /g flag on :s substitutions
 set hidden                                       " Edit various files without saving or undoing
 set lazyredraw                                   " Fast macros
 set listchars=eol:↲,tab:▶\ ,extends:>,precedes:<
