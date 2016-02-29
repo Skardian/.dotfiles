@@ -9,6 +9,7 @@
     cm    = commit
     cma   = commit --amend
     co    = checkout
+    d     = diff
     dt    = difftool
     dtp   = difftool HEAD~1
     f     = fetch
