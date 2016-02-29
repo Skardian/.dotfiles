@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+mkdir -p build
+pdflatex -file-line-error -output-directory=build $@
