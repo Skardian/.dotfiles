@@ -365,3 +365,5 @@ nnoremap <leader>gpl :Dispatch :Gpull<cr>
 let g:gitgutter_diff_args = '-w'
 let g:gitgutter_sign_column_always = 1
 
+" Vim-latex-live-preview
+nnoremap <leader>lp :LLPStartPreview<cr>
