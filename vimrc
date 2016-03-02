@@ -249,9 +249,12 @@ vnoremap <leader><leader> <ESC>
 " Select pasted text
 noremap gV `[V+`]
 
-" Stop annoying Q things
+" Stop annoying :q menu
 noremap q: :q
-noremap Q <nop>
+
+" Format paragraph with Q
+nnoremap Q gqip
+vnoremap Q gq
 
 " Buffers
 nnoremap <leader>n :bn<cr>
