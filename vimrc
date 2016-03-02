@@ -166,6 +166,13 @@ endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<cr>//<cr><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<cr>??<cr><c-o>
 
+" Do not highlight trailing whitespace in insert mode
+augroup whitespace
+    autocmd!
+    autocmd InsertEnter * :DisableWhitespace
+    autocmd InsertLeave * :EnableWhitespace
+augroup END
+
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
