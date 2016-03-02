@@ -9,20 +9,22 @@ call plug#begin()
 " Plugins
 Plug 'AndrewRadev/switch.vim'
 Plug 'EinfachToll/DidYouMean'
-Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-g-dot'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'gorodinskiy/vim-coloresque'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-peekaboo'
 Plug 'majutsushi/tagbar'
 Plug 'matchit.zip'
 Plug 'moll/vim-bbye'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rking/ag.vim'
-Plug 'shime/vim-livedown'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
@@ -31,6 +33,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
+Plug 'xuhdev/vim-latex-live-preview'
 
 " Text objects pre
 Plug 'kana/vim-textobj-user'
@@ -52,14 +55,8 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'junegunn/fzf.vim'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'junegunn/vim-peekaboo'
-Plug 'junegunn/vim-after-object'
-Plug 'junegunn/vim-easy-align'
-Plug 'xuhdev/vim-latex-live-preview'
-Plug 'gorodinskiy/vim-coloresque'
 
 " Plug 'wincent/terminus'
 
@@ -342,9 +339,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 nnoremap <leader>es :UltiSnipsEdit<cr>
 
-" Vim-after-object
-autocmd VimEnter * call after_object#enable(['A', 'AA'], '=', ':', '-', '#', ' ')
-
 " Vim-easy-align
 nmap ga <Plug>(LiveEasyAlign)
 xmap ga <Plug>(LiveEasyAlign)
@@ -358,8 +352,6 @@ nnoremap <leader>gm  :Gmove<space>
 nnoremap <leader>gr  :Gread<cr>:w<cr>
 nnoremap <leader>gs  :Gstatus<cr>
 nnoremap <leader>gw  :Gwrite<cr>:w<cr>
-nnoremap <leader>gps :Dispatch :Gpush<cr>
-nnoremap <leader>gpl :Dispatch :Gpull<cr>
 
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
