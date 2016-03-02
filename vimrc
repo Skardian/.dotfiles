@@ -57,6 +57,7 @@ Plug 'NLKNguyen/papercolor-theme'
 " Experimental
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'terryma/vim-multiple-cursors'
 
 " Plug 'wincent/terminus'
 
