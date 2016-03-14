@@ -42,7 +42,6 @@ Plug 'glts/vim-textobj-comment'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
-Plug 'sgur/vim-textobj-parameter'
 Plug 'tek/vim-textobj-ruby'
 Plug 'whatyouhide/vim-textobj-erb'
 
@@ -58,8 +57,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'terryma/vim-multiple-cursors'
-
-" Plug 'wincent/terminus'
+Plug 'wellle/targets.vim'
 
 call plug#end()
 
@@ -367,6 +365,9 @@ nnoremap <leader>gw  :Gwrite<cr>:w<cr>
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
 let g:gitgutter_sign_column_always = 1
+
+" Vim-targets
+let g:targets_nlNL = 'NL  '
 
 " Vim-latex-live-preview
 nnoremap <leader>lp :LLPStartPreview<cr>
