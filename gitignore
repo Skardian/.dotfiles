@@ -2,3 +2,4 @@ tags
 *~
 *.log
 local_bin
+.idea/
