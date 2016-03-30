@@ -183,19 +183,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" Filetypes --------------------------------------------------
-" Enable syntax highighting
-syntax enable
-
-augroup my_filetypes
-    autocmd!
-    autocmd FileType html     setlocal softtabstop=2 shiftwidth=2 tabstop=2
-    autocmd FileType markdown setlocal softtabstop=2 shiftwidth=2 tabstop=2
-    autocmd FileType ruby     setlocal softtabstop=2 shiftwidth=2 tabstop=2
-    autocmd FileType xml      setlocal softtabstop=2 shiftwidth=2 tabstop=2
-    autocmd FileType sql      setlocal softtabstop=2 shiftwidth=2 tabstop=2
-augroup END
-
 " Maps --------------------------------------------------
 " Leader is <space>
 nnoremap <space> <nop>
