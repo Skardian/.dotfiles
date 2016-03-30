@@ -261,6 +261,13 @@ nnoremap <leader>co :copen<cr>
 " Virtual lines are real lines
 nnoremap j gj
 nnoremap k gk
+nnoremap 0 g0
+nnoremap $ g$
+
+vnoremap j gj
+vnoremap k gk
+vnoremap 0 g0
+vnoremap $ g$
 
 " Start and end of line on command mode
 cnoremap <c-a> <home>
