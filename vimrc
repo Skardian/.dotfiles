@@ -75,6 +75,7 @@ set cpoptions+=$                                 " Show $ with 'cw' and similar 
 set gdefault                                     " Assume /g flag on :s substitutions
 set hidden                                       " Edit various files without saving or undoing
 set lazyredraw                                   " Fast macros
+set linebreak
 set listchars=eol:↲,tab:▶\ ,extends:>,precedes:<
 set noerrorbells                                 " Don't beep
 set noshowmode                                   " Don't show current mode down the bottom (airline does)
