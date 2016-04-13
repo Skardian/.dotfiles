@@ -97,6 +97,8 @@ set wildignore+=.hg,.git,.svn                    " Version control
 set wildmenu                                     " Enable tab
 set wildmode=list:full,full
 
+" .tex files are LaTeX, not plaintex
+let g:tex_flavor = "latex"
 
 filetype plugin indent on
 
