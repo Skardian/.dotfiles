@@ -58,6 +58,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'wellle/targets.vim'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -349,6 +350,9 @@ nnoremap <leader>es :UltiSnipsEdit<cr>
 nmap ga <Plug>(LiveEasyAlign)
 xmap ga <Plug>(LiveEasyAlign)
 xmap <Enter> <Plug>(LiveEasyAlign)
+
+" Vim-emmet
+let g:user_emmet_leader_key='<C-Z>'
 
 " Vim-fugitive
 nnoremap <leader>gb  :Gblame<cr>
