@@ -60,6 +60,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'wellle/targets.vim'
 Plug 'mattn/emmet-vim'
 Plug 'luochen1990/rainbow'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
