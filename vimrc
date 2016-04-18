@@ -59,6 +59,7 @@ Plug 'honza/vim-snippets'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'wellle/targets.vim'
 Plug 'mattn/emmet-vim'
+Plug 'luochen1990/rainbow'
 
 call plug#end()
 
@@ -321,6 +322,30 @@ let g:fzf_command_prefix = 'Fzf'
 " Tagbar
 nnoremap <silent> <leader>tt :TagbarToggle<cr>
 let g:tagbar_autoclose = 1
+
+" Rainbow
+let g:rainbow_active = 1
+nnoremap <leader>tr :RainbowToggle<cr>
+let g:rainbow_conf = {
+  \ 'ctermfgs': [
+  \   'brown',
+  \   'Darkblue',
+  \   'darkgray',
+  \   'darkgreen',
+  \   'darkcyan',
+  \   'darkred',
+  \   'darkmagenta',
+  \   'brown',
+  \   'gray',
+  \   'black',
+  \   'darkmagenta',
+  \   'Darkblue',
+  \   'darkgreen',
+  \   'darkcyan',
+  \   'darkred',
+  \   'red',
+  \ ]
+\ }
 
 " Switch
 let g:switch_mapping = "gS"
