@@ -5,13 +5,13 @@
     ba    = branch -a
     br    = branch -r
     ca    = commit --all
-    ch    = !$EDITOR $(git diff --name-only)
+    ch    = !$EDITOR $(git diff --name-only) ; Edit changed files
     cm    = commit
     cma   = commit --amend
     co    = checkout
     d     = diff
+    dc    = diff --cached
     dt    = difftool
-    dtp   = difftool HEAD~1
     f     = fetch
     files = diff --name-status
     m     = merge
@@ -19,7 +19,8 @@
     r     = reset
     rb    = rebase
     s     = status
-    sa    = status --ignored
+    sh    = show
+    sa    = status --ignored ; Show all
     t     = log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --all
 [color]
 	ui = auto
