@@ -325,7 +325,7 @@ nnoremap <silent> <leader>tt :TagbarToggle<cr>
 let g:tagbar_autoclose = 1
 
 " Rainbow
-let g:rainbow_active = 1
+let g:rainbow_active = 0
 nnoremap <leader>tr :RainbowToggle<cr>
 let g:rainbow_conf = {
   \ 'ctermfgs': [
