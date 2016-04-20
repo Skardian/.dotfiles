@@ -33,7 +33,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
-Plug 'xuhdev/vim-latex-live-preview'
 
 " Text objects pre
 Plug 'kana/vim-textobj-user'
@@ -57,7 +56,6 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'wellle/targets.vim'
 Plug 'mattn/emmet-vim'
 Plug 'luochen1990/rainbow'
 Plug 'sheerun/vim-polyglot'
@@ -400,9 +398,3 @@ nnoremap <leader>gw  :Gwrite<cr>:w<cr>
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
 let g:gitgutter_sign_column_always = 1
-
-" Vim-targets
-let g:targets_nlNL = 'NL  '
-
-" Vim-latex-live-preview
-nnoremap <leader>lp :LLPStartPreview<cr>
