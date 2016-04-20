@@ -148,6 +148,14 @@ set expandtab
 set autoindent
 set smartindent
 
+
+if exists("&undodir")
+    set undofile          "Persistent undo! Pure money.
+    let &undodir=&directory
+    set undolevels=500
+    set undoreload=500
+endif
+
 " Tab wrapper
 function! InsertTabWrapper()
     let col = col('.') - 1
