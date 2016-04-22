@@ -22,6 +22,7 @@ setopt hist_ignore_space
 # Source common config
 source ~/.commonrc
 
+source $HOME/.dotfiles/zsh/functions.zsh
 source $HOME/.dotfiles/zsh/aliases.zsh
 
 # Source local config
