@@ -3,7 +3,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_CUSTOM="$HOME/.dotfiles/zsh-custom/"
+ZSH_CUSTOM="$HOME/.dotfiles/zsh/"
 # Set name of the theme to load.
 ZSH_THEME="murilasso"
 
@@ -22,16 +22,7 @@ setopt hist_ignore_space
 # Source common config
 source ~/.commonrc
 
-# Inline alias
-alias -g A='| ag'              # Pipe to ag
-alias -g G='| grep'            # Pipe to grep
-alias -g H='| head'            # Pipe to head
-alias -g L="| less"            # Pipe to less
-alias -g LA="2>&1 | less"      # Pipe everything to less
-alias -g NA="> /dev/null 2>&1" # Redirect everything to null
-alias -g NE="2> /dev/null"     # Redirect error to null
-alias -g RE="2>&1"             # Redirect error to stdout
-alias -g T='| tail'            # Pipe to tail
+source $HOME/.dotfiles/zsh/aliases.zsh
 
 # Source local config
 [ -f ~/.localrc ] && source ~/.localrc
