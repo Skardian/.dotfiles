@@ -18,6 +18,7 @@
     mt    = mergetool
     r     = reset
     rb    = rebase
+    root  = rev-parse --show-toplevel
     s     = status
     sh    = show
     sa    = status --ignored ; Show all
