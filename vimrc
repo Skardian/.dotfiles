@@ -232,7 +232,7 @@ nnoremap <silent> <leader><cr> :set hlsearch!<cr>
 nnoremap Y y$
 
 " Toggle line wrap
-nnoremap <leader>tw :set wrap!<cr>
+nnoremap <leader>tw :windo set wrap!<cr>
 " Show current line
 nnoremap <leader>tl :set cursorline!<cr>
 " Show chars
