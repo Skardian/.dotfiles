@@ -315,12 +315,6 @@ augroup commentstrings
     autocmd FileType matlab set commentstring=%%s
 augroup END
 
-" CtrlP
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ }
-
 " EasyTag
 set tags=./tags;
 let g:easytags_dynamic_files = 2
