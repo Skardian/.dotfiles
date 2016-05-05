@@ -2,3 +2,4 @@
 .netrwhist
 vim/plugged/
 vim/autoload/
+vim/undo
