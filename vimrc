@@ -268,10 +268,13 @@ vnoremap Q gq
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 nnoremap <leader>bd :Bdelete<cr>
+
 " Quickfix
-nnoremap <leader>cn :cn<cr>
-nnoremap <leader>cp :cp<cr>
-nnoremap <leader>co :copen<cr>
+nnoremap <leader>N :cnext<cr>
+nnoremap <leader>P :cprevious<cr>
+nnoremap <leader>O :cwindow<cr>
+" make
+nnoremap <leader>m :make!<cr>:cwindow<cr>
 
 " Virtual lines are real lines
 nnoremap j gj
