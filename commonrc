@@ -40,6 +40,9 @@ export PATH=".git/safe/../../local_bin:.git/safe/../../bin:$PATH"
 # Local bin
 export PATH="$HOME/bin:$PATH"
 
+# .dotfiles bin
+export PATH="$HOME/.dotfiles/bin:$PATH"
+
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
