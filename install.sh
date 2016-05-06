@@ -10,13 +10,6 @@ for f in $FILES; do
     ln -sf $DOT_DIR/$f $FILE;
 done
 
-# Link bin files
-for b in bin/*; do
-    [ "$b" = "tags" ] && continue;
-    FILE="$HOME/$b"
-    ln -sf $DOT_DIR/$b $FILE
-done
-
 # Install hack font
 ./dot_bin/update_hack_font.sh
 
