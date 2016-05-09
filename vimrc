@@ -340,6 +340,7 @@ let g:limelight_conceal_guifg = '#777777'
 " Tagbar
 nnoremap <silent> <leader>tt :TagbarToggle<cr>
 let g:tagbar_autoclose = 1
+let g:tagbar_sort = 0
 
 " Rainbow
 let g:rainbow_active = 0
