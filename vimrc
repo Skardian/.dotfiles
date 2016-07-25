@@ -219,7 +219,8 @@ augroup END
 
 " Command line bindings
 command! W w
-cnoremap jj <esc>
+cnoremap jk <esc>
+cnoremap kj <esc>
 cnoremap w!! w !sudo tee % >/dev/null
 
 " Open and close folds
@@ -249,7 +250,8 @@ nnoremap <leader>w :w<cr>
 nnoremap du :diffupdate<cr>
 
 " Exit insert mode
-inoremap jj <ESC>
+inoremap jk <ESC>
+inoremap kj <ESC>
 
 " Exit visual mode
 vnoremap <leader><leader> <ESC>
