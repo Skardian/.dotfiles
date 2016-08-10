@@ -60,6 +60,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
+Plug 'tpope/vim-rails'
 
 call plug#end()
 
