@@ -60,6 +60,7 @@ Plug 'NLKNguyen/papercolor-theme'
 " Experimental
 Plug 'tpope/vim-rails'
 Plug 'cohama/lexima.vim'
+Plug 't9md/vim-ruby-xmpfilter'
 
 call plug#end()
 
@@ -396,3 +397,27 @@ nnoremap <leader>gs  :Gstatus<cr>
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
 let g:gitgutter_sign_column_always = 1
+
+" Vim-ruby-xmpfilter
+let g:xmpfilter_cmd = "seeing_is_believing"
+
+augroup seeing_is_believing
+    autocmd FileType ruby nmap <buffer> <M-m> <Plug>(seeing_is_believing-mark)
+    autocmd FileType ruby xmap <buffer> <M-m> <Plug>(seeing_is_believing-mark)
+    autocmd FileType ruby imap <buffer> <M-m> <Plug>(seeing_is_believing-mark)
+
+    autocmd FileType ruby nmap <buffer> <M-c> <Plug>(seeing_is_believing-clean)
+    autocmd FileType ruby xmap <buffer> <M-c> <Plug>(seeing_is_believing-clean)
+    autocmd FileType ruby imap <buffer> <M-c> <Plug>(seeing_is_believing-clean)
+
+    " xmpfilter compatible
+    autocmd FileType ruby nmap <buffer> <M-r> <Plug>(seeing_is_believing-run_-x)
+    autocmd FileType ruby xmap <buffer> <M-r> <Plug>(seeing_is_believing-run_-x)
+    autocmd FileType ruby imap <buffer> <M-r> <Plug>(seeing_is_believing-run_-x)
+
+    " auto insert mark at appropriate spot.
+    autocmd FileType ruby nmap <buffer> <F5> <Plug>(seeing_is_believing-run)
+    autocmd FileType ruby xmap <buffer> <F5> <Plug>(seeing_is_believing-run)
+    autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing_is_believing-run)
+
+augroup end
