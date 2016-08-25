@@ -18,8 +18,6 @@ Plug 'gorodinskiy/vim-coloresque'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 Plug 'luochen1990/rainbow'
@@ -329,16 +327,6 @@ let g:easytags_dynamic_files = 2
 " Fzf
 let g:fzf_command_prefix = 'Fzf'
 
-" Goyo-Limelight
-nnoremap <leader>tg :Goyo<cr>
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
-
 " Tagbar
 nnoremap <silent> <leader>tt :TagbarToggle<cr>
 let g:tagbar_autoclose = 1
@@ -397,17 +385,12 @@ nmap ga <Plug>(LiveEasyAlign)
 xmap ga <Plug>(LiveEasyAlign)
 xmap <Enter> <Plug>(LiveEasyAlign)
 
-" Vim-emmet
-let g:user_emmet_leader_key='<C-Z>'
-
 " Vim-fugitive
 nnoremap <leader>gb  :Gblame<cr>
 nnoremap <leader>gc  :Gcommit<cr>
 nnoremap <leader>gd  :Gdiff<cr>
 nnoremap <leader>gm  :Gmove<space>
-nnoremap <leader>gr  :Gread<cr>:w<cr>
 nnoremap <leader>gs  :Gstatus<cr>
-nnoremap <leader>gw  :Gwrite<cr>:w<cr>
 
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
