@@ -47,3 +47,5 @@
     name = Pepe Padial
 [github]
     user = Skardian
+[commit]
+	verbose = true
