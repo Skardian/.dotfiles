@@ -59,6 +59,7 @@ Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
 Plug 'tpope/vim-rails'
+Plug 'cohama/lexima.vim'
 
 call plug#end()
 
