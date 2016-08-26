@@ -59,6 +59,7 @@ Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
 Plug 'cohama/lexima.vim'
 Plug 't9md/vim-ruby-xmpfilter'
 
