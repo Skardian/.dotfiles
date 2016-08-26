@@ -422,3 +422,13 @@ augroup seeing_is_believing
     autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing_is_believing-run)
 
 augroup end
+
+" Vim-rails/rake
+nnoremap <leader>rt :Rake<cr>
+nnoremap <leader>rem :Emodel<space>
+nnoremap <leader>rev :Eview<space>
+nnoremap <leader>rec :Econtroller<space>
+
+nnoremap <leader>rx :Rextract<space>
+vnoremap <leader>rx :Rextract<space>
+
