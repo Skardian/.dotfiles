@@ -59,6 +59,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
+Plug 'scrooloose/syntastic'
 
 call plug#end()
 
@@ -428,4 +429,10 @@ nnoremap <leader>rec :Econtroller<space>
 
 nnoremap <leader>rx :Rextract<space>
 vnoremap <leader>rx :Rextract<space>
+
+" Vim syntastic
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol = "\u2717"
+let g:syntastic_warning_symbol = "\u26A0"
 
