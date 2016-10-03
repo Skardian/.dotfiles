@@ -13,6 +13,7 @@ Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-g-dot'
 Plug 'christoomey/vim-sort-motion'
+Plug 'cohama/lexima.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'honza/vim-snippets'
@@ -58,10 +59,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'cohama/lexima.vim'
-Plug 't9md/vim-ruby-xmpfilter'
 
 call plug#end()
 
