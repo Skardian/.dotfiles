@@ -14,6 +14,9 @@ DISABLE_AUTO_TITLE="true"
 plugins=(zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern root)
+ZSH_HIGHLIGHT_STYLES[root]='bg=red'
+
 # Personal config
 compdef g=git # g function as git
 setopt hist_ignore_all_dups
