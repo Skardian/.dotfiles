@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# Create the bin folder
+mkdir -p ~/bin
 # Files included
 DOT_DIR="$HOME/.dotfiles"
 FILES="Xmodmap alias bashrc commonrc gemrc gitconfig gitignore i3 tmux.conf vim vimrc vrapperrc zshrc"
