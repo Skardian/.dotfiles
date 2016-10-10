@@ -389,7 +389,7 @@ xmap <Enter> <Plug>(LiveEasyAlign)
 " Vim-fugitive
 nnoremap <leader>gb  :Gblame<cr>
 nnoremap <leader>gc  :Gcommit<cr>
-nnoremap <leader>gd  :Gdiff<cr>
+nnoremap <leader>gd  :Gvdiff<cr>
 nnoremap <leader>gm  :Gmove<space>
 nnoremap <leader>gs  :Gstatus<cr>
 
