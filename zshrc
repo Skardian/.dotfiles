@@ -28,3 +28,6 @@ source $HOME/.dotfiles/zsh/aliases.zsh
 # Source local config
 [ -f ~/.localrc ] && source ~/.localrc
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Remove path duplicates
+typeset -U PATH
