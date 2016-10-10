@@ -22,3 +22,6 @@ vim +PlugInstall
 
 # Get tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Get zsh-syntax-highlightning
+test -n "ZSH_CUSTOM" && git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins
