@@ -60,6 +60,7 @@ Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
 Plug 'scrooloose/syntastic'
+Plug 'floobits/floobits-neovim'
 
 call plug#end()
 
