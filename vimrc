@@ -271,13 +271,6 @@ nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
 nnoremap <leader>bd :Bdelete<cr>
 
-" Quickfix
-nnoremap <leader>N :cnext<cr>
-nnoremap <leader>P :cprevious<cr>
-nnoremap <leader>O :cwindow<cr>
-" make
-nnoremap <leader>m :make!<cr>:cwindow<cr>
-
 " Virtual lines are real lines
 nnoremap j gj
 nnoremap k gk
@@ -359,7 +352,6 @@ let g:rainbow_conf = {
 \ }
 
 " Switch
-let g:switch_mapping = "gS"
 augroup my_switch_group
     autocmd!
     autocmd FileType gitrebase let b:switch_custom_definitions =
