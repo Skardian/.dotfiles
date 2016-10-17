@@ -61,6 +61,7 @@ Plug 'NLKNguyen/papercolor-theme'
 " Experimental
 Plug 'scrooloose/syntastic'
 Plug 'floobits/floobits-neovim'
+Plug 'tpope/vim-unimpaired'
 
 call plug#end()
 
