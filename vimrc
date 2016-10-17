@@ -353,6 +353,7 @@ let g:rainbow_conf = {
 \ }
 
 " Switch
+let g:switch_mapping = "-"
 augroup my_switch_group
     autocmd!
     autocmd FileType gitrebase let b:switch_custom_definitions =
