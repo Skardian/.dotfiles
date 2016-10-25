@@ -62,6 +62,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'scrooloose/syntastic'
 Plug 'floobits/floobits-neovim', has('nvim') ? {} : { 'on': [] }
 Plug 'tpope/vim-unimpaired'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 call plug#end()
 
@@ -400,3 +401,5 @@ let g:syntastic_error_symbol = "\u2717"
 let g:syntastic_warning_symbol = "\u26A0"
 let g:syntastic_python_checkers = ['python', 'pyflakes']
 
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion = 1
