@@ -11,7 +11,7 @@ ZSH_THEME="murilasso"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
 
-plugins=(zsh-syntax-highlighting)
+plugins=(aws zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern root)
