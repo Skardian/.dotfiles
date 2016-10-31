@@ -63,6 +63,7 @@ Plug 'scrooloose/syntastic'
 Plug 'floobits/floobits-neovim', has('nvim') ? {} : { 'on': [] }
 Plug 'tpope/vim-unimpaired'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'unblevable/quick-scope'
 
 call plug#end()
 
@@ -329,6 +330,10 @@ let g:fzf_command_prefix = 'Fzf'
 nnoremap <silent> <leader>tt :TagbarToggle<cr>
 let g:tagbar_autoclose = 1
 let g:tagbar_sort = 0
+
+" Quick-scope
+
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Rainbow
 let g:rainbow_active = 0
