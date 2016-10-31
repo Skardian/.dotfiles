@@ -289,13 +289,13 @@ vnoremap $ g$
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
 
-" Using spanish keyboard this is better
-" , to next f/F/t/T
-" ; to previous f/F/t/T
-nnoremap ; ,
-nnoremap , ;
-vnoremap ; ,
-vnoremap , ;
+" " Using spanish keyboard this is better
+" " , to next f/F/t/T
+" " ; to previous f/F/t/T
+" nnoremap ; ,
+" nnoremap , ;
+" vnoremap ; ,
+" vnoremap , ;
 
 " Swap 0/^ and '/`
 nnoremap 0 ^
