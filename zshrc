@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_CUSTOM="$HOME/.dotfiles/zsh/"
 # Set name of the theme to load.
-ZSH_THEME="murilasso"
+ZSH_THEME="skardian"
 
 # ZSH Configs
 COMPLETION_WAITING_DOTS="true"
