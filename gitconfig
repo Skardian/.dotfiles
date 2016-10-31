@@ -50,3 +50,5 @@
     user = Skardian
 [commit]
 	verbose = true
+[include]
+    path = ~/.gitconfig.local
