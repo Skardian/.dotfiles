@@ -62,7 +62,6 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'scrooloose/syntastic'
 Plug 'floobits/floobits-neovim', has('nvim') ? {} : { 'on': [] }
 Plug 'tpope/vim-unimpaired'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'unblevable/quick-scope'
 
 call plug#end()
