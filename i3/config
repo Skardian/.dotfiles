@@ -35,8 +35,8 @@ bindsym $mod+d exec xfce4-popup-whiskermenu
 bindsym $mod+space exec xfce4-popup-whiskermenu
 
 # split mode
-bindsym $mod+s split h
-bindsym $mod+v split v
+bindsym $mod+s split v
+bindsym $mod+v split h
 bindsym $mod+t split t
 
 # change layout
