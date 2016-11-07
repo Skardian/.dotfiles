@@ -226,6 +226,10 @@ cnoremap jk <esc>
 cnoremap kj <esc>
 cnoremap w!! w !sudo tee % >/dev/null
 
+" Visual indent
+vnoremap < <gv
+vnoremap > >gv
+
 " Open and close folds
 nnoremap <leader><leader> za
 nnoremap <leader>j zaj
