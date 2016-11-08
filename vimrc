@@ -50,6 +50,12 @@ Plug 'kana/vim-textobj-line'
 Plug 'tek/vim-textobj-ruby'
 Plug 'whatyouhide/vim-textobj-erb'
 
+Plug 'Julian/vim-textobj-variable-segment'
+Plug 'bps/vim-textobj-python'
+Plug 'sgur/vim-textobj-parameter'
+Plug 'lucapette/vim-textobj-underscore'
+Plug 'vimtaku/vim-textobj-keyvalue'
+
 " Tags
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
