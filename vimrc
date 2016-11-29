@@ -69,6 +69,7 @@ Plug 'scrooloose/syntastic'
 Plug 'floobits/floobits-neovim', has('nvim') ? {} : { 'on': [] }
 Plug 'tpope/vim-unimpaired'
 Plug 'unblevable/quick-scope'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 
@@ -253,6 +254,8 @@ nnoremap <leader>tw :windo set wrap!<cr>
 nnoremap <leader>tl :set cursorline!<cr>
 " Show chars
 nnoremap <leader>tc :set list!<cr>
+" Show indent guides
+nnoremap <leader>ti :IndentGuidesToggle<cr>
 
 " Quick save and quit
 nnoremap <leader>q :q<cr>
@@ -407,6 +410,11 @@ nnoremap <leader>gs  :Gstatus<cr>
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
 let g:gitgutter_sign_column_always = 1
+
+" Vim-indent-guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_default_mapping = 0
 
 " Vim syntastic
 let g:syntastic_check_on_open = 1
