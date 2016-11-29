@@ -4,6 +4,7 @@ alias RM='rm -rf'
 
 alias grep='grep --color=auto'
 alias o='xdg-open'
+alias pubip='curl ifconfig.co'
 
 # Rerun as sudo
 alias fuck='sudo -E $(fc -ln -1)'
