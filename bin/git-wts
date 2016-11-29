@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
-# git-watchTree
+# git-watchTreeSimple
 # Show a live version of the repo
 
 while :; do
     clear;                        # Clear screen
     LINES=`tput lines`;           # Get screen size
-    git log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --all | head -n $(($LINES-1)) # Draw tree
+    git log --graph --decorate --oneline --all --color | head -n $(($LINES-1)) # Draw tree
     sleep 0.5;                    # Wait
 done
