@@ -70,6 +70,7 @@ Plug 'floobits/floobits-neovim', has('nvim') ? {} : { 'on': [] }
 Plug 'tpope/vim-unimpaired'
 Plug 'unblevable/quick-scope'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ervandew/supertab'
 
 call plug#end()
 
@@ -415,6 +416,9 @@ let g:gitgutter_sign_column_always = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_default_mapping = 0
+
+" Vim supertab
+let g:SuperTabDefaultCompletionType = "context"
 
 " Vim syntastic
 let g:syntastic_check_on_open = 1
