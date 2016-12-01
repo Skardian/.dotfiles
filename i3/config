@@ -162,11 +162,12 @@ bar {
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
 
-
 # Lock system
 exec --no-startup-id xss-lock -- "$HOME/.dotfiles/bin/fancy-i3lock"
 bindsym $mod2+Control+l exec --no-startup-id "$HOME/.dotfiles/bin/fancy-i3lock"
 
-# Restore background image
-exec --no-startup-id killall xfdesktop
-exec --no-startup-id nitrogen --restore
+# Keyboard dist
+exec --no-startup-id setxkbmap us -option ctrl:nocaps
+
+# Swap CAPS y Ctrl
+exec --no-startup-id xmodmap ~/.Xmodmap
