@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if which rofi; then
+    exec rofi -fuzzy -show run -fg "#f1f1f1" -bg "#333333" -hlfg "#ffffff" -hlbg "#336699" -modi "run,window"
+elif which dmenu; then
+    exec dmenu
+else
+    exec i3-nagbar -m 'Could not find rofi or dmenu!'
+fi
+
+
