@@ -104,6 +104,18 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# move workspace to current window
+bindsym $mod+Control+1 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 1
+bindsym $mod+Control+2 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 2
+bindsym $mod+Control+3 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 3
+bindsym $mod+Control+4 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 4
+bindsym $mod+Control+5 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 5
+bindsym $mod+Control+6 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 6
+bindsym $mod+Control+7 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 7
+bindsym $mod+Control+8 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 8
+bindsym $mod+Control+9 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 9
+bindsym $mod+Control+0 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 10
+
 # scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
