@@ -113,6 +113,12 @@ bindsym $mod+Control+8 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 8
 bindsym $mod+Control+9 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 9
 bindsym $mod+Control+0 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 10
 
+# Multimedia keys
+# Volume control
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5- unmute
+bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle
+
 # scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
