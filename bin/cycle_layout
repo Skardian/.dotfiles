@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if setxkbmap -query | grep -q -e 'layout:\s\+es'; then
+    echo us
+    setxkbmap us
+else
+    echo es
+    setxkbmap es
+fi
