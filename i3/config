@@ -18,6 +18,9 @@ font pango:monospace 10 # Fallback 2
 font pango:DejaVu Sans Mono 10 # Fallback 1
 font pango:Hack, FontAwesome 10
 
+# Hide edge borders
+hide_edge_borders both
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
