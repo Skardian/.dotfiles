@@ -116,6 +116,16 @@ bindsym $mod+Control+8 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 8
 bindsym $mod+Control+9 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 9
 bindsym $mod+Control+0 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 10
 
+# move workpspace to other window
+bindsym $mod+Ctrl+h move workspace to output left
+bindsym $mod+Ctrl+j move workspace to output down
+bindsym $mod+Ctrl+k move workspace to output up
+bindsym $mod+Ctrl+l move workspace to output right
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Down move workspace to output down
+bindsym $mod+Ctrl+Up move workspace to output up
+bindsym $mod+Ctrl+Right move workspace to output right
+
 # Multimedia keys
 # Volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5+ unmute
