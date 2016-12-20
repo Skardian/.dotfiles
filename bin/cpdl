@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+SOURCE="$HOME/Downloads/"
+HERE=${1:-$(pwd)}
+
+FILE=$(ls -1rt ${SOURCE} | tail -1)
+
+cp "$SOURCE/$FILE" "$HERE"
+echo Copied "$SOURCE$FILE" to "$HERE"

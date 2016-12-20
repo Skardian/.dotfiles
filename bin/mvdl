@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+SOURCE="$HOME/Downloads/"
+HERE=${1:-$(pwd)}
+
+FILE=$(ls -1rt ${SOURCE} | tail -1)
+
+mv "$SOURCE/$FILE" "$HERE"
+echo Moved "$SOURCE$FILE" to "$HERE"
