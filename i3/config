@@ -188,3 +188,4 @@ exec --no-startup-id setxkbmap us -option ctrl:nocaps
 
 # Swap CAPS y Ctrl
 exec --no-startup-id xmodmap ~/.Xmodmap
+bindsym $mod2+$mod+space exec --no-startup-id "$HOME/.dotfiles/bin/cycle_layout"
