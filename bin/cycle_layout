@@ -2,8 +2,8 @@
 
 if setxkbmap -query | grep -q -e 'layout:\s\+es'; then
     echo us
-    setxkbmap us
+    setxkbmap us -option ctrl:nocaps
 else
     echo es
-    setxkbmap es
+    setxkbmap es -option ctrl:nocaps
 fi
