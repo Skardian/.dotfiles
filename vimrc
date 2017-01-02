@@ -71,6 +71,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'unblevable/quick-scope'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ervandew/supertab'
+Plug 'tommcdo/vim-fubitive'
+Plug 'tpope/vim-rhubarb'
 
 call plug#end()
 
