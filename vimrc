@@ -43,18 +43,18 @@ Plug 'vim-ruby/vim-ruby'
 " Text objects pre
 Plug 'kana/vim-textobj-user'
 " Text objects
+Plug 'Julian/vim-textobj-variable-segment'
+Plug 'bps/vim-textobj-python'
 Plug 'glts/vim-textobj-comment'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
-Plug 'tek/vim-textobj-ruby'
-Plug 'whatyouhide/vim-textobj-erb'
-
-Plug 'Julian/vim-textobj-variable-segment'
-Plug 'bps/vim-textobj-python'
-Plug 'sgur/vim-textobj-parameter'
 Plug 'lucapette/vim-textobj-underscore'
+Plug 'sgur/vim-textobj-parameter'
+Plug 'tek/vim-textobj-ruby'
+Plug 'thinca/vim-textobj-between'
 Plug 'vimtaku/vim-textobj-keyvalue'
+Plug 'whatyouhide/vim-textobj-erb'
 
 " Tags
 Plug 'xolox/vim-misc'
