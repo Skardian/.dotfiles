@@ -16,6 +16,7 @@
     f     = fetch
     files = diff --name-status
     m     = merge
+    mnf   = merge --no-ff
     mt    = mergetool
     r     = reset
     rb    = rebase
