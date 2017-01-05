@@ -260,6 +260,9 @@ nnoremap <leader>tc :set list!<cr>
 " Show indent guides
 nnoremap <leader>ti :IndentGuidesToggle<cr>
 
+" Set filetype
+nnoremap <leader>ft :set filetype=
+
 " Quick save and quit
 nnoremap <leader>q :q<cr>
 nnoremap <leader>Q :qa!<cr>
