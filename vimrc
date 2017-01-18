@@ -140,10 +140,11 @@ set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
 set laststatus=2 " Allways show status line
 
 " Searching configs
-set hlsearch            " Highlight search
-set noignorecase        " Dont ignore case
+set hlsearch   " Highlight search
+set ignorecase " Dont ignore case
+set smartcase  " Dont ignore case
 set incsearch
-set magic               " Magic REGEX
+set magic      " Magic REGEX
 
 
 " Do not continue comments when adding a line with o/O
