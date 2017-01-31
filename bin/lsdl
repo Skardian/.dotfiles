@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+SOURCE="$HOME/Downloads/"
+HERE=${1:-5}
+
+FILES=$(ls -lArt ${SOURCE} | grep -v -e " .^" | tail -$HERE)
+
+echo "$FILES"
