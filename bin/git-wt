@@ -5,6 +5,6 @@
 while :; do
     clear;                        # Clear screen
     LINES=`tput lines`;           # Get screen size
-    git log --graph --decorate --oneline --all --color | head -n $(($LINES-1)) # Draw tree
+    git log --graph --decorate --oneline --all --color | head -n $(($LINES-2)) | less -S -E # Draw tree
     sleep 0.5;                    # Wait
 done
