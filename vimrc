@@ -442,7 +442,7 @@ let g:syntastic_error_symbol = "\u2717"
 let g:syntastic_warning_symbol = "\u26A0"
 let g:syntastic_python_checkers = ['python', 'flake8']
 let g:syntastic_yaml_checkers = ['yamllint']
-let g:syntastic_ansible_checkers = ['ansible_lint', 'yaml/yamllint']
+let g:syntastic_ansible_checkers = ['yaml/yamllint']
 
 " Vim syntastic
 let g:UltiSnipsListSnippets = "<c-l>"
