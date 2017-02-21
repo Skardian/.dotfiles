@@ -5,6 +5,6 @@
 while :; do
     clear;                        # Clear screen
     LINES=`tput lines`;           # Get screen size
-    git log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --all | head -n $(($LINES-2)) | less -S -E # Draw tree
+    git log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset' --color --abbrev-commit --all | head -n $(($LINES-2)) | less -S -E # Draw tree
     sleep 0.5;                    # Wait
 done
