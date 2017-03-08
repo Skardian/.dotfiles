@@ -147,6 +147,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym --release Print exec scrot -u 'scrot_%Y-%m-%d_%H%M%S.png' -e 'mv $f ~/Pictures/'
 bindsym --release Shift+Print exec scrot -s 'scrot-%Y-%m-%d_%H%M%S.png' -e 'mv $f ~/Pictures/'
 
+# Change keyboard layout
+bindsym Shift+0xffe1 exec --no-startup-id "$HOME/.dotfiles/bin/cycle_layout"
+bindsym Shift+0xffe2 exec --no-startup-id "$HOME/.dotfiles/bin/cycle_layout"
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -202,4 +206,3 @@ exec --no-startup-id setxkbmap us -option ctrl:nocaps
 
 # Swap CAPS and Ctrl
 exec --no-startup-id xmodmap ~/.Xmodmap
-bindsym $mod+y exec --no-startup-id "$HOME/.dotfiles/bin/cycle_layout"
