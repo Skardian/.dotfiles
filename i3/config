@@ -207,3 +207,6 @@ exec --no-startup-id setxkbmap us -option ctrl:nocaps
 
 # Swap CAPS and Ctrl
 exec --no-startup-id xmodmap ~/.Xmodmap
+
+# Network Manager
+exec --no-startup-id nm-applet
