@@ -180,6 +180,7 @@ bindsym $mod+i mode "insert"
 mode "insert" {
         bindsym --release d exec --no-startup-id "xdotool type $(date +%Y%m%d)"; mode "default"
         bindsym --release f exec --no-startup-id "xdotool type --delay 50 '(╯°□°) ╯︵ ┻━┻'"; mode "default"
+        bindsym --release y exec --no-startup-id "xdotool type --delay 50 'ლ(°益°ლ)'"; mode "default"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
