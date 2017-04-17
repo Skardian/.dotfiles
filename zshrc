@@ -21,6 +21,8 @@ ZSH_HIGHLIGHT_STYLES[root]='bg=red'
 compdef g=git # g function as git
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
+# Allow [ or ] wherever you want
+unsetopt nomatch
 
 # Source common config
 source ~/.commonrc
