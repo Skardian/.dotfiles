@@ -151,6 +151,9 @@ bindsym --release Shift+Print exec scrot -s 'scrot-%Y-%m-%d_%H%M%S.png' -e 'mv $
 bindsym Shift+0xffe1 exec --no-startup-id "$HOME/.dotfiles/bin/cycle_layout"
 bindsym Shift+0xffe2 exec --no-startup-id "$HOME/.dotfiles/bin/cycle_layout"
 
+# Keepass auto type
+bindsym $mod+backslash exec "keepass2 --auto-type"
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
