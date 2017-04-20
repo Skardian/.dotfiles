@@ -212,5 +212,8 @@ exec --no-startup-id setxkbmap us -option ctrl:nocaps
 # Swap CAPS and Ctrl
 exec --no-startup-id xmodmap ~/.Xmodmap
 
+# Enable natural scrolling
+exec --no-startup-id "xinput set-prop 12 297 -114 -114"
+
 # Network Manager
 exec --no-startup-id nm-applet
