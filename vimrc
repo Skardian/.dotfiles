@@ -73,6 +73,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ervandew/supertab'
 Plug 'tommcdo/vim-fubitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
@@ -393,6 +394,9 @@ augroup my_switch_group
         \   },
         \ ]
 augroup end
+
+" Terraform
+let g:terraform_fmt_on_save = 1
 
 " UltiSnips
 inoremap <c-j> <nop>
