@@ -121,7 +121,7 @@ let g:tex_flavor = "latex"
 filetype plugin indent on
 
 " Reaction time
-set timeoutlen=500
+set timeoutlen=300
 set ttimeoutlen=100
 
 
