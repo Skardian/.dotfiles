@@ -7,8 +7,10 @@ dotfiles_list:
   - gemrc
   - gitconfig
   - gitignore
+  - i3
   - tmux.conf
   - toprc
+  - vim
   - vimrc
   - vrapperrc
   - Xmodmap
