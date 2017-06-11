@@ -1,6 +1,7 @@
-tags
-*.pyc
-*~
 *.log
-local_bin
+*.pyc
+*.retry
+*~
 .idea/
+local_bin
+tags
