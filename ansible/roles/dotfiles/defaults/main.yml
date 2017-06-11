@@ -1,0 +1,15 @@
+---
+dotfiles_dir: ~/.dotfiles
+dotfiles_list:
+  - alias
+  - bashrc
+  - commonrc
+  - gemrc
+  - gitconfig
+  - gitignore
+  - tmux.conf
+  - toprc
+  - vimrc
+  - vrapperrc
+  - Xmodmap
+  - zshrc

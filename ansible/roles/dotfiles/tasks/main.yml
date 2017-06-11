@@ -1,0 +1,8 @@
+---
+- name: "Link files in {{dotfiles_dir}}"
+  file:
+    path: "~/.{{item}}"
+    src: "{{dotfiles_dir}}/{{item}}"
+    state: link
+  with_items:
+    - "{{dotfiles_list}}"
