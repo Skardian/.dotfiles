@@ -399,8 +399,8 @@ augroup my_switch_group
     autocmd FileType terraform let b:switch_custom_definitions =
         \ [
         \   {
-        \     '\(\s\+source =\) "git::ssh://\(.*\)//\(.*\)"': '\1 "../../\3" # \2',
-        \     '\(\s\+source =\) "\(\.\./\)\+\(.*\)" # \(.*\)': '\1 "git::ssh://\4//\3"',
+        \     '\(\s\+source =\) "git::ssh://\(.*\)//\(.*\)"': '\1 "../../terraform-modules/\3" # \2',
+        \     '\(\s\+source =\) ".*/terraform-modules/\(.*\)" # \(.*\)': '\1 "git::ssh://\3//\2"',
         \   },
         \ ]
 augroup end
