@@ -74,6 +74,7 @@ Plug 'ervandew/supertab'
 Plug 'tommcdo/vim-fubitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'hashivim/vim-terraform'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
 call plug#end()
 
