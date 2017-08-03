@@ -15,6 +15,7 @@
     dt    = difftool
     f     = fetch
     files = diff --name-status
+    g     = !"f() { [ $# -gt 0 ] && git \"$@\" || git status --short --branch ; }; f"
     m     = merge
     mnf   = merge --no-ff
     mt    = mergetool
