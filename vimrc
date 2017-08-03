@@ -14,7 +14,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-g-dot'
 Plug 'christoomey/vim-sort-motion'
 Plug 'cohama/lexima.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -208,11 +207,8 @@ if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --ignore ".git" --nocolor --hidden -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  " Use ag with FZF
+  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 endif
 
 " Maps --------------------------------------------------
@@ -346,7 +342,8 @@ set tags=./tags;
 let g:easytags_dynamic_files = 2
 
 " Fzf
-let g:fzf_command_prefix = 'Fzf'
+nnoremap <leader>b :Buffers<CR>
+nnoremap <C-p> :FZF -m<CR>
 
 " Tagbar
 nnoremap <silent> <leader>tt :TagbarToggle<cr>
