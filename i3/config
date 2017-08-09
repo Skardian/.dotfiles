@@ -202,6 +202,10 @@ bar {
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
 
+# Assign
+assign [class="^Gnome-terminal$" window_role="^main$"] 2
+assign [class="^Gnome-terminal$" window_role="^vpn$"] 3
+
 # Lock system
 exec --no-startup-id xss-lock -- "$HOME/.dotfiles/bin/fancy-i3lock"
 bindsym $mod2+Control+l exec --no-startup-id "$HOME/.dotfiles/bin/fancy-i3lock"
@@ -217,6 +221,10 @@ exec --no-startup-id "xinput set-prop 12 297 -114 -114"
 
 # Network Manager
 exec --no-startup-id nm-applet
+
+# Start daily apps
+exec --no-startup-id gnome-terminal --role main -e tat
+exec --no-startup-id gnome-terminal --role vpn -e 'tat vpn'
 
 # Floating windows
 for_window [class="Forticlientsslvpn" instance="forticlientsslvpn"] floating disable
