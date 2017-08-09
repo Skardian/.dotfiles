@@ -335,7 +335,6 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <C-p> :Files<CR>
 
 let g:fzf_files_options =
-  \ '--reverse ' .
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
 " Tagbar
