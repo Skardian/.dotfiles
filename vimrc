@@ -343,7 +343,11 @@ let g:easytags_dynamic_files = 2
 
 " Fzf
 nnoremap <leader>b :Buffers<CR>
-nnoremap <C-p> :FZF -m<CR>
+nnoremap <C-p> :Files<CR>
+
+let g:fzf_files_options =
+  \ '--reverse ' .
+  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
 " Tagbar
 nnoremap <silent> <leader>tt :TagbarToggle<cr>
