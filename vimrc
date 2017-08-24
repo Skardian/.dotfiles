@@ -6,42 +6,51 @@ set encoding=utf-8
 
 call plug#begin()
 
+" Basic
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'ervandew/supertab'
+
 " Plugins
 Plug 'AndrewRadev/switch.vim'
 Plug 'EinfachToll/DidYouMean'
 Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
 Plug 'christoomey/vim-g-dot'
 Plug 'christoomey/vim-sort-motion'
 Plug 'cohama/lexima.vim'
+Plug 'floobits/floobits-neovim', has('nvim') ? {} : { 'on': [] }
 Plug 'gorodinskiy/vim-coloresque'
+Plug 'hashivim/vim-terraform'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 Plug 'luochen1990/rainbow'
-" Plug 'majutsushi/tagbar'
-Plug 'vim-scripts/matchit.zip'
+Plug 'majutsushi/tagbar'
 Plug 'moll/vim-bbye'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rking/ag.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tommcdo/vim-exchange'
-Plug 'tpope/vim-commentary'
+Plug 'tommcdo/vim-fubitive'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/matchit.zip'
 
-" Text objects pre
-Plug 'kana/vim-textobj-user'
 " Text objects
+Plug 'kana/vim-textobj-user'
 Plug 'Julian/vim-textobj-variable-segment'
 Plug 'bps/vim-textobj-python'
 Plug 'glts/vim-textobj-comment'
@@ -58,23 +67,14 @@ Plug 'whatyouhide/vim-textobj-erb'
 " Tags
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
+Plug 'majutsushi/tagbar'
 
 " Color
 Plug 'nanotech/jellybeans.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
-Plug 'scrooloose/syntastic'
-Plug 'floobits/floobits-neovim', has('nvim') ? {} : { 'on': [] }
-Plug 'tpope/vim-unimpaired'
-Plug 'unblevable/quick-scope'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'ervandew/supertab'
-Plug 'tommcdo/vim-fubitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'hashivim/vim-terraform'
-Plug 'martinda/Jenkinsfile-vim-syntax'
-Plug 'airblade/vim-rooter'
+Plug 'bronson/vim-visual-star-search'
 
 call plug#end()
 
@@ -357,7 +357,7 @@ let g:tagbar_sort = 0
 
 " Quick-scope
 
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Rainbow
 let g:rainbow_active = 0
@@ -465,3 +465,7 @@ let g:UltiSnipsListSnippets = "<c-l>"
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Vim rooter
+let g:rooter_silent_chdir = 1
+let g:rooter_use_lcd = 1
