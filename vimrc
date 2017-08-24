@@ -77,6 +77,7 @@ Plug 'bronson/vim-visual-star-search'
 Plug 'matze/vim-move'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'wellle/targets.vim'
+Plug 'metakirby5/codi.vim'
 
 call plug#end()
 
@@ -467,3 +468,6 @@ noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 8, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 8, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 8, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 8, 4)<CR>
+
+" Codi
+let g:codi#rightalign = 0
