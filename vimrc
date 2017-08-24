@@ -101,6 +101,7 @@ set noerrorbells                                 " Don't beep
 set noshowmode                                   " Don't show current mode down the bottom (airline does)
 set nowrap                                       " Don't warp lines
 set nrformats-=octal
+set relativenumber
 set number                                       " Show absolute line number
 set scrolloff=1
 set showcmd                                      " Show incomplete cmds down the bottom
