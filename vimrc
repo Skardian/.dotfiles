@@ -187,16 +187,6 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
-" Visual Mode search with */# from Scrooloose
-function! s:VSetSearch()
-  let temp = @@
-  norm! gvy
-  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-  let @@ = temp
-endfunction
-vnoremap * :<C-u>call <SID>VSetSearch()<cr>//<cr><c-o>
-vnoremap # :<C-u>call <SID>VSetSearch()<cr>??<cr><c-o>
-
 " Do not highlight trailing whitespace in insert mode
 augroup whitespace
     autocmd!
