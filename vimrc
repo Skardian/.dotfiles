@@ -51,18 +51,17 @@ Plug 'vim-scripts/matchit.zip'
 
 " Text objects
 Plug 'kana/vim-textobj-user'
-Plug 'Julian/vim-textobj-variable-segment'
-Plug 'bps/vim-textobj-python'
+" Plug 'Julian/vim-textobj-variable-segment'
+" Plug 'bps/vim-textobj-python'
 Plug 'glts/vim-textobj-comment'
 Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-function'
+" Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
-Plug 'lucapette/vim-textobj-underscore'
+" Plug 'lucapette/vim-textobj-underscore'
 Plug 'sgur/vim-textobj-parameter'
-Plug 'tek/vim-textobj-ruby'
-Plug 'vimtaku/vim-textobj-keyvalue'
-Plug 'whatyouhide/vim-textobj-erb'
+" Plug 'tek/vim-textobj-ruby'
+" Plug 'vimtaku/vim-textobj-keyvalue'
 
 " Tags
 Plug 'xolox/vim-misc'
@@ -77,6 +76,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'bronson/vim-visual-star-search'
 Plug 'matze/vim-move'
 Plug 'terryma/vim-smooth-scroll'
+Plug 'wellle/targets.vim'
 
 call plug#end()
 
