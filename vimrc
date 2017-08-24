@@ -75,6 +75,7 @@ Plug 'NLKNguyen/papercolor-theme'
 
 " Experimental
 Plug 'bronson/vim-visual-star-search'
+Plug 'matze/vim-move'
 
 call plug#end()
 
