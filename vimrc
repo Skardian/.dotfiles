@@ -432,8 +432,8 @@ nnoremap <leader>gs  :Gstatus<cr>
 
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
-let g:gitgutter_sign_column_always = 1
 let g:gitgutter_map_keys = 0
+set signcolumn=yes
 nmap ]c <Plug>GitGutterNextHunk
 nmap [c <Plug>GitGutterPrevHunk
 omap ih <Plug>GitGutterTextObjectInnerPending
