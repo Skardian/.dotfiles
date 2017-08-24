@@ -76,6 +76,7 @@ Plug 'NLKNguyen/papercolor-theme'
 " Experimental
 Plug 'bronson/vim-visual-star-search'
 Plug 'matze/vim-move'
+Plug 'terryma/vim-smooth-scroll'
 
 call plug#end()
 
@@ -460,3 +461,9 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " Vim rooter
 let g:rooter_silent_chdir = 1
 let g:rooter_use_lcd = 1
+
+" Smooth scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 8, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 8, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 8, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 8, 4)<CR>
