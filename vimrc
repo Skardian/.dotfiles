@@ -463,3 +463,11 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 8, 4)<CR>
 
 " Codi
 let g:codi#rightalign = 0
+
+" Vim-slime
+let g:slime_target = "tmux"
+let g:slime_dont_ask_default = 1
+let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
+nnoremap <silent> <c-c><c-v> :SlimeSendCurrentLine<CR>
+nnoremap <silent> <c-c><c-l> :SlimeSend0 "<c-l>"<CR>
+nmap <c-c>% v%<c-c><c-c>
