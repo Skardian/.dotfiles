@@ -79,6 +79,7 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'wellle/targets.vim'
 Plug 'metakirby5/codi.vim'
 Plug 'wincent/terminus'
+Plug 'mhinz/vim-sayonara'
 
 call plug#end()
 
@@ -260,7 +261,7 @@ nnoremap <leader>ti :IndentGuidesToggle<cr>
 nnoremap <leader>ft :set filetype=
 
 " Quick save and quit
-nnoremap <leader>q :q<cr>
+nnoremap <leader>q :Sayonara<cr>
 nnoremap <leader>Q :qa!<cr>
 nnoremap <leader>w :w<cr>
 
@@ -287,7 +288,6 @@ vnoremap Q gq
 " Buffers
 nnoremap <leader>n :bn<cr>
 nnoremap <leader>p :bp<cr>
-nnoremap <leader>bd :Bdelete<cr>
 
 " Virtual lines are real lines
 nnoremap j gj
