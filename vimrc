@@ -79,6 +79,7 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'wellle/targets.vim'
 Plug 'metakirby5/codi.vim'
 Plug 'wincent/terminus'
+Plug 'jpalardy/vim-slime'
 Plug 'mhinz/vim-sayonara'
 
 call plug#end()
