@@ -78,6 +78,7 @@ Plug 'matze/vim-move'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'wellle/targets.vim'
 Plug 'metakirby5/codi.vim'
+Plug 'wincent/terminus'
 
 call plug#end()
 
