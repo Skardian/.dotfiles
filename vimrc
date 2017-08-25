@@ -81,6 +81,7 @@ Plug 'metakirby5/codi.vim'
 Plug 'wincent/terminus'
 Plug 'jpalardy/vim-slime'
 Plug 'mhinz/vim-sayonara'
+Plug 'tpope/vim-rsi'
 
 call plug#end()
 
@@ -300,18 +301,6 @@ vnoremap j gj
 vnoremap k gk
 vnoremap 0 g0
 vnoremap $ g$
-
-" Start and end of line on command mode
-cnoremap <c-a> <home>
-cnoremap <c-e> <end>
-
-" " Using spanish keyboard this is better
-" " , to next f/F/t/T
-" " ; to previous f/F/t/T
-" nnoremap ; ,
-" nnoremap , ;
-" vnoremap ; ,
-" vnoremap , ;
 
 " Swap 0/^ and '/`
 nnoremap 0 ^
