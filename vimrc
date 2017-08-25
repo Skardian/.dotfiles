@@ -345,7 +345,7 @@ let g:tagbar_sort = 0
 " let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Rainbow
-let g:rainbow_active = 0
+let g:rainbow_active = 1
 nnoremap <leader>tr :RainbowToggle<cr>
 let g:rainbow_conf = {
   \ 'ctermfgs': [
