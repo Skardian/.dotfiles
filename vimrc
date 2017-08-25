@@ -383,17 +383,6 @@ let g:rainbow_conf = {
 let g:switch_mapping = "-"
 augroup my_switch_group
     autocmd!
-    autocmd FileType gitrebase let b:switch_custom_definitions =
-        \ [
-        \   {
-        \     'pick': 'reword',
-        \     'reword': 'edit',
-        \     'edit': 'squash',
-        \     'squash': 'fixup',
-        \     'fixup': 'pick',
-        \   },
-        \ ]
-
     autocmd FileType terraform let b:switch_custom_definitions =
         \ [
         \   {
