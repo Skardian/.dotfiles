@@ -124,6 +124,11 @@ set wildmode=list:full,full
 set clipboard=unnamed,unnamedplus
 set termguicolors
 
+" Keep cursor position when switching buffers
+if v:version >= 700
+  au BufLeave * let b:winview = winsaveview()
+  au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+endif
 " .tex files are LaTeX, not plaintex
 let g:tex_flavor = "latex"
 
@@ -305,8 +310,6 @@ vnoremap $ g$
 " Swap 0/^ and '/`
 nnoremap 0 ^
 nnoremap ^ 0
-nnoremap ` '
-nnoremap ' `
 
 " Plugin Config --------------------------------------------------
 " Airline
