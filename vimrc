@@ -124,6 +124,7 @@ set wildmode=list:full,full
 set clipboard=unnamed,unnamedplus
 set termguicolors
 set foldcolumn=2
+set numberwidth=3
 
 " Keep cursor position when switching buffers
 if v:version >= 700
