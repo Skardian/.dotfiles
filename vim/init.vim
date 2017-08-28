@@ -1,1 +1,1 @@
-/home/jcpadial/.dotfiles/vimrc
+../vimrc
