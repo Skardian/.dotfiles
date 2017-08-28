@@ -223,8 +223,8 @@ exec --no-startup-id "xinput set-prop 12 297 -114 -114"
 exec --no-startup-id nm-applet
 
 # Start daily apps
-exec --no-startup-id gnome-terminal --role main -e tat
-exec --no-startup-id gnome-terminal --role vpn -e 'tat vpn'
+exec --no-startup-id gnome-terminal --role main -e "$HOME/.dotfiles/bin/tat"
+exec --no-startup-id gnome-terminal --role vpn  -e "$HOME/.dotfiles/bin/tat vpn"
 
 # Floating windows
 for_window [class="Forticlientsslvpn" instance="forticlientsslvpn"] floating disable
