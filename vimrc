@@ -32,7 +32,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 Plug 'luochen1990/rainbow'
-Plug 'majutsushi/tagbar'
 Plug 'moll/vim-bbye'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
@@ -312,6 +311,10 @@ vnoremap $ g$
 " Swap 0/^ and '/`
 nnoremap 0 ^
 nnoremap ^ 0
+
+" Delete chars without storing them
+nnoremap x "_x
+nnoremap X "_X
 
 " Plugin Config --------------------------------------------------
 " Airline
