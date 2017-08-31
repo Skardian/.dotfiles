@@ -312,10 +312,6 @@ vnoremap $ g$
 nnoremap 0 ^
 nnoremap ^ 0
 
-" Delete chars without storing them
-nnoremap x "_x
-nnoremap X "_X
-
 " Plugin Config --------------------------------------------------
 " Airline
 let g:airline#extensions#tabline#enabled = 1
