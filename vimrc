@@ -269,7 +269,7 @@ nnoremap <leader>ti :IndentGuidesToggle<cr>
 nnoremap <leader>ft :set filetype=
 
 " Quick save and quit
-nnoremap <leader>q :Sayonara<cr>
+nnoremap <leader>q :Sayonara!<cr>
 nnoremap <leader>Q :qa!<cr>
 nnoremap <leader>w :w<cr>
 
