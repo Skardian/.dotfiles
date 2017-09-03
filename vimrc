@@ -81,6 +81,9 @@ Plug 'jpalardy/vim-slime'
 Plug 'mhinz/vim-sayonara'
 Plug 'tpope/vim-rsi'
 Plug 'yonchu/accelerated-smooth-scroll'
+Plug 'tpope/vim-fireplace'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
 
 call plug#end()
 
@@ -459,5 +462,8 @@ let g:slime_target = "tmux"
 let g:slime_dont_ask_default = 1
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
 nnoremap <silent> <c-c><c-v> :SlimeSendCurrentLine<CR>
-nnoremap <silent> <c-c><c-l> :SlimeSend0 "<c-l>"<CR>
+nnoremap <silent> <c-c><c-l> :SlimeSend0 "<c-v><c-c><c-l>"<CR>
 nmap <c-c>% v%<c-c><c-c>
+
+" Vim fireplace
+nnoremap <silent> <c-c><c-k> :Require<CR>
