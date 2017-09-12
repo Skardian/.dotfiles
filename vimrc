@@ -79,7 +79,6 @@ Plug 'metakirby5/codi.vim'
 Plug 'wincent/terminus'
 Plug 'jpalardy/vim-slime'
 Plug 'mhinz/vim-sayonara'
-Plug 'tpope/vim-rsi'
 Plug 'yonchu/accelerated-smooth-scroll'
 Plug 'tpope/vim-fireplace'
 Plug 'guns/vim-sexp'
@@ -237,6 +236,10 @@ augroup my_paste_group
     autocmd!
     autocmd InsertLeave * set nopaste
 augroup END
+
+" Start and end of line on command mode
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
 
 " Command line bindings
 command! W w
