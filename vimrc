@@ -402,6 +402,7 @@ inoremap <c-k> <nop>
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsListSnippets = "<c-l>"
 nnoremap <leader>es :UltiSnipsEdit<cr>
 
 " Vim-easy-align
@@ -449,9 +450,6 @@ let g:syntastic_warning_symbol = "\u26A0"
 let g:syntastic_python_checkers = ['python', 'flake8']
 let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_ansible_checkers = ['yaml/yamllint']
-
-" Vim syntastic
-let g:UltiSnipsListSnippets = "<c-l>"
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
