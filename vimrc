@@ -84,6 +84,7 @@ Plug 'tpope/vim-fireplace'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'majutsushi/tagbar'
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
