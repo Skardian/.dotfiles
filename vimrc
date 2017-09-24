@@ -50,17 +50,11 @@ Plug 'vim-scripts/matchit.zip'
 
 " Text objects
 Plug 'kana/vim-textobj-user'
-" Plug 'Julian/vim-textobj-variable-segment'
-" Plug 'bps/vim-textobj-python'
 Plug 'glts/vim-textobj-comment'
 Plug 'kana/vim-textobj-entire'
-" Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
-" Plug 'lucapette/vim-textobj-underscore'
 Plug 'sgur/vim-textobj-parameter'
-" Plug 'tek/vim-textobj-ruby'
-" Plug 'vimtaku/vim-textobj-keyvalue'
 
 " Tags
 Plug 'xolox/vim-misc'
