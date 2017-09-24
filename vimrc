@@ -19,7 +19,6 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'EinfachToll/DidYouMean'
 Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
-Plug 'airblade/vim-rooter'
 Plug 'christoomey/vim-g-dot'
 Plug 'christoomey/vim-sort-motion'
 Plug 'cohama/lexima.vim'
@@ -79,6 +78,7 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'majutsushi/tagbar'
 Plug 'vim-syntastic/syntastic'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
@@ -210,6 +210,12 @@ if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 
+ " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --ignore ".git" --nocolor --hidden -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
   " Use ag with FZF
   let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 endif
@@ -337,7 +343,6 @@ let g:easytags_dynamic_files = 2
 
 " Fzf
 nnoremap <leader>b :Buffers<CR>
-nnoremap <C-p> :Files<CR>
 
 let g:fzf_files_options =
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
@@ -448,10 +453,6 @@ let g:syntastic_ansible_checkers = ['yaml/yamllint']
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
-
-" Vim rooter
-let g:rooter_silent_chdir = 1
-let g:rooter_use_lcd = 1
 
 " Codi
 let g:codi#rightalign = 0
