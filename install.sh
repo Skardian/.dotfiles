@@ -4,7 +4,7 @@
 mkdir -p ~/bin
 # Files included
 DOT_DIR="$HOME/.dotfiles"
-FILES="Xmodmap alias bashrc commonrc gemrc gitconfig gitignore i3 tmux.conf vim vimrc vrapperrc zshrc"
+FILES="Xmodmap alias bashrc commonrc gemrc gitconfig gitignore i3 terraformrc tmux.conf vim vimrc vrapperrc zshrc"
 
 # Link dotfiles
 for f in $FILES; do
