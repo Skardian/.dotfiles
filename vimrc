@@ -327,7 +327,7 @@ let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts=1
 
 " Ag.vim
-nnoremap <leader>a :Ag<space>
+nnoremap <leader>a :Ag!<space>
 
 " Commentary
 augroup commentstrings
