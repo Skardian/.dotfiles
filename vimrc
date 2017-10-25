@@ -54,6 +54,7 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
 Plug 'sgur/vim-textobj-parameter'
+Plug 'beloglazov/vim-textobj-quotes'
 
 " Tags
 Plug 'xolox/vim-misc'
