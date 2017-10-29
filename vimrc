@@ -77,8 +77,8 @@ Plug 'tpope/vim-fireplace'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'majutsushi/tagbar'
-Plug 'vim-syntastic/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -444,16 +444,20 @@ let g:indent_guides_default_mapping = 0
 " Vim supertab
 let g:SuperTabDefaultCompletionType = "context"
 
-" Vim syntastic
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" let g:syntastic_auto_loc_list = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_error_symbol = "\u2717"
-let g:syntastic_warning_symbol = "\u26A0"
-let g:syntastic_python_checkers = ['python', 'flake8']
-let g:syntastic_yaml_checkers = ['yamllint']
-let g:syntastic_ansible_checkers = ['yaml/yamllint']
+" Vim ALE linting events
+set updatetime=1000
+let g:airline#extensions#ale#enabled = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_sign_error = "\u2717"
+let g:ale_sign_warning = "\u26A0"
+augroup ale
+    autocmd CursorHold * call ale#Lint()
+    autocmd CursorHoldI * call ale#Lint()
+    autocmd InsertEnter * call ale#Lint()
+    autocmd InsertLeave * call ale#Lint()
+augroup END
+nnoremap ]r :ALENextWrap<CR>
+nnoremap [r :ALEPreviousWrap<CR>
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
