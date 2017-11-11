@@ -1,4 +1,6 @@
 tags
+tags.lock
+tags.temp
 *.pyc
 *~
 *.log

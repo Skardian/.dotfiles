@@ -63,8 +63,7 @@ Plug 'sgur/vim-textobj-parameter'
 Plug 'beloglazov/vim-textobj-quotes'
 
 " Tags
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 
 " Color
@@ -82,7 +81,6 @@ Plug 'mhinz/vim-sayonara'
 Plug 'tpope/vim-fireplace'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
