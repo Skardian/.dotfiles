@@ -24,3 +24,12 @@
     ~/.vimrc:
     ~/.vrapperrc:
     ~/.zshrc:
+
+- shell:
+  # Install hack font
+  - curl -L 'https://github.com/source-foundry/Hack/releases/download/v3.000/Hack-v3.000-ttf.zip' -o ~/.fonts/Hack-v3.000-ttf.zip
+  - unzip ~/.fonts/Hack-v3.000-ttf.zip -d ~/.fonts/
+  - mv -f ~/.fonts/ttf/* ~/.fonts/
+  - rm -rf ~/.fonts/{ttf,Hack-v3.000-ttf.zip}
+  - fc-cache
+
