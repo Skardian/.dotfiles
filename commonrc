@@ -58,10 +58,6 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 # Local bin
 export PATH="$HOME/bin:$PATH"
 
-# RVM
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # g acts as 'git status' or as git
 # Source: https://github.com/thoughtbot/dotfiles
 g() {
@@ -87,3 +83,4 @@ export EDITOR=vim
 export VISUAL=vim
 source ~/.alias
 
+source $HOME/.asdf/completions/asdf.bash

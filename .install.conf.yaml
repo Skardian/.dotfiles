@@ -39,3 +39,7 @@
   # Get zsh plugins
   - git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.dotfiles/zsh/plugins/zsh-syntax-highlighting || true
 
+  # Install asdf
+  - git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.0 || true
+
+
