@@ -33,3 +33,5 @@
   - rm -rf ~/.fonts/{ttf,Hack-v3.000-ttf.zip}
   - fc-cache
 
+  # Get tpm
+  - git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || true
