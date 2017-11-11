@@ -85,6 +85,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
@@ -192,17 +193,6 @@ if exists("+undofile")
   set undofile
 endif
 
-" Tab wrapper
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
 
 " Do not highlight trailing whitespace in insert mode
 augroup whitespace
@@ -469,8 +459,8 @@ let g:ale_fixers = {}
 let g:ale_fixers['markdown'] = ['prettier']
 let g:ale_fix_on_save = 1
 
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion = 1
+" Deoplete
+let g:deoplete#enable_at_startup = 1
 
 " Codi
 let g:codi#rightalign = 0
