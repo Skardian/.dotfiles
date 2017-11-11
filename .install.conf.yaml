@@ -1,0 +1,26 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.Xmodmap:
+    ~/.alias:
+    ~/.bashrc:
+    ~/.commonrc:
+    ~/.dunstrc:
+    ~/.flake8:
+    ~/.gemrc:
+    ~/.gitconfig:
+    ~/.gitignore:
+    ~/.i3:
+    ~/.konsole:
+    ~/.terraformrc:
+    ~/.tmux.conf:
+    ~/.toprc:
+    ~/.vim:
+    ~/.vimrc:
+    ~/.vrapperrc:
+    ~/.zshrc:
