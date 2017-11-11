@@ -1,0 +1,13 @@
+--recurse=yes
+--exclude=tags
+--exclude=.git
+--exclude=Session.vim
+--exclude=*.class
+--exclude=*.json
+--exclude=*.pdb
+--exclude=*.pyc
+--exclude=*.swp
+--exclude=*.gz
+--exclude=bower_components
+--exclude=node_modules
+--exclude=vendor
