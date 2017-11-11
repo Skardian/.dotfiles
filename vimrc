@@ -465,6 +465,10 @@ augroup END
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
 
+let g:ale_fixers = {}
+let g:ale_fixers['markdown'] = ['prettier']
+let g:ale_fix_on_save = 1
+
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
 
