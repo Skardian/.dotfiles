@@ -11,7 +11,15 @@ ZSH_THEME="skardian"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
 
-plugins=(aws terraform zsh-syntax-highlighting)
+plugins=(
+    aws
+    docker
+    httpie
+    lein
+    python
+    terraform
+    zsh-syntax-highlighting
+)
 source $ZSH/oh-my-zsh.sh
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern root)
