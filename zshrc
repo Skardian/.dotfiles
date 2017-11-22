@@ -12,9 +12,10 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
 
 plugins=(
-    aws
     asdf
+    aws
     docker
+    gpg-agent
     httpie
     lein
     python
