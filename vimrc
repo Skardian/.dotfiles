@@ -331,10 +331,6 @@ augroup commentstrings
     autocmd FileType ansible_template set commentstring=#%s
 augroup END
 
-" EasyTag
-set tags=./tags;
-let g:easytags_dynamic_files = 2
-
 " Fzf
 nnoremap <leader>b :Buffers<CR>
 
@@ -346,9 +342,19 @@ nnoremap <silent> <leader>tt :TagbarToggle<cr>
 let g:tagbar_autoclose = 1
 let g:tagbar_sort = 0
 
-" Quick-scope
-
-" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:tagbar_type_terraform = {
+    \ 'ctagstype' : 'terraform',
+    \ 'kinds' : [
+        \ 'r:Resources',
+        \ 'd:Datas',
+        \ 'v:Variables',
+        \ 'p:Providers',
+        \ 'o:Outputs',
+        \ 'm:Modules',
+        \ 'f:TFVars'
+    \ ],
+    \ 'sort' : 1,
+\ }
 
 " Rainbow
 let g:rainbow_active = 1
