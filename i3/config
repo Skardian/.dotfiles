@@ -181,7 +181,9 @@ mode "resize" {
 # Insert things
 bindsym $mod+i mode "insert"
 mode "insert" {
-        bindsym --release d exec --no-startup-id "xdotool type $(date +%Y%m%d)"; mode "default"
+        bindsym --release d exec --no-startup-id "xdotool type --clearmodifiers $(date +%Y%m%d)"; mode "default"
+        bindsym --release Shift+d exec --no-startup-id "xdotool type --clearmodifiers $(date +%Y%m%d-%H%M%S)"; mode "default"
+        bindsym --release h exec --no-startup-id "xdotool type --clearmodifiers $(date +%H%M%S)"; mode "default"
         bindsym --release f exec --no-startup-id "xdotool type --delay 50 '(╯°□°) ╯︵ ┻━┻'"; mode "default"
         bindsym --release y exec --no-startup-id "xdotool type --delay 50 'ლ(°益°ლ)'"; mode "default"
 
