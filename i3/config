@@ -216,8 +216,10 @@ bindsym $mod2+Control+l exec --no-startup-id "$HOME/.dotfiles/bin/fancy-i3lock"
 exec --no-startup-id setxkbmap us -option ctrl:nocaps
 
 # Swap CAPS and Ctrl
-exec --no-startup-id "dunst -config ~/.dunstrc"
 exec --no-startup-id xmodmap ~/.Xmodmap
+
+# Start dunst
+exec_always --no-startup-id "dunst -config ~/.dunstrc"
 
 # Enable natural scrolling
 exec --no-startup-id "xinput set-prop 12 297 -114 -114"
