@@ -273,6 +273,7 @@ nnoremap <leader>ft :set filetype=
 nnoremap <leader>q :Sayonara!<cr>
 nnoremap <leader>Q :qa!<cr>
 nnoremap <leader>w :w<cr>
+nnoremap <leader>c :close<cr>
 
 " Update diffs
 nnoremap du :diffupdate<cr>
@@ -427,6 +428,9 @@ else
 endif
 nmap ]c <Plug>GitGutterNextHunk
 nmap [c <Plug>GitGutterPrevHunk
+nmap <Leader>ga <Plug>GitGutterStageHunk
+nmap <Leader>gr <Plug>GitGutterUndoHunk
+nmap <Leader>gp <Plug>GitGutterPreviewHunk
 omap ih <Plug>GitGutterTextObjectInnerPending
 omap ah <Plug>GitGutterTextObjectOuterPending
 xmap ih <Plug>GitGutterTextObjectInnerVisual
