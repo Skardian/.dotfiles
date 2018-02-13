@@ -1,6 +1,6 @@
 # Includes configs included in .bashrc and .zshrc
 # Set 256 colors
-[[ $TMUX = "" ]] && export TERM="xterm-256color"
+[[ $TMUX = "" ]] && export TERM="screen-256color"
 
 # LESS options
 # Source: https://github.com/janmoesen/tilde
