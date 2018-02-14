@@ -84,6 +84,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 
@@ -388,8 +389,8 @@ augroup my_switch_group
     autocmd FileType terraform let b:switch_custom_definitions =
         \ [
         \   {
-        \     '\(\s\+source\s\+=\)\s\+"git::ssh://\(.*\)//\([^?]*\)\(.*\)"': '\1 "../../terraform-modules/\3" # \2 #\4',
-        \     '\(\s\+source\s\+=\)\s\+".*/terraform-modules/\(.*\)"\s\+#\s\+\(.*\)\s\+#\(.*\)': '\1 "git::ssh://\3//\2\4"',
+        \     '\(\s\+source\s\+=\)\s\+"git::ssh://\([^/]*\)/\([^/]*\)/\([^?]*\)\(?ref.*\)*"': '\1 "../../terraform-modules/\4" # \2/\3/\4\5',
+        \     '\(\s\+source\s\+=\)\s\+".*/terraform-modules/[^ ]*\s*#\s\+\(.*\)': '\1 "git::ssh://\2"',
         \   },
         \ ]
 augroup end
@@ -463,6 +464,9 @@ augroup END
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
 
+let g:ale_linters = {
+\   'ansible': ['ansible-lint', 'yamllint'],
+\}
 let g:ale_fixers = {}
 let g:ale_fixers['markdown'] = ['prettier']
 let g:ale_fix_on_save = 1
