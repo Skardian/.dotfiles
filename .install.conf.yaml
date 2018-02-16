@@ -11,6 +11,8 @@
     ~/.alias:
     ~/.bashrc:
     ~/.commonrc:
+    ~/.config/kitty/kitty.conf:
+    ~/.config/nvim: vim
     ~/.ctags:
     ~/.dunstrc:
     ~/.flake8:
@@ -23,7 +25,6 @@
     ~/.tmux.conf:
     ~/.toprc:
     ~/.vim:
-    ~/.config/nvim: vim
     ~/.vimrc:
     ~/.vrapperrc:
     ~/.zshrc:
