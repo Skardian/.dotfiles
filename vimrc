@@ -331,6 +331,7 @@ augroup commentstrings
     autocmd!
     autocmd FileType matlab set commentstring=%%s
     autocmd FileType ansible_template set commentstring=#%s
+    autocmd FileType Jenkinsfile set commentstring=//%s
 augroup END
 
 " Fzf
