@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Get last pointer id
+DEVICE_ID=$(xinput list | grep -B 1 'Virtual core keyboard' | head -n1 | sed -rn 's/.*id=([0-9]+).*/\1/p')
+SCROLLING_PROPERTIES=$(xinput list-props $DEVICE_ID | grep 'Synaptics Scrolling Distance' | sed -rn 's/.*\(([0-9]+)\):\s+([0-9]+),\s*([0-9]+)/\1 -\2 -\3/p')
+
+xinput set-prop $DEVICE_ID $SCROLLING_PROPERTIES
