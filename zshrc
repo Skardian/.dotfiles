@@ -12,7 +12,6 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
 
 plugins=(
-    asdf
     aws
     docker
     gpg-agent
