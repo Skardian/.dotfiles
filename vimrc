@@ -130,6 +130,9 @@ set numberwidth=3
 set foldmethod=syntax
 set foldlevelstart=99
 
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+
 " Folding
 function! MyFoldText()
     let line = getline(v:foldstart)
