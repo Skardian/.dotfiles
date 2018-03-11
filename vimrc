@@ -78,6 +78,7 @@ Plug 'mhinz/vim-sayonara'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'haya14busa/incsearch.vim'
 
 call plug#end()
 
@@ -333,6 +334,10 @@ vnoremap $ g$
 nnoremap 0 ^
 nnoremap ^ 0
 
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
 " Plugin Config --------------------------------------------------
 " Airline
 let g:airline#extensions#tabline#enabled = 1
@@ -492,3 +497,4 @@ let g:ale_fix_on_save = 1
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+
