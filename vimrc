@@ -28,7 +28,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-g-dot'
 Plug 'christoomey/vim-sort-motion'
 Plug 'cohama/lexima.vim'
-Plug 'floobits/floobits-neovim', has('nvim') ? {} : { 'on': [] }
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'hashivim/vim-terraform'
 Plug 'honza/vim-snippets'
@@ -74,17 +73,11 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'bronson/vim-visual-star-search'
 Plug 'matze/vim-move'
 Plug 'wellle/targets.vim'
-Plug 'metakirby5/codi.vim'
 Plug 'wincent/terminus'
-Plug 'jpalardy/vim-slime'
 Plug 'mhinz/vim-sayonara'
-Plug 'tpope/vim-fireplace'
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 
@@ -499,17 +492,3 @@ let g:ale_fix_on_save = 1
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
-
-" Codi
-let g:codi#rightalign = 0
-
-" Vim-slime
-let g:slime_target = "tmux"
-let g:slime_dont_ask_default = 1
-let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.1"}
-nnoremap <silent> <c-c><c-v> :SlimeSendCurrentLine<CR>
-nnoremap <silent> <c-c><c-l> :SlimeSend0 "<c-v><c-c><c-l>"<CR>
-nmap <c-c>% v%<c-c><c-c>
-
-" Vim fireplace
-nnoremap <silent> <c-c><c-k> :Require<CR>
