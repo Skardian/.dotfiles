@@ -17,6 +17,7 @@
     ~/.dunstrc:
     ~/.flake8:
     ~/.gemrc:
+    ~/.git-templates:
     ~/.gitconfig:
     ~/.gitignore:
     ~/.i3:
