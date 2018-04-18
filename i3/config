@@ -148,8 +148,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Screenshots
-bindsym --release Print exec scrot -u 'scrot-%Y-%m-%d_%H%M%S.png' -e 'mv $f ~/Pictures/'
-bindsym --release Shift+Print exec scrot -s 'scrot-%Y-%m-%d_%H%M%S.png' -e 'mv $f ~/Pictures/'
+bindsym --release Print exec "maim -i $(xdotool getactivewindow) -u ~/Pictures/$(date +%F_%T).png | xclip -selection clipboard -t image/png"
+bindsym --release Shift+Print exec "maim -s -b 2 -u ~/Pictures/$(date +%F_%T).png | xclip -selection clipboard -t image/png"
 
 # Change keyboard layout
 bindsym Shift+0xffe1 exec --no-startup-id "$HOME/.dotfiles/bin/cycle_layout"
