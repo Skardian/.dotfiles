@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+mkdir -p ~/Pictures/screenshots
+
+if [ "$1" = "--region" ]; then
+    maim -s -b 2 -u ~/Pictures/screenshots/$(date +%F_%T).png
+else
+    maim -i $(xdotool getactivewindow) -u ~/Pictures/screenshots/$(date +%F_%T).png
+fi
+
+# Copy to clipboard
+last_screen=$(ls -1 -t ~/Pictures/screenshots/ | head -1)
+xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/$last_screen
+xclip -selection primary -t image/png -i ~/Pictures/screenshots/$last_screen
