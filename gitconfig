@@ -28,7 +28,7 @@
     sh    = show
     t     = log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --all
     tb    = log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --first-parent
-    who   = shortlog -sn
+    who   = shortlog -sne
 [color]
 	ui = auto
 [core]
