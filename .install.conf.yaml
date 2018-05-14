@@ -9,6 +9,7 @@
     ~/.Xmodmap:
     ~/.agignore:
     ~/.alias:
+    ~/.ansible.cfg:
     ~/.bashrc:
     ~/.commonrc:
     ~/.config/kitty/kitty.conf:
