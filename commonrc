@@ -68,6 +68,18 @@ g() {
     fi
 }
 
+touch() {
+    if [ "$#" = 1 ]; then
+        DIRNAME=$(dirname $1)
+        mkdir -p $DIRNAME
+        command touch $1
+    else
+        command touch "$@"
+    fi
+
+}
+
+
 stty start undef
 stty stop undef
 
