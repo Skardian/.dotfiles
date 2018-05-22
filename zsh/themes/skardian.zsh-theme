@@ -4,8 +4,9 @@ local current_dir='%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}'
 local rvm_ruby='%{$fg[red]%}$(rvm_prompt_info || rbenv_prompt_info)%{$reset_color%}'
 local git_branch='%{$fg[cyan]%}$(git_prompt_info)%{$reset_color%}'
 local tf_workspace='%{$fg[magenta]%}$(tf_prompt_info)'
+local aws_workspace='$(aws_prompt_info)'
 
-PROMPT="${user_host}:${current_dir}${tf_workspace} ${rvm_ruby}
+PROMPT="${user_host}:${current_dir}${tf_workspace}${aws_workspace} ${rvm_ruby}
 ${git_branch} %B$%b "
 RPS1="${return_code}"
 
@@ -19,5 +20,11 @@ function tf_prompt_info() {
     if [ -d .terraform ]; then
       workspace=$(terraform workspace show 2> /dev/null) || return
       echo " [${workspace}]"
+    fi
+}
+
+function aws_prompt_info() {
+    if [ -n "$AWS_PROFILE" ]; then
+      echo " \e[38;5;214m[$AWS_PROFILE]"
     fi
 }
