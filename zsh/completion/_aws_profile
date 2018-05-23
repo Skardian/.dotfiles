@@ -1,0 +1,11 @@
+#compdef aws_profile
+
+_aws_profile() {
+  local state
+
+  case $state in
+      (*) compadd "$@" $(aws_profiles)
+  esac
+}
+
+_aws_profile "$@"

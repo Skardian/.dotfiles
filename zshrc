@@ -3,13 +3,14 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_CUSTOM="$HOME/.dotfiles/zsh/"
+ZSH_CUSTOM="$HOME/.dotfiles/zsh"
 # Set name of the theme to load.
 ZSH_THEME="skardian"
 
 # ZSH Configs
 COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
+fpath=(~/.dotfiles/zsh/completion $fpath)
 
 plugins=(
     aws
