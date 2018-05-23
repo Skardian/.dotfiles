@@ -1,0 +1,37 @@
+# g acts as 'git status' or as git
+# Source: https://github.com/thoughtbot/dotfiles
+g() {
+    if [[ $# > 0 ]]; then
+        git $@
+    else
+        git status --short --branch # Needs whitespace or comment at the end (Strange behaviour)
+    fi
+}
+
+touch() {
+    if [ "$#" = 1 ]; then
+        DIRNAME=$(dirname $1)
+        mkdir -p $DIRNAME
+        command touch $1
+    else
+        command touch "$@"
+    fi
+
+}
+
+aws_profile() {
+    if [ "$1" = "--unset" ] || [ "$1" = "" ]; then
+        unset AWS_PROFILE
+        unset AWS_DEFAULT_PROFILE
+        echo > ~/.aws/profile
+    else
+        echo "export AWS_PROFILE=$1" > ~/.aws/profile
+        echo "export AWS_DEFAULT_PROFILE=$1" >> ~/.aws/profile
+        source ~/.aws/profile
+    fi
+}
+
+aws_profiles() {
+    grep '\[.*\]' ~/.aws/credentials | tr -d '\[\]\\'
+}
+

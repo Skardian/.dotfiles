@@ -58,33 +58,12 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval "$(<~/.ssh-agent-thing)"
 fi
 
-# g acts as 'git status' or as git
-# Source: https://github.com/thoughtbot/dotfiles
-g() {
-    if [[ $# > 0 ]]; then
-        git $@
-    else
-        git status --short --branch # Needs whitespace or comment at the end (Strange behaviour)
-    fi
-}
-
-touch() {
-    if [ "$#" = 1 ]; then
-        DIRNAME=$(dirname $1)
-        mkdir -p $DIRNAME
-        command touch $1
-    else
-        command touch "$@"
-    fi
-
-}
-
-
 stty start undef
 stty stop undef
 
 export EDITOR=vim
 export VISUAL=vim
+source ~/.functions
 source ~/.alias
 
 source $HOME/.asdf/asdf.sh
