@@ -212,9 +212,11 @@ if exists("+undofile")
 endif
 
 " .localrc is bash
-augroup localrc
+augroup my_rc_files
     autocmd!
     autocmd BufEnter .localrc :set filetype=sh
+    autocmd BufEnter .commonrc :set filetype=sh
+    autocmd BufEnter .functions :set filetype=sh
 augroup END
 
 " Do not highlight trailing whitespace in insert mode
