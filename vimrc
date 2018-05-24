@@ -505,3 +505,8 @@ let g:ale_fix_on_save = 1
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
