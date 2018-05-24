@@ -6,3 +6,5 @@ tags.temp
 *.log
 local_bin
 .idea/
+.terraform
+terraform.tfstate.d
