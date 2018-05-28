@@ -11,6 +11,9 @@ alias sshconfig='vim ~/.ssh/config'
 alias fuck='sudo -E $(fc -ln -1)'
 alias please='sudo -E $(fc -ln -1)'
 
+alias ip='ip --color'
+alias ipb='ip --color --brief'
+
 # ls alias
 if [ `uname` = 'Darwin' ]; then
     alias ls='ls -G' # Colorize ls
