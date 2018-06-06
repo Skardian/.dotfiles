@@ -32,6 +32,6 @@ aws_profile() {
 }
 
 aws_profiles() {
-    grep '\[.*\]' ~/.aws/credentials | tr -d '\[\]\\'
+    grep -ho '[^ ]*\]' ~/.aws/credentials ~/.aws/config | tr -d '\[\]\\' | sort
 }
 
