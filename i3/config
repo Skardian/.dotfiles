@@ -218,6 +218,8 @@ exec --no-startup-id setxkbmap us -option ctrl:nocaps
 # Swap CAPS and Ctrl
 exec --no-startup-id xmodmap ~/.Xmodmap
 
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper
+
 # Start dunst
 exec_always --no-startup-id "dunst -config ~/.dunstrc"
 
