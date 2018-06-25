@@ -45,7 +45,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tommcdo/vim-exchange'
 Plug 'tommcdo/vim-fubitive'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-markdown'
+Plug 'gabrielelana/vim-markdown'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline-themes'
@@ -79,6 +79,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'haya14busa/incsearch.vim'
+Plug 'reedes/vim-pencil'
+Plug 'pixelastic/vim-undodir-tree'
 
 call plug#end()
 
@@ -505,6 +507,8 @@ let g:ale_fix_on_save = 1
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
+" Vim-markdown
+let g:markdown_mapping_switch_status = '<CR>'
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
