@@ -79,6 +79,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'haya14busa/incsearch.vim'
+Plug 'chrisbra/csv.vim'
 Plug 'reedes/vim-pencil'
 Plug 'pixelastic/vim-undodir-tree'
 
@@ -354,6 +355,7 @@ let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#branch#enabled = 0
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts=1
+let g:airline#extensions#csv#column_display = 'Name'
 
 " Ag.vim
 nnoremap <leader>a :Ag!<space>
