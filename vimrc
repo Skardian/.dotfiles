@@ -414,7 +414,12 @@ let g:rainbow_conf = {
   \   'darkcyan',
   \   'darkred',
   \   'red',
-  \ ]
+  \ ],
+  \ 'separately': {
+  \		'vim-plug': {
+  \			'syn_name_prefix': 'vimPlugRainbow',
+  \		},
+  \	},
 \ }
 
 " Switch
