@@ -82,6 +82,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'reedes/vim-pencil'
 Plug 'pixelastic/vim-undodir-tree'
+Plug 'raimon49/requirements.txt.vim'
 
 call plug#end()
 
@@ -516,6 +517,9 @@ let g:deoplete#enable_at_startup = 1
 
 " Vim-markdown
 let g:markdown_mapping_switch_status = '<CR>'
+
+" Requirements.txt
+let g:requirements#detect_filename_pattern = '\vrequire(ment)?s/?.*\.(txt|in)$'
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
