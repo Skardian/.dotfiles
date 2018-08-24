@@ -62,6 +62,14 @@ Plug 'kana/vim-textobj-line'
 Plug 'sgur/vim-textobj-parameter'
 Plug 'beloglazov/vim-textobj-quotes'
 
+" Deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
+Plug 'Shougo/echodoc'
+Plug 'Shougo/neopairs.vim'
+Plug 'Shougo/neco-syntax'
+
+
 " Tags
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
@@ -78,7 +86,6 @@ Plug 'wincent/terminus'
 Plug 'mhinz/vim-sayonara'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'haya14busa/incsearch.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'reedes/vim-pencil'
@@ -517,12 +524,16 @@ let g:ale_fix_on_save = 1
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+set completeopt-=preview
 
 " Vim-markdown
 let g:markdown_mapping_switch_status = '<CR>'
 
 " Requirements.txt
 let g:requirements#detect_filename_pattern = '\vrequire(ment)?s/?.*\.(txt|in)$'
+
+" Echodoc
+let g:echodoc#enable_at_startup = 1
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
