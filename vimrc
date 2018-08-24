@@ -128,6 +128,7 @@ set foldcolumn=2
 set numberwidth=3
 set foldmethod=syntax
 set foldlevelstart=99
+set guicursor=
 
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
