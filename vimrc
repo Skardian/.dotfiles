@@ -83,6 +83,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'reedes/vim-pencil'
 Plug 'pixelastic/vim-undodir-tree'
+Plug 'justinmk/vim-dirvish'
 Plug 'raimon49/requirements.txt.vim'
 
 call plug#end()
