@@ -1,12 +1,23 @@
 #!/usr/bin/env bash
 
 mkdir -p ~/Pictures/screenshots
+NOW=$(date +%F_%T)
 
-if [ "$1" = "--region" ]; then
-    maim -s -b 2 -u ~/Pictures/screenshots/$(date +%F_%T).png
-else
-    maim -i $(xdotool getactivewindow) -u ~/Pictures/screenshots/$(date +%F_%T).png
+if command -v flameshot; then
+    if [ "$1" = "--region" ]; then
+        flameshot gui -r > ~/Pictures/screenshots/$NOW.png
+    else
+        flameshot full -r > ~/Pictures/screenshots/$NOW.png
+    fi
+elif command -v maim; then
+    if [ "$1" = "--region" ]; then
+        maim -s -b 2 -u ~/Pictures/screenshots/$NOW.png
+    else
+        maim -i $(xdotool getactivewindow) -u ~/Pictures/screenshots/$NOW.png
+    fi
 fi
+
+notify-send "Capture saved as ~/Pictures/screenshots/$NOW.png"
 
 # Copy to clipboard
 last_screen=$(ls -1 -t ~/Pictures/screenshots/ | head -1)
