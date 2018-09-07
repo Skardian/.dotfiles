@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 for hook in .git/hooks/pre-commit.d/*; do
-    $hook
+    $hook || exit $?
 done
