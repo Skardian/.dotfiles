@@ -148,8 +148,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Screenshots
-bindsym --release Print exec "$HOME/.dotfiles/bin/i3-screenshot"
-bindsym --release Shift+Print exec "$HOME/.dotfiles/bin/i3-screenshot --region"
+bindsym --release Shift+Print exec "$HOME/.dotfiles/bin/i3-screenshot"
+bindsym --release Print exec "$HOME/.dotfiles/bin/i3-screenshot --region"
 
 # Change keyboard layout
 bindsym Shift+0xffe1 exec --no-startup-id "$HOME/.dotfiles/bin/cycle_layout"

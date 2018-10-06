@@ -2,7 +2,7 @@
 ICON=$HOME/.xlock/icon.png
 TMPBG=/tmp/screen.png
 
-scrot $TMPBG
+~/.dotfiles/bin/i3-screenshot --stdout > $TMPBG
 convert $TMPBG -scale 10% -scale 1000% $TMPBG
 # convert $TMPBG -blur 0x5 $TMPBG # Gaussian blur
 # convert $TMPBG $ICON -gravity center -composite -matte $TMPBG # Place a lock icon

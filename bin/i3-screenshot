@@ -3,13 +3,13 @@
 mkdir -p ~/Pictures/screenshots
 NOW=$(date +%F_%T)
 
-if command -v flameshot; then
+if command -v flameshot > /dev/null; then
     if [ "$1" = "--region" ]; then
         flameshot gui -r > ~/Pictures/screenshots/$NOW.png
     else
         flameshot full -r > ~/Pictures/screenshots/$NOW.png
     fi
-elif command -v maim; then
+elif command -v maim > /dev/null; then
     if [ "$1" = "--region" ]; then
         maim -s -b 2 -u ~/Pictures/screenshots/$NOW.png
     else
@@ -17,9 +17,11 @@ elif command -v maim; then
     fi
 fi
 
-notify-send "Capture saved as ~/Pictures/screenshots/$NOW.png"
-
-# Copy to clipboard
 last_screen=$(ls -1 -t ~/Pictures/screenshots/ | head -1)
-xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/$last_screen
-xclip -selection primary -t image/png -i ~/Pictures/screenshots/$last_screen
+if [ "$1" = "--stdout" ]; then
+    cat ~/Pictures/screenshots/$last_screen
+else
+    # Copy to clipboard
+    xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/$last_screen
+    xclip -selection primary -t image/png -i ~/Pictures/screenshots/$last_screen
+fi
