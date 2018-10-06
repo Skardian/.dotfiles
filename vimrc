@@ -264,6 +264,7 @@ let mapleader=" "
 nnoremap <silent> <leader>ev :edit $MYVIMRC<cr>
 nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:AirlineRefresh<cr>
 
+nnoremap <leader>ip :r!curl -s ifconfig.co<cr>
 " Toggle paste mode
 nmap <silent> <F2> :set paste!<cr>
 set pastetoggle=<F2>
