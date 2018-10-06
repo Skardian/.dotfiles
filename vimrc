@@ -37,7 +37,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 Plug 'luochen1990/rainbow'
 Plug 'moll/vim-bbye'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rking/ag.vim'
 Plug 'sheerun/vim-polyglot'
@@ -305,7 +305,7 @@ nnoremap <leader>tl :set cursorline!<cr>
 " Show chars
 nnoremap <leader>tc :set list!<cr>
 " Show indent guides
-nnoremap <leader>ti :IndentGuidesToggle<cr>
+nnoremap <leader>ti :IndentLinesToggle<cr>
 
 " Set filetype
 nnoremap <leader>ft :set filetype=
@@ -492,10 +492,8 @@ let g:gitgutter_sign_modified = '│'
 let g:gitgutter_sign_removed = '│'
 let g:gitgutter_sign_modified_removed = '│'
 
-" Vim-indent-guides
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-let g:indent_guides_default_mapping = 0
+" indentLine
+let g:indentLine_char = '▏'
 
 " Vim supertab
 let g:SuperTabDefaultCompletionType = "context"
