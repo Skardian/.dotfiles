@@ -35,3 +35,7 @@ aws_profiles() {
     grep -ho '[^ ]*\]' ~/.aws/credentials ~/.aws/config | tr -d '\[\]\\' | sort
 }
 
+
+copy() {
+    cat "$1" | xsel -b
+}
