@@ -130,10 +130,14 @@ bindsym $mod+Ctrl+Up move workspace to output up
 bindsym $mod+Ctrl+Right move workspace to output right
 
 # Multimedia keys
-# Volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5- unmute
 bindsym XF86AudioMute exec amixer -q -D pulse set Master toggle
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 20%+ # increase screen brightness
