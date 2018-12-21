@@ -9,6 +9,7 @@
     cm    = commit
     cma   = commit --amend
     co    = checkout
+    codecommit = !"f() { profile=$1; shift; echo git clone --config 'credential.helper=!aws codecommit --profile '$profile' credential-helper $@' --config 'credential.UseHttpPath=true' $@; }; f"
     d     = diff
     dc    = diff --cached
     dl    = diff @~1
