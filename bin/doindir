@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+for f in $(find . -maxdepth 1 ! -path . -type d); do
+    pushd $f
+    $@
+    popd > /dev/null
+done
