@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 for f in $(find . -maxdepth 1 ! -path . -type d); do
-    pushd $f
+    pushd $f > /dev/null
+    pwd
+    hr -
     $@
     popd > /dev/null
+    hr
 done
