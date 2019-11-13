@@ -510,6 +510,8 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_sign_error = "\u2717"
 let g:ale_sign_warning = "\u26A0"
 let g:ale_python_auto_pipenv = 1
+let g:ale_python_mypy_options = '-ignore-missing-imports'
+
 augroup ale
     autocmd CursorHold * call ale#Queue(0)
     autocmd CursorHoldI * call ale#Queue(0)

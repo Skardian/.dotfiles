@@ -8,3 +8,4 @@ local_bin
 .idea/
 .terraform
 terraform.tfstate.d
+.mypy_cache
