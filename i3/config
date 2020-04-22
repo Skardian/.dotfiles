@@ -241,6 +241,9 @@ exec --no-startup-id nm-applet
 # Start touchpad-indicator
 exec --no-startup-id "touchpad-indicator"
 
+# Numlock on
+exec --no-startup-id "numlockx on"
+
 # Start daily apps
 exec --no-startup-id "~/.screenlayout/main.sh"
 
