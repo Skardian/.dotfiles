@@ -18,8 +18,8 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}✔%{$reset_color%}"
 
 function tf_prompt_info() {
     # check if in terraform dir
-    if [ -d .terraform ]; then
-      workspace=$(terraform workspace show 2> /dev/null) || return
+    if [[ -d .terraform && -r .terraform/environment ]]; then
+      workspace=$(cat .terraform/environment) || return
       echo " [${workspace}]"
     fi
 }
