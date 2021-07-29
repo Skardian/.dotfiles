@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+    command="status --short --branch"
+else
+    command="$@"
+fi
+
+cd $(git rev-parse --show-toplevel)/..
+for f in *; do
+    cd $f; echo $f;
+    git $command
+    echo;
+    cd ..;
+done
