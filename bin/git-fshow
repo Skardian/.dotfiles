@@ -2,7 +2,7 @@
 # fshow - git commit browser
 
 git log --graph --all --color=always \
-  --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  --format="%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset" "$@" |
 fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
   --bind "ctrl-m:execute:
             (grep -o '[a-f0-9]\{7\}' | head -1 |
