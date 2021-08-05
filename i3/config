@@ -13,6 +13,7 @@ set $mod Mod4
 set $mod2 Mod1
 
 set $music_ws "🤘"
+set $obs_ws "🎥"
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -94,6 +95,7 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 bindsym $mod+m workspace $music_ws
+bindsym $mod+o workspace $obs_ws
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -107,6 +109,7 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+m move container to workspace $music_ws
+bindsym $mod+Shift+o move container to workspace $obs_ws
 
 # move workspace to current window
 bindsym $mod+Control+1 exec --no-startup-id ~/.i3/bring-workspace-to-window.py 1
@@ -212,6 +215,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command py3status -c ~/.i3/i3status.conf
         position top
+        tray_output primary
 }
 
 focus_follows_mouse no
