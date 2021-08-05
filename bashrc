@@ -1,6 +1,20 @@
 # BASH config
 # Prompt
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$ '
+tf_prompt_info() {
+    # check if in terraform dir
+    if [ -d .terraform ]; then
+      workspace=$(terraform workspace show 2> /dev/null) || return
+      echo " [${workspace}]"
+    fi
+}
+
+aws_prompt_info() {
+    if [ -n "$AWS_PROFILE" ]; then
+      echo " [$AWS_PROFILE]"
+    fi
+}
+
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] $(tf_prompt_info)$(aws_prompt_info)\$ '
 
 # Eternal bash history.
 # ---------------------
