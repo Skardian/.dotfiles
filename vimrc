@@ -114,7 +114,7 @@ set linebreak
 set listchars=eol:↲,tab:▶\ ,extends:>,precedes:<
 set noerrorbells                                 " Don't beep
 set noshowmode                                   " Don't show current mode down the bottom (airline does)
-set nowrap                                       " Don't warp lines
+set wrap                                         " Don't warp lines
 set nrformats-=octal
 set number                                       " Show absolute line number
 set scrolloff=1
@@ -138,6 +138,7 @@ set numberwidth=3
 set foldmethod=syntax
 set foldlevelstart=99
 set guicursor=
+set cursorline
 
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
@@ -281,8 +282,8 @@ cnoremap <c-e> <end>
 
 " Command line bindings
 command! W w
-cnoremap jk <esc>
-cnoremap kj <esc>
+cnoremap jk <cr>
+cnoremap kj <cr>
 cnoremap w!! w !sudo tee % >/dev/null
 
 " Visual indent
@@ -445,6 +446,10 @@ augroup my_switch_group
         \     '\(\s\+source\s\+=\)\s\+"git::ssh://\([^/]*\)/\([^/]*\)/\([^?]*\)\(?ref.*\)*"': '\1 "../../terraform-modules/\4" # \2/\3/\4\5',
         \     '\(\s\+source\s\+=\)\s\+".*/terraform-modules/[^ ]*\s*#\s\+\(.*\)': '\1 "git::ssh://\2"',
         \   },
+        \   {
+        \     '^\(\s*\w\+\s\+=\)\s\+false': '\1 true',
+        \     '^\(\s*\w\+\s\+=\)\s\+true': '\1 false',
+        \   },
         \ ]
 augroup end
 
@@ -480,8 +485,8 @@ if exists('&signcolumn')  " Vim 7.4.2201
 else
   let g:gitgutter_sign_column_always = 1
 endif
-nmap ]c <Plug>GitGutterNextHunk
-nmap [c <Plug>GitGutterPrevHunk
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap [c <Plug>(GitGutterPrevHunk)
 nmap <Leader>ga <Plug>GitGutterStageHunk
 nmap <Leader>gr <Plug>GitGutterUndoHunk
 nmap <Leader>gp <Plug>GitGutterPreviewHunk
@@ -510,7 +515,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_sign_error = "\u2717"
 let g:ale_sign_warning = "\u26A0"
-let g:ale_python_auto_pipenv = 1
+" let g:ale_python_auto_pipenv = 1
 let g:ale_python_mypy_options = '-ignore-missing-imports'
 
 augroup ale
@@ -527,9 +532,14 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {}
 let g:ale_fixers['markdown'] = ['prettier']
+let g:ale_fixers['json'] = ['fixjson']
+" let g:ale_fixers['python'] = ['black', 'isort', 'remove_trailing_lines', 'trim_whitespace']
+let g:ale_fixers['python'] = ['autopep8', 'remove_trailing_lines', 'trim_whitespace'] " Roche
 let g:ale_fix_on_save = 1
 
 " Deoplete
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
 let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
 
@@ -541,6 +551,67 @@ let g:requirements#detect_filename_pattern = '\vrequire(ment)?s/?.*\.(txt|in)$'
 
 " Echodoc
 let g:echodoc#enable_at_startup = 1
+
+" NarrowRegion
+let g:nrrw_rgn_nomap_Nr = 0
+let g:nrrw_rgn_nomap_nr = 0
+
+" nmap <unique> <Leader>nr <Plug>NrrwrgnBangDo
+" xmap <unique> <Leader>Nr <Plug>NrrwrgnBangDo
+" Denite
+call denite#custom#var('file/rec', 'command',
+	\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
+" " Ag command on grep source
+" 	call denite#custom#var('grep', 'command', ['ag'])
+" 	call denite#custom#var('grep', 'default_opts',
+" 			\ ['-i', '--vimgrep'])
+" 	call denite#custom#var('grep', 'recursive_opts', [])
+" 	call denite#custom#var('grep', 'pattern_opt', [])
+" 	call denite#custom#var('grep', 'separator', ['--'])
+" 	call denite#custom#var('grep', 'final_opts', [])
+
+
+" CSV
+let g:csv_no_conceal = 1
+
+" Semshi
+function MyCustomHighlights()
+    hi semshiGlobal      ctermfg=red guifg=#ff0000
+    hi semshiLocal           ctermfg=209 guifg=#ff875f
+    hi semshiGlobal          ctermfg=214 guifg=#fffffa
+    hi semshiImported        ctermfg=214 guifg=#fffffa cterm=NONE gui=NONE
+    hi semshiParameter       ctermfg=75  guifg=#5fafff
+    hi semshiParameterUnused ctermfg=117 guifg=#87d7ff cterm=underline gui=underline
+    hi semshiFree            ctermfg=218 guifg=#ffafd7
+    hi semshiBuiltin         ctermfg=207 guifg=#ff5fff
+    hi semshiAttribute       ctermfg=49  guifg=#00ffaf
+    hi semshiSelf            ctermfg=249 guifg=#b2b2b2
+    hi semshiUnresolved      ctermfg=226 guifg=#ffff00 cterm=underline gui=underline
+    hi semshiSelected        ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#007d94
+    hi semshiErrorSign       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d70000
+    hi semshiErrorChar       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d70000
+endfunction
+autocmd FileType python call MyCustomHighlights()
+
+
+" Pandoc
+let g:pandoc#syntax#conceal#use = 0
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
