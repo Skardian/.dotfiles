@@ -37,5 +37,9 @@ aws_profiles() {
 
 
 copy() {
-    cat "$1" | xsel -b
+    if [ $# -eq 0 ]; then
+        xsel -b
+    else
+        cat "$1" | xsel -b
+    fi
 }
