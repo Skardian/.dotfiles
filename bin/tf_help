@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+
+PROVIDER=$(echo $1 | cut -d _ -f1)
+RESOURCE=$(echo $1 | cut -d _ -f2-)
+
+
+google-chrome https://registry.terraform.io/providers/hashicorp/${PROVIDER}/latest/docs/resources/${RESOURCE}
+
