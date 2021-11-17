@@ -6,10 +6,21 @@ else
     command="$@"
 fi
 
-cd $(git rev-parse --show-toplevel)/..
+in_git() {
+    git rev-parse --is-inside-work-tree &> /dev/null
+}
+
+if in_git; then
+    cd $(git rev-parse --show-toplevel)/..
+fi
+
 for f in *; do
-    cd $f; echo $f;
-    git $command
-    echo;
+    if [ ! -d "$f" ]; then continue; fi
+    cd $f;
+    if in_git; then
+        echo $f;
+        git $command
+        echo;
+    fi
     cd ..;
 done
