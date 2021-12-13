@@ -93,6 +93,9 @@ Plug 'reedes/vim-pencil'
 Plug 'pixelastic/vim-undodir-tree'
 Plug 'justinmk/vim-dirvish'
 Plug 'raimon49/requirements.txt.vim'
+Plug 'blueyed/vim-diminactive'
+Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'azabiong/vim-highlighter'
 
 call plug#end()
 
