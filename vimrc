@@ -18,7 +18,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-Plug 'ervandew/supertab'
 
 " Plugins
 Plug 'AndrewRadev/switch.vim'
@@ -27,8 +26,6 @@ Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-g-dot'
 Plug 'christoomey/vim-sort-motion'
-Plug 'cohama/lexima.vim'
-Plug 'gorodinskiy/vim-coloresque'
 Plug 'hashivim/vim-terraform'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
@@ -53,6 +50,20 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/matchit.zip'
+Plug 'matze/vim-move'
+Plug 'bronson/vim-visual-star-search'
+Plug 'wincent/terminus'
+Plug 'mhinz/vim-sayonara'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'blueyed/vim-diminactive'
+Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'wellle/targets.vim'
+Plug 'chrisbra/csv.vim'
+Plug 'reedes/vim-pencil'
+Plug 'pixelastic/vim-undodir-tree'
+Plug 'justinmk/vim-dirvish'
+Plug 'raimon49/requirements.txt.vim'
 
 " Text objects
 Plug 'kana/vim-textobj-user'
@@ -62,14 +73,7 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
 Plug 'sgur/vim-textobj-parameter'
 Plug 'beloglazov/vim-textobj-quotes'
-
-" Deoplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
-Plug 'Shougo/echodoc'
-Plug 'Shougo/neopairs.vim'
-Plug 'Shougo/neco-syntax'
-
+Plug 'julian/vim-textobj-variable-segment'
 
 " Tags
 Plug 'ludovicchabant/vim-gutentags'
@@ -79,23 +83,30 @@ Plug 'majutsushi/tagbar'
 Plug 'nanotech/jellybeans.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
+" LSP
+Plug 'neovim/nvim-lspconfig'
+
+" Autocompletion
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-git'
+Plug 'andersevenrud/cmp-tmux'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'hrsh7th/cmp-nvim-lua'
+
 " Experimental
-Plug 'bronson/vim-visual-star-search'
-Plug 'matze/vim-move'
-Plug 'wellle/targets.vim'
-Plug 'wincent/terminus'
-Plug 'mhinz/vim-sayonara'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'w0rp/ale'
-Plug 'haya14busa/incsearch.vim'
-Plug 'chrisbra/csv.vim'
-Plug 'reedes/vim-pencil'
-Plug 'pixelastic/vim-undodir-tree'
-Plug 'justinmk/vim-dirvish'
-Plug 'raimon49/requirements.txt.vim'
-Plug 'blueyed/vim-diminactive'
-Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'azabiong/vim-highlighter'
+Plug 'juliosueiras/vim-terraform-completion'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'farmergreg/vim-lastplace'
+Plug 'mfussenegger/nvim-lint'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+
+" Closing pairs
+Plug 'ZhiyuanLck/smart-pairs' " In place of lexima
 
 call plug#end()
 
@@ -144,7 +155,7 @@ set guicursor=
 set cursorline
 
 let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '/Users/jcpadial/miniconda3/envs/neovim/bin/python'
 
 " Folding
 function! MyFoldText()
@@ -165,6 +176,11 @@ endfunction
 set foldtext=MyFoldText()
 
 nnoremap zO zczO
+
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=800}
+augroup END
 
 " Keep cursor position when switching buffers
 if v:version >= 700
@@ -267,7 +283,7 @@ let mapleader=" "
 
 " Edit vimrc and source vimrc
 nnoremap <silent> <leader>ev :edit $MYVIMRC<cr>
-nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:AirlineRefresh<cr>
+nnoremap <silent> <leader><leader>v :source $MYVIMRC<cr>:AirlineRefresh<cr>
 
 nnoremap <leader>ip :r!curl -s ifconfig.co<cr>
 " Toggle paste mode
@@ -366,6 +382,7 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " Plugin Config --------------------------------------------------
+
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
@@ -373,42 +390,6 @@ let g:airline#extensions#branch#enabled = 0
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts=1
 let g:airline#extensions#csv#column_display = 'Name'
-
-" Ag.vim
-nnoremap <leader>a :Ag!<space>
-
-" Commentary
-augroup commentstrings
-    autocmd!
-    autocmd FileType matlab set commentstring=%%s
-    autocmd FileType ansible_template set commentstring=#%s
-    autocmd FileType Jenkinsfile set commentstring=//%s
-augroup END
-
-" Fzf
-nnoremap <leader>b :Buffers<CR>
-
-let g:fzf_files_options =
-  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
-
-" Tagbar
-nnoremap <silent> <leader>tt :TagbarToggle<cr>
-let g:tagbar_autoclose = 1
-let g:tagbar_sort = 0
-
-let g:tagbar_type_terraform = {
-    \ 'ctagstype' : 'terraform',
-    \ 'kinds' : [
-        \ 'r:Resources',
-        \ 'd:Datas',
-        \ 'v:Variables',
-        \ 'p:Providers',
-        \ 'o:Outputs',
-        \ 'm:Modules',
-        \ 'f:TFVars'
-    \ ],
-    \ 'sort' : 1,
-\ }
 
 " Rainbow
 let g:rainbow_active = 1
@@ -439,26 +420,6 @@ let g:rainbow_conf = {
   \	},
 \ }
 
-" Switch
-let g:switch_mapping = "-"
-augroup my_switch_group
-    autocmd!
-    autocmd FileType terraform let b:switch_custom_definitions =
-        \ [
-        \   {
-        \     '\(\s\+source\s\+=\)\s\+"git::ssh://\([^/]*\)/\([^/]*\)/\([^?]*\)\(?ref.*\)*"': '\1 "../../terraform-modules/\4" # \2/\3/\4\5',
-        \     '\(\s\+source\s\+=\)\s\+".*/terraform-modules/[^ ]*\s*#\s\+\(.*\)': '\1 "git::ssh://\2"',
-        \   },
-        \   {
-        \     '^\(\s*\w\+\s\+=\)\s\+false': '\1 true',
-        \     '^\(\s*\w\+\s\+=\)\s\+true': '\1 false',
-        \   },
-        \ ]
-augroup end
-
-" Terraform
-let g:terraform_fmt_on_save = 1
-
 " UltiSnips
 inoremap <c-j> <nop>
 inoremap <c-k> <nop>
@@ -467,18 +428,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsListSnippets = "<c-l>"
 nnoremap <leader>es :UltiSnipsEdit<cr>
-
-" Vim-easy-align
-nmap ga <Plug>(LiveEasyAlign)
-xmap ga <Plug>(LiveEasyAlign)
-xmap <Enter> <Plug>(LiveEasyAlign)
-
-" Vim-fugitive
-nnoremap <leader>gb  :Gblame<cr>
-nnoremap <leader>gc  :Gcommit<cr>
-nnoremap <leader>gd  :Gvdiff<cr>
-nnoremap <leader>gm  :Gmove<space>
-nnoremap <leader>gs  :Gstatus<cr>
 
 " Vim-gitgutter
 let g:gitgutter_diff_args = '-w'
@@ -502,119 +451,139 @@ let g:gitgutter_sign_modified = '│'
 let g:gitgutter_sign_removed = '│'
 let g:gitgutter_sign_modified_removed = '│'
 
-highlight GitGutterAdd    guifg=#009900 ctermfg=2
-highlight GitGutterChange guifg=#bbbb00 ctermfg=3
-highlight GitGutterDelete guifg=#ff2222 ctermfg=1
-
-" indentLine
-let g:indentLine_char = '▏'
-
-" Vim supertab
-let g:SuperTabDefaultCompletionType = "context"
-
-" Vim ALE linting events
-set updatetime=1000
-let g:airline#extensions#ale#enabled = 1
-let g:ale_lint_on_text_changed = 0
-let g:ale_sign_error = "\u2717"
-let g:ale_sign_warning = "\u26A0"
-" let g:ale_python_auto_pipenv = 1
-let g:ale_python_mypy_options = '-ignore-missing-imports'
-
-augroup ale
-    autocmd CursorHold * call ale#Queue(0)
-    autocmd CursorHoldI * call ale#Queue(0)
-    autocmd InsertEnter * call ale#Queue(0)
-    autocmd InsertLeave * call ale#Queue(0)
-augroup END
-nnoremap ]r :ALENextWrap<CR>
-nnoremap [r :ALEPreviousWrap<CR>
-
-let g:ale_linters = {
-\   'ansible': ['ansible-lint', 'yamllint'],
-\}
-let g:ale_fixers = {}
-let g:ale_fixers['markdown'] = ['prettier']
-let g:ale_fixers['json'] = ['fixjson']
-" let g:ale_fixers['python'] = ['black', 'isort', 'remove_trailing_lines', 'trim_whitespace']
-let g:ale_fixers['python'] = ['autopep8', 'remove_trailing_lines', 'trim_whitespace'] " Roche
-let g:ale_fix_on_save = 1
-
-" Deoplete
-let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
-let g:deoplete#enable_at_startup = 1
-set completeopt-=preview
-
-" Vim-markdown
-let g:markdown_mapping_switch_status = '<CR>'
-
-" Requirements.txt
-let g:requirements#detect_filename_pattern = '\vrequire(ment)?s/?.*\.(txt|in)$'
-
-" Echodoc
-let g:echodoc#enable_at_startup = 1
-
-" NarrowRegion
-let g:nrrw_rgn_nomap_Nr = 0
-let g:nrrw_rgn_nomap_nr = 0
-
-" nmap <unique> <Leader>nr <Plug>NrrwrgnBangDo
-" xmap <unique> <Leader>Nr <Plug>NrrwrgnBangDo
-" Denite
-call denite#custom#var('file/rec', 'command',
-	\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> d
-  \ denite#do_map('do_action', 'delete')
-  nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> q
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> i
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <Space>
-  \ denite#do_map('toggle_select').'j'
-endfunction
-" " Ag command on grep source
-" 	call denite#custom#var('grep', 'command', ['ag'])
-" 	call denite#custom#var('grep', 'default_opts',
-" 			\ ['-i', '--vimgrep'])
-" 	call denite#custom#var('grep', 'recursive_opts', [])
-" 	call denite#custom#var('grep', 'pattern_opt', [])
-" 	call denite#custom#var('grep', 'separator', ['--'])
-" 	call denite#custom#var('grep', 'final_opts', [])
-
+highlight GitGutterAdd    guifg=#009900 ctermfg=2 guibg=#333333
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3 guibg=#333333
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1 guibg=#333333
 
 " CSV
 let g:csv_no_conceal = 1
 
-" Semshi
-function MyCustomHighlights()
-    hi semshiGlobal      ctermfg=red guifg=#ff0000
-    hi semshiLocal           ctermfg=209 guifg=#ff875f
-    hi semshiGlobal          ctermfg=214 guifg=#fffffa
-    hi semshiImported        ctermfg=214 guifg=#fffffa cterm=NONE gui=NONE
-    hi semshiParameter       ctermfg=75  guifg=#5fafff
-    hi semshiParameterUnused ctermfg=117 guifg=#87d7ff cterm=underline gui=underline
-    hi semshiFree            ctermfg=218 guifg=#ffafd7
-    hi semshiBuiltin         ctermfg=207 guifg=#ff5fff
-    hi semshiAttribute       ctermfg=49  guifg=#00ffaf
-    hi semshiSelf            ctermfg=249 guifg=#b2b2b2
-    hi semshiUnresolved      ctermfg=226 guifg=#ffff00 cterm=underline gui=underline
-    hi semshiSelected        ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#007d94
-    hi semshiErrorSign       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d70000
-    hi semshiErrorChar       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d70000
-endfunction
-autocmd FileType python call MyCustomHighlights()
-
-
 " Pandoc
 let g:pandoc#syntax#conceal#use = 0
+
+" Terraform
+let g:terraform_fmt_on_save = 1
+
+" Wilder
+call wilder#enable_cmdline_enter()
+set wildcharm=<Tab>
+cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
+cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
+call wilder#set_option('modes', ['/', '?', ':'])
+
+call wilder#set_option('pipeline', [
+      \   wilder#branch(
+      \     wilder#cmdline_pipeline({
+      \       'fuzzy': 1,
+      \       'sorter': wilder#python_difflib_sorter(),
+      \     }),
+      \     wilder#python_search_pipeline({
+      \       'pattern': 'fuzzy',
+      \     }),
+      \   ),
+      \ ])
+
+let s:highlighters = [
+        \ wilder#pcre2_highlighter(),
+        \ wilder#basic_highlighter(),
+        \ ]
+
+call wilder#set_option('renderer', wilder#renderer_mux({
+      \ ':': wilder#popupmenu_renderer({
+      \   'highlighter': s:highlighters,
+      \ }),
+      \ '/': wilder#wildmenu_renderer({
+      \   'highlighter': s:highlighters,
+      \ }),
+      \ }))
+
+" Switch
+let g:switch_mapping = "-"
+augroup my_switch_group
+    autocmd!
+    autocmd FileType terraform let b:switch_custom_definitions =
+        \ [
+        \   {
+        \     '\(\s\+source\s\+=\)\s\+"git::ssh://\([^/]*\)/\([^/]*\)/\([^?]*\)\(?ref.*\)*"': '\1 "../../terraform-modules/\4" # \2/\3/\4\5',
+        \     '\(\s\+source\s\+=\)\s\+".*/terraform-modules/[^ ]*\s*#\s\+\(.*\)': '\1 "git::ssh://\2"',
+        \   },
+        \   {
+        \     '^\(\s*\w\+\s\+=\)\s\+false': '\1 true',
+        \     '^\(\s*\w\+\s\+=\)\s\+true': '\1 false',
+        \   },
+        \ ]
+augroup end
+
+" indentLine
+let g:indentLine_char = '▏'
+let g:gutentags_project_root = ['.git', '.svn', '.root', '.hg', '.project']
+let g:gutentags_ctags_tagfile = '.tags'
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q', '--c++-kinds=+px', '--c-kinds=+px']
+" let g:gutentags_trace = 1
+let g:gutentags_file_list_command = {
+            \  'markers': {
+                \  '.git': 'git ls-files',
+                \  '.hg': 'hg files',
+                \  }
+            \  }
+
+" Ag.vim
+nnoremap <leader>a :Ag!<space>
+
+" Fzf
+nnoremap <leader>b :Buffers<CR>
+let g:fzf_files_options =
+  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+
+" Requirements.txt
+let g:requirements#detect_filename_pattern = '\vrequire(ment)?s/?.*\.(txt|in)$'
+
+" Tagbar
+nnoremap <silent> <leader>tt :TagbarToggle<cr>
+let g:tagbar_autoclose = 1
+let g:tagbar_sort = 0
+
+let g:tagbar_type_terraform = {
+    \ 'ctagstype' : 'terraform',
+    \ 'kinds' : [
+        \ 'r:Resources',
+        \ 'd:Datas',
+        \ 'v:Variables',
+        \ 'p:Providers',
+        \ 'o:Outputs',
+        \ 'm:Modules',
+        \ 'f:TFVars'
+    \ ],
+    \ 'sort' : 1,
+\ }
+
+" Commentary
+augroup commentstrings
+    autocmd!
+    autocmd FileType matlab set commentstring=%%s
+    autocmd FileType ansible_template set commentstring=#%s
+    autocmd FileType Jenkinsfile set commentstring=//%s
+augroup END
+
+" Vim-easy-align
+nmap ga <Plug>(LiveEasyAlign)
+xmap ga <Plug>(LiveEasyAlign)
+xmap <Enter> <Plug>(LiveEasyAlign)
+
+" Vim-fugitive
+nnoremap <leader>gb  :Git blame<cr>
+nnoremap <leader>gc  :Gcommit<cr>
+nnoremap <leader>gd  :Gvdiff<cr>
+nnoremap <leader>gm  :Gmove<space>
+nnoremap <leader>gs  :Gstatus<cr>
+
+" Vim-markdown
+let g:markdown_mapping_switch_status = '<CR>'
+
+" Lua
+lua require("main")
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
