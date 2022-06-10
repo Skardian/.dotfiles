@@ -23,7 +23,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'AndrewRadev/switch.vim'
 Plug 'EinfachToll/DidYouMean'
 Plug 'SirVer/ultisnips'
-Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-g-dot'
 Plug 'christoomey/vim-sort-motion'
 Plug 'hashivim/vim-terraform'
@@ -34,8 +33,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 Plug 'luochen1990/rainbow'
 Plug 'moll/vim-bbye'
-Plug 'Yggdroot/indentLine'
-Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rking/ag.vim'
 Plug 'sheerun/vim-polyglot'
@@ -54,7 +51,6 @@ Plug 'matze/vim-move'
 Plug 'bronson/vim-visual-star-search'
 Plug 'wincent/terminus'
 Plug 'mhinz/vim-sayonara'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'blueyed/vim-diminactive'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -82,6 +78,7 @@ Plug 'majutsushi/tagbar'
 " Color
 Plug 'nanotech/jellybeans.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'themercorp/themer.lua'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -101,12 +98,20 @@ Plug 'azabiong/vim-highlighter'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'farmergreg/vim-lastplace'
-Plug 'mfussenegger/nvim-lint'
 Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'lewis6991/gitsigns.nvim' " Replaces vim-gitgutter
+Plug 'ZhiyuanLck/smart-pairs' " Replaces lexima
+Plug 'lukas-reineke/indent-blankline.nvim' " Repalces 'Yggdroot/indentLine'
+Plug 'tweekmonster/startuptime.vim'
+Plug 'stevearc/dressing.nvim'
+Plug 'kevinhwang91/nvim-bqf'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'yioneko/nvim-yati'
 
-" Closing pairs
-Plug 'ZhiyuanLck/smart-pairs' " In place of lexima
 
 call plug#end()
 
@@ -147,7 +152,7 @@ set wildmenu                                     " Enable tab
 set wildmode=list:full,full
 set clipboard=unnamed,unnamedplus
 set termguicolors
-set foldcolumn=2
+set foldcolumn=1
 set numberwidth=3
 set foldmethod=syntax
 set foldlevelstart=99
@@ -202,8 +207,26 @@ let g:jellybeans_overrides = {
 \ 'Cursor': { 'guibg': 'ff00ee', 'guifg': 'ffffff' },
 \ 'Search': { 'guifg': '00dddd', 'attr': 'underline' },
 \}
-colorscheme jellybeans " Dark
+lua << EOF
+EOF
+colorscheme themer_jellybeans " Dark
+" colorscheme jellybeans " Dark
 " colorscheme PaperColor " Light
+" TODO: Update to themer config
+highlight Search guifg=#43dede guibg=black
+highlight Search gui=underline guifg=#00dddd guibg=#302028
+highlight FoldColumn guifg=#535D66 guibg=#1f1f1f
+
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+function! SynGroup()
+    let l:s = synID(line('.'), col('.'), 1)
+    echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun
 
 " Dont backup files
 set nobackup
@@ -211,7 +234,7 @@ set noswapfile
 
 " Status line
 set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
-set laststatus=2 " Allways show status line
+set laststatus=2 " Always show status line
 
 " Searching configs
 set hlsearch   " Highlight search
@@ -261,19 +284,7 @@ augroup whitespace
     autocmd InsertLeave * :EnableWhitespace
 augroup END
 
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
- " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --ignore ".git" --nocolor --hidden -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
-  " Use ag with FZF
-  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
-endif
+nnoremap <C-p> :Telescope git_files<cr>
 
 " Maps --------------------------------------------------
 " Leader is <space>
@@ -283,7 +294,7 @@ let mapleader=" "
 
 " Edit vimrc and source vimrc
 nnoremap <silent> <leader>ev :edit $MYVIMRC<cr>
-nnoremap <silent> <leader><leader>v :source $MYVIMRC<cr>:AirlineRefresh<cr>
+nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:AirlineRefresh<cr>
 
 nnoremap <leader>ip :r!curl -s ifconfig.co<cr>
 " Toggle paste mode
@@ -327,10 +338,10 @@ nnoremap <leader>tl :set cursorline!<cr>
 " Show chars
 nnoremap <leader>tc :set list!<cr>
 " Show indent guides
-nnoremap <leader>ti :IndentLinesToggle<cr>
+nnoremap <leader>ti :IndentBlanklineToggle<cr>
 
 " Set filetype
-nnoremap <leader>ft :set filetype=
+nnoremap <leader>ft :Telescope filetypes<cr>
 
 " Quick save and quit
 nnoremap <leader>q :Sayonara!<cr>
@@ -395,23 +406,13 @@ let g:airline#extensions#csv#column_display = 'Name'
 let g:rainbow_active = 1
 nnoremap <leader>tr :RainbowToggle<cr>
 let g:rainbow_conf = {
-  \ 'ctermfgs': [
-  \   'brown',
-  \   'Darkblue',
-  \   'darkgray',
-  \   'darkgreen',
-  \   'darkcyan',
-  \   'darkred',
-  \   'darkmagenta',
-  \   'brown',
-  \   'gray',
-  \   'black',
-  \   'darkmagenta',
-  \   'Darkblue',
-  \   'darkgreen',
-  \   'darkcyan',
-  \   'darkred',
-  \   'red',
+  \ 'guifgs': [
+    \ '#E06C75',
+    \ '#E5C07B',
+    \ '#98C379',
+    \ '#56B6C2',
+    \ '#61AFEF',
+    \ '#C678DD',
   \ ],
   \ 'separately': {
   \		'vim-plug': {
@@ -428,32 +429,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsListSnippets = "<c-l>"
 nnoremap <leader>es :UltiSnipsEdit<cr>
-
-" Vim-gitgutter
-let g:gitgutter_diff_args = '-w'
-let g:gitgutter_map_keys = 0
-if exists('&signcolumn')  " Vim 7.4.2201
-  set signcolumn=yes
-else
-  let g:gitgutter_sign_column_always = 1
-endif
-nmap ]c <Plug>(GitGutterNextHunk)
-nmap [c <Plug>(GitGutterPrevHunk)
-nmap <Leader>ga <Plug>GitGutterStageHunk
-nmap <Leader>gr <Plug>GitGutterUndoHunk
-nmap <Leader>gp <Plug>GitGutterPreviewHunk
-omap ih <Plug>GitGutterTextObjectInnerPending
-omap ah <Plug>GitGutterTextObjectOuterPending
-xmap ih <Plug>GitGutterTextObjectInnerVisual
-xmap ah <Plug>GitGutterTextObjectOuterVisual
-let g:gitgutter_sign_added = '│'
-let g:gitgutter_sign_modified = '│'
-let g:gitgutter_sign_removed = '│'
-let g:gitgutter_sign_modified_removed = '│'
-
-highlight GitGutterAdd    guifg=#009900 ctermfg=2 guibg=#333333
-highlight GitGutterChange guifg=#bbbb00 ctermfg=3 guibg=#333333
-highlight GitGutterDelete guifg=#ff2222 ctermfg=1 guibg=#333333
 
 " CSV
 let g:csv_no_conceal = 1
@@ -514,8 +489,7 @@ augroup my_switch_group
         \ ]
 augroup end
 
-" indentLine
-let g:indentLine_char = '▏'
+" Gutentags
 let g:gutentags_project_root = ['.git', '.svn', '.root', '.hg', '.project']
 let g:gutentags_ctags_tagfile = '.tags'
 let s:vim_tags = expand('~/.cache/tags')
@@ -533,9 +507,7 @@ let g:gutentags_file_list_command = {
 nnoremap <leader>a :Ag!<space>
 
 " Fzf
-nnoremap <leader>b :Buffers<CR>
-let g:fzf_files_options =
-  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+nnoremap <leader>b :Telescope buffers<CR>
 
 " Requirements.txt
 let g:requirements#detect_filename_pattern = '\vrequire(ment)?s/?.*\.(txt|in)$'
@@ -572,8 +544,9 @@ nmap ga <Plug>(LiveEasyAlign)
 xmap ga <Plug>(LiveEasyAlign)
 xmap <Enter> <Plug>(LiveEasyAlign)
 
-" Vim-fugitive
-nnoremap <leader>gb  :Git blame<cr>
+" Git mappings, fugitive and gitsigns
+nnoremap <leader>gb  :Gitsigns blame_line<cr>
+nnoremap <leader>gB  :Git blame<cr>
 nnoremap <leader>gc  :Gcommit<cr>
 nnoremap <leader>gd  :Gvdiff<cr>
 nnoremap <leader>gm  :Gmove<space>
