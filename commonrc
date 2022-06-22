@@ -47,6 +47,9 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 # Local bin
 export PATH="$HOME/bin:$PATH"
 
+# Mac colors are weird
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+
 # SSH Agent
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-thing

@@ -37,9 +37,15 @@ aws_profiles() {
 
 
 copy() {
+    unameOut="$(uname -s)"
+    case "${unameOut}" in
+        Darwin*)    COPY_PROGRAM="pbcopy";;
+        *)          COPY_PROGRAM="xsel -b"
+    esac
+
     if [ $# -eq 0 ]; then
-        xsel -b
+        $COPY_PROGRAM
     else
-        cat "$1" | xsel -b
+        cat "$1" | $COPY_PROGRAM
     fi
 }
