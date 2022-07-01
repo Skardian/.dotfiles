@@ -65,5 +65,6 @@
 	newHighlight = green bold 22
 [init]
 	templatedir = ~/.git-templates
+	defaultBranch = main
 [fetch]
 	prune = true

@@ -23,12 +23,12 @@ plugins=(
     terraform
     vagrant
     zsh-completions
-    zsh-syntax-highlighting
+    fast-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern root)
-ZSH_HIGHLIGHT_STYLES[root]='bg=red'
+# ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern root)
+# ZSH_HIGHLIGHT_STYLES[root]='bg=red'
 
 # Personal config
 compdef g=git # g function as git

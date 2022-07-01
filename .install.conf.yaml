@@ -15,6 +15,7 @@
     ~/.config/kitty/kitty.conf:
     ~/.config/nvim: vim
     ~/.ctags:
+    ~/.codespell-ignore:
     ~/.dunstrc:
     ~/.flake8:
     ~/.functions:

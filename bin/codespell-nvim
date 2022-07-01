@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+codespell --ignore-words=$HOME/.codespell-ignore -
