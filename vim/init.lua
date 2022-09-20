@@ -7,24 +7,29 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
+vim.g.polyglot_disabled = {'markdown'}
+
 -- stylua: ignore start
 require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'                                                    -- Package manager
+  use 'wbthomason/packer.nvim' -- Package manager
   use {
-    'themercorp/themer.lua', -- Multiple themes, includig jellybeans
+    'themercorp/themer.lua', -- Multiple themes, including jellybeans
     config = function()
       -- Custom colors for hlsearch
       vim.cmd [[highlight Search guifg=#43dede guibg=black]]
       vim.cmd [[highlight Search gui=underline guifg=#00dddd guibg=#302028]]
       vim.cmd [[highlight FoldColumn guifg=#535D66 guibg=#1f1f1f]]
+
+      -- Custom color for CmpItemMenu
+      vim.cmd [[highlight CmpItemMenu guifg=#fabada]]
     end
   }
 
   use 'tpope/vim-commentary'
-  use 'tpope/vim-sleuth'                                                          -- Detect tabstop and shiftwidth automatically
-  use 'tpope/vim-fugitive'                                                        -- Git commands in nvim
-  use 'tpope/vim-rhubarb'                                                         -- Fugitive-companion to interact with github
-  use 'tpope/vim-unimpaired'                                                         -- Fugitive-companion to interact with github
+  use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+  use 'tpope/vim-fugitive' -- Git commands in nvim
+  use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
+  use 'tpope/vim-unimpaired' -- Fugitive-companion to interact with github
   use 'tpope/vim-repeat'
 
   use { "kylechui/nvim-surround",
@@ -35,38 +40,40 @@ require('packer').startup(function(use)
       })
     end
   }
-  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }       -- Add git related info in the signs columns and popups
+  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- Add git related info in the signs columns and popups
   use 'AndrewRadev/switch.vim'
-  use 'nvim-treesitter/nvim-treesitter'                                           -- Highlight, edit, and navigate code
-  use 'nvim-treesitter/nvim-treesitter-textobjects'                               -- Additional textobjects for treesitter
+  use 'nvim-treesitter/nvim-treesitter' -- Highlight, edit, and navigate code
+  use 'nvim-treesitter/nvim-treesitter-textobjects' -- Additional textobjects for treesitter
   use 'm-demare/hlargs.nvim' -- Highlight args
-  use 'neovim/nvim-lspconfig'                                                     -- Collection of configurations for built-in LSP client
+  use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use { "williamboman/mason.nvim" }
   use { "williamboman/mason-lspconfig.nvim" }
   use 'jose-elias-alvarez/null-ls.nvim'
 
-  use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }               -- Autocompletion
+  use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } } -- Autocompletion
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-git'
   use 'andersevenrud/cmp-tmux'
-  use 'hrsh7th/cmp-nvim-lua'
+  use 'onsails/lspkind.nvim'
 
-  use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }           -- Snippet Engine and Snippet Expansion
+  use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } } -- Snippet Engine and Snippet Expansion
+  use "rafamadriz/friendly-snippets"
+  use "benfowler/telescope-luasnip.nvim"
 
-  use {'kyazdani42/nvim-web-devicons'}                                                 -- Fancier statusline
-  use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }                                                 -- Fancier statusline
+  use { 'kyazdani42/nvim-web-devicons' } -- Fancier statusline
+  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } -- Fancier statusline
   use {
     'kdheepak/tabline.nvim',
     config = function()
-      require'tabline'.setup {
+      require 'tabline'.setup {
         -- Defaults configuration options
         enable = true,
         options = {
           -- If lualine is installed tabline will use separators configured in lualine by default.
           -- These options can be used to override those settings.
-          section_separators = {'', ''},
-          component_separators = {'', ''},
+          section_separators = { '', '' },
+          component_separators = { '', '' },
           max_bufferline_percent = 66, -- set to nil by default, and it uses vim.o.columns * 2/3
           show_tabs_always = true, -- this shows tabs only when there are more than one tab or if the first tab is named
           show_devicons = true, -- this shows devicons in buffer section
@@ -76,15 +83,15 @@ require('packer').startup(function(use)
           show_tabs_only = false, -- this shows only tabs instead of tabs + buffers
         }
       }
-      vim.cmd[[
+      vim.cmd [[
         set guioptions-=e " Use showtabline in gui vim
         set sessionoptions+=tabpages,globals " store tabpages and globals in session
       ]]
     end,
-    requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
+    requires = { { 'hoob3rt/lualine.nvim', opt = true }, { 'kyazdani42/nvim-web-devicons', opt = true } }
   }
   use 'p00f/nvim-ts-rainbow' -- Rainbow braces
-  use 'lukas-reineke/indent-blankline.nvim'                                       -- Add indentation guides even on blank lines
+  use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- Fuzzy Finder (files, lsp, etc)
   use { "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" } -- Show code context
   use 'ethanholz/nvim-lastplace'
@@ -95,6 +102,7 @@ require('packer').startup(function(use)
 
   use 'christoomey/vim-sort-motion' -- gs to sort things
   use 'gelguy/wilder.nvim' -- Better wildmenu
+  use 'stsewd/isort.nvim'
 
   use 'junegunn/vim-easy-align' -- Align code
   use 'junegunn/vim-peekaboo' -- Show regs
@@ -106,7 +114,7 @@ require('packer').startup(function(use)
   -- Programming languages
   use {
     'hashivim/vim-terraform',
-    config = function ()
+    config = function()
       vim.g.terraform_fmt_on_save = true
     end
   }
@@ -132,7 +140,7 @@ require('packer').startup(function(use)
   use 'NvChad/nvim-colorizer.lua'
   use {
     'AckslD/nvim-trevJ.lua',
-    config = 'require("trevj").setup()',  -- optional call for configurating non-default filetypes etc
+    config = 'require("trevj").setup()', -- optional call for configurating non-default filetypes etc
 
     -- uncomment if you want to lazy load
     -- module = 'trevj',
@@ -146,12 +154,39 @@ require('packer').startup(function(use)
       )
     end,
   }
+  use 'justinmk/vim-dirvish' -- Better directory navigation
+  use 'azabiong/vim-highlighter' -- Highlight specific words
 
   use 'sheerun/vim-polyglot'
+  use 'ixru/nvim-markdown'
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+    setup = function() 
+      vim.g.vim_markdown_conceal=0
+      vim.g.mkdp_filetypes = { "markdown" } 
+    end,
+    ft = { "markdown" }, })
+  use {
+    'luk400/vim-jukit',
+    setup = function()
+      vim.g.jukit_mappings = 1
+    end
+  }
+
+  use {
+    'jinh0/eyeliner.nvim',
+    config = function()
+      require'eyeliner'.setup {
+        highlight_on_key = true
+      }
+    end
+  }
+
   if is_bootstrap then
     require('packer').sync()
   end
 end)
+
+
 -- stylua: ignore end
 
 -- When we are bootstrapping a configuration, it doesn't
@@ -209,7 +244,7 @@ vim.o.incsearch = true
 vim.o.magic = true
 
 -- Decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime = 50
 vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
@@ -237,7 +272,7 @@ vim.keymap.set('n', '<leader>ev', ':edit $MYVIMRC <cr>', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Toggle search
-vim.keymap.set('n', '<leader><cr>', ':set hlsearch!<cr>', {silent = true })
+vim.keymap.set('n', '<leader><cr>', ':set hlsearch!<cr>', { silent = true })
 
 -- Exit with jk
 vim.keymap.set('i', 'jk', '<ESC>')
@@ -287,7 +322,15 @@ vim.keymap.set('n', '<leader>p', ':bp<cr>')
 -- Fast switch
 vim.g.switch_mapping = '-'
 
+-- Keep position
+vim.keymap.set('n', 'J', 'mzJ`z')
+vim.keymap.set('n', 'J', 'mzJ`z')
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '<C-f>', '<C-f>zz')
+vim.keymap.set('n', '<C-b>', '<C-b>zz')
 
+-- Git
 vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<cr>')
 vim.keymap.set('n', '<leader>gB', ':Git blame<cr>')
 
@@ -311,12 +354,12 @@ local navic = require("nvim-navic")
 -- Set lualine as statusline
 -- See `:help lualine.txt`
 require("lualine").setup({
-    sections = {
-        lualine_c = {
-            'filename',
-            { navic.get_location, cond = navic.is_available },
-        }
+  sections = {
+    lualine_c = {
+      'filename',
+      { navic.get_location, cond = navic.is_available },
     }
+  }
 })
 
 -- Enable colored `lukas-reineke/indent-blankline.nvim`
@@ -329,14 +372,14 @@ vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
 vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 require("indent_blankline").setup {
   show_trailing_blankline_indent = false,
-    char_highlight_list = {
-        "IndentBlanklineIndent1",
-        "IndentBlanklineIndent2",
-        "IndentBlanklineIndent3",
-        "IndentBlanklineIndent4",
-        "IndentBlanklineIndent5",
-        "IndentBlanklineIndent6",
-    },
+  char_highlight_list = {
+    "IndentBlanklineIndent1",
+    "IndentBlanklineIndent2",
+    "IndentBlanklineIndent3",
+    "IndentBlanklineIndent4",
+    "IndentBlanklineIndent5",
+    "IndentBlanklineIndent6",
+  },
 }
 
 -- Gitsigns
@@ -357,13 +400,13 @@ require('gitsigns').setup {
       if vim.wo.diff then return ']c' end
       vim.schedule(function() gs.next_hunk() end)
       return '<Ignore>'
-    end, {expr=true})
+    end, { expr = true })
 
     map('n', '[c', function()
       if vim.wo.diff then return '[c' end
       vim.schedule(function() gs.prev_hunk() end)
       return '<Ignore>'
-    end, {expr=true})
+    end, { expr = true })
 
     -- Actions
     map('n', '<leader>tb', gs.toggle_current_line_blame)
@@ -372,29 +415,47 @@ require('gitsigns').setup {
     map('n', '<leader>td', gs.toggle_deleted)
 
     -- Text object
-    map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+    map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
 }
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
+local vimgrep_arguments = { unpack(require("telescope.config").values.vimgrep_arguments) }
+
+-- I want to search in hidden/dot files.
+table.insert(vimgrep_arguments, "--hidden")
+-- I don't want to search in the `.git` directory.
+table.insert(vimgrep_arguments, "--glob")
+table.insert(vimgrep_arguments, "!.git/*")
+
 require('telescope').setup {
   defaults = {
+		vimgrep_arguments = vimgrep_arguments,
     mappings = {
       i = {
+        ["<esc>"] = require("telescope.actions").close,
         ['<C-u>'] = false,
         ['<C-d>'] = false,
       },
     },
   },
+  pickers = {
+    find_files = {
+			find_command = { "fd", "--type", "f", "--hidden", "--exclude", ".git", "--strip-cwd-prefix" }
+    }
+  },
 }
+
+require('telescope').load_extension('luasnip')
+require('luasnip.loaders.from_vscode').lazy_load()
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -403,12 +464,14 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer]' })
 
+
 vim.keymap.set('n', '<c-p>', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
+
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
@@ -535,7 +598,8 @@ local on_attach = function(client, bufnr)
   end, '[W]orkspace [L]ist Folders')
 
   -- Create a command `:Format` local to the LSP buffer
-  vim.api.nvim_buf_create_user_command(bufnr, 'Format', vim.lsp.buf.format or vim.lsp.buf.formatting, { desc = 'Format current buffer with LSP' })
+  vim.api.nvim_buf_create_user_command(bufnr, 'Format', vim.lsp.buf.format or vim.lsp.buf.formatting,
+    { desc = 'Format current buffer with LSP' })
 end
 
 -- Disable virtual_text since it's redundant due to lsp_lines.
@@ -548,7 +612,7 @@ vim.diagnostic.config({
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Enable the following language servers
-local servers = { 'terraformls', 'clangd', 'pyright', 'rust_analyzer', 'sumneko_lua', 'tsserver' }
+local servers = { 'terraformls', 'clangd', 'pyright', 'rust_analyzer', 'tsserver' }
 
 -- Ensure the servers above are installed
 require('mason').setup()
@@ -565,7 +629,7 @@ end
 
 -- Python
 
-require'lspconfig'.pyright.setup{
+require 'lspconfig'.pyright.setup {
   on_attach = on_attach,
   capabilities = capabilities, -- send the lsp what neovim allows
 }
@@ -576,31 +640,11 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
-require('lspconfig').sumneko_lua.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = runtime_path,
-      },
-      diagnostics = {
-        globals = { 'vim' },
-      },
-      workspace = { library = vim.api.nvim_get_runtime_file('', true) },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = { enable = false, },
-    },
-  },
-}
-
 -- nvim-cmp setup
 vim.o.completeopt = 'menu,menuone,noselect'
 
 local cmp = require 'cmp'
+local lspkind = require 'lspkind'
 local luasnip = require 'luasnip'
 
 cmp.setup {
@@ -612,11 +656,24 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-j>'] = cmp.mapping.complete({}),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
+    ['<C-j>'] = cmp.mapping(function(fallback)
+      if luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<C-k>'] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -637,19 +694,47 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
-    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp'},
     { name = 'luasnip' },
     { name = 'path' },
-    { name = 'tmux' },
     { name = 'git' },
-    { name = 'buffer' },
+    { name = 'buffer', keyword_length = 3},
+    { name = 'tmux' , keyword_length = 3},
   },
+
+  view = {
+    entries = 'custom'
+  },
+
+  formatting = {
+    format = lspkind.cmp_format({
+      -- mode = 'symbol_text', -- show only symbol annotations
+      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      with_text = true,
+
+      menu = {
+        buffer = "[buf]",
+        nvim_lsp = "[LSP]",
+        path = "[path]",
+        tmux = "[tmux]",
+        luasnip = "[snip]",
+      },
+      experimental = {
+        ghost_text = false
+      },
+      -- The function below will be called before any actual modifications from lspkind
+      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+      before = function (entry, vim_item)
+        return vim_item
+      end
+    })
+  }
 }
 
 require('dressing').setup()
 require('colorizer').setup({})
 
-require'nvim-lastplace'.setup{}
+require 'nvim-lastplace'.setup {}
 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on(
@@ -664,20 +749,20 @@ local sources = {
   null_ls.builtins.code_actions.refactoring,
   null_ls.builtins.code_actions.shellcheck,
   null_ls.builtins.diagnostics.codespell.with({
-      -- args = {"--dictionary", "-", "--ignore-words", "$HOME/.codespell-ignore"}
-      command = "codespell-nvim",
-      arg = {"-"},
-      -- args = {"--dictionary=-"}
+    -- args = {"--dictionary", "-", "--ignore-words", "$HOME/.codespell-ignore"}
+    command = "codespell-nvim",
+    arg = { "-" },
+    -- args = {"--dictionary=-"}
   }),
 
   null_ls.builtins.diagnostics.jsonlint,
   null_ls.builtins.diagnostics.flake8.with({
-    extra_args = {"--max-line-length", "99"}
+    extra_args = { "--max-line-length", "99" }
   }),
   null_ls.builtins.formatting.jq,
-  null_ls.builtins.formatting.isort,
+  null_ls.builtins.formatting.prettier,
   null_ls.builtins.formatting.blue.with({
-    extra_args = { "--fast"},
+    extra_args = { "--fast" },
   }),
 }
 
