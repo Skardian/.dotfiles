@@ -10,3 +10,4 @@ local_bin
 terraform.tfstate.d
 .mypy_cache
 .DS_Store
+.jukit/
