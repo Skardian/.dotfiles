@@ -181,6 +181,8 @@ require('packer').startup(function(use)
     end
   }
 
+  use("petertriho/nvim-scrollbar")
+
   if is_bootstrap then
     require('packer').sync()
   end
@@ -349,6 +351,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+require("scrollbar").setup()
 
 local navic = require("nvim-navic")
 -- Set lualine as statusline
