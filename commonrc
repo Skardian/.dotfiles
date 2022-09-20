@@ -73,6 +73,8 @@ export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d . --hidden --exclude .git"
 
+export PRE_COMMIT_ALLOW_NO_CONFIG=1
+
 # Export JAVA_HOME
 asdf_update_java_home() {
   local current
