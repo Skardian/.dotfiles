@@ -44,7 +44,14 @@ require('packer').startup(function(use)
   use 'AndrewRadev/switch.vim'
   use 'nvim-treesitter/nvim-treesitter' -- Highlight, edit, and navigate code
   use 'nvim-treesitter/nvim-treesitter-textobjects' -- Additional textobjects for treesitter
-  use 'm-demare/hlargs.nvim' -- Highlight args
+
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      {"nvim-lua/plenary.nvim"},
+      {"nvim-treesitter/nvim-treesitter"}
+    }
+  }
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use { "williamboman/mason.nvim" }
   use { "williamboman/mason-lspconfig.nvim" }
@@ -54,6 +61,7 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-git'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'andersevenrud/cmp-tmux'
   use 'onsails/lspkind.nvim'
 
@@ -93,6 +101,7 @@ require('packer').startup(function(use)
   use 'p00f/nvim-ts-rainbow' -- Rainbow braces
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- Fuzzy Finder (files, lsp, etc)
+  use 'rking/ag.vim' -- Search for thing
   use { "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" } -- Show code context
   use 'ethanholz/nvim-lastplace'
 
@@ -133,7 +142,6 @@ require('packer').startup(function(use)
   use 'sgur/vim-textobj-parameter'
 
   use 'tommcdo/vim-exchange'
-  -- use 'luk400/vim-jukit'
   use 'kevinhwang91/nvim-bqf'
 
   use 'stevearc/dressing.nvim'
@@ -181,7 +189,6 @@ require('packer').startup(function(use)
     end
   }
 
-  use("petertriho/nvim-scrollbar")
 
   if is_bootstrap then
     require('packer').sync()
@@ -227,6 +234,8 @@ vim.o.swapfile = false -- No swap
 vim.o.cursorline = true
 vim.o.numberwidth = 3
 vim.o.termguicolors = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 local no_comments_oO_group = vim.api.nvim_create_augroup('no_comments_oO', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -292,8 +301,11 @@ vim.keymap.set('n', '<leader>Q', ':qa!<cr>')
 vim.keymap.set('n', '<leader>w', ':w<cr>')
 vim.keymap.set('n', '<leader>c', ':close<cr>')
 
--- Visual mode reselection
+-- Close buffer
 vim.keymap.set('n', '<leader>c', ':close<cr>')
+
+-- Search with Ag
+vim.keymap.set('n', '<leader>a', ':Ag!<space>')
 
 -- Reselect after indent
 vim.keymap.set('v', '<', '<gv')
@@ -301,10 +313,6 @@ vim.keymap.set('v', '>', '>gv')
 
 -- Select pasted text
 vim.keymap.set('n', 'gV', '`[V+`]')
-
--- Paste without copy
-vim.keymap.set('v', 'p', '"_dP')
-
 
 -- Make commandline look a little bit more like bash
 vim.keymap.set('c', '<c-a>', '<home>')
@@ -325,16 +333,14 @@ vim.keymap.set('n', '<leader>p', ':bp<cr>')
 vim.g.switch_mapping = '-'
 
 -- Keep position
-vim.keymap.set('n', 'J', 'mzJ`z')
-vim.keymap.set('n', 'J', 'mzJ`z')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-f>', '<C-f>zz')
 vim.keymap.set('n', '<C-b>', '<C-b>zz')
 
 -- Git
-vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<cr>')
-vim.keymap.set('n', '<leader>gB', ':Git blame<cr>')
+vim.keymap.set('n', '<leader>gB', ':Gitsigns toggle_current_line_blame<cr>')
+vim.keymap.set('n', '<leader>gb', ':Git blame<cr>')
 
 -- Align
 vim.keymap.set('n', 'ga', '<Plug>(LiveEasyAlign)')
@@ -352,7 +358,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
-require("scrollbar").setup()
+-- require("scrollbar").setup()
 
 local navic = require("nvim-navic")
 -- Set lualine as statusline
@@ -414,8 +420,8 @@ require('gitsigns').setup {
 
     -- Actions
     map('n', '<leader>tb', gs.toggle_current_line_blame)
-    map('n', '<leader>gd', gs.diffthis) -- [G]it [D]iff
-    map('n', '<leader>gD', function() gs.diffthis('~') end) -- [G]it [D]iff all
+    map('n', '<leader>gD', gs.diffthis) -- [G]it [D]iff
+    map('n', '<leader>gd', function() gs.diffthis('~') end) -- [G]it [D]iff all
     map('n', '<leader>td', gs.toggle_deleted)
 
     -- Text object
@@ -526,15 +532,6 @@ require('nvim-treesitter.configs').setup {
         ['[]'] = '@class.outer',
       },
     },
-    swap = {
-      enable = true,
-      swap_next = {
-        ['<leader>a'] = '@parameter.inner',
-      },
-      swap_previous = {
-        ['<leader>A'] = '@parameter.inner',
-      },
-    },
   },
   rainbow = {
     enable = true,
@@ -613,7 +610,7 @@ vim.diagnostic.config({
   },
 })
 -- nvim-cmp supports additional completion capabilities
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Enable the following language servers
 local servers = { 'terraformls', 'clangd', 'pyright', 'rust_analyzer', 'tsserver' }
@@ -630,6 +627,9 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+-- Terraform
+require'lspconfig'.tflint.setup{}
 
 -- Python
 
@@ -662,7 +662,7 @@ cmp.setup {
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
+      select = false, -- Do not autoselect with enter
     },
     ['<C-j>'] = cmp.mapping(function(fallback)
       if luasnip.expand_or_jumpable() then
@@ -698,6 +698,7 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
+    { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lsp'},
     { name = 'luasnip' },
     { name = 'path' },
@@ -763,11 +764,10 @@ local sources = {
   null_ls.builtins.diagnostics.flake8.with({
     extra_args = { "--max-line-length", "99" }
   }),
+  -- null_ls.builtins.diagnostics.mypy,
   null_ls.builtins.formatting.jq,
   null_ls.builtins.formatting.prettier,
-  null_ls.builtins.formatting.blue.with({
-    extra_args = { "--fast" },
-  }),
+  null_ls.builtins.formatting.black
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -787,6 +787,23 @@ null_ls.setup({
   --   end
   -- end,
 })
+
+-- Refactoring
+require('refactoring').setup({})
+
+-- Remaps for the refactoring operations currently offered by the plugin
+vim.api.nvim_set_keymap("v", "<leader>re", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]], {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap("v", "<leader>rf", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]], {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap("v", "<leader>rv", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap("v", "<leader>ri", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], {noremap = true, silent = true, expr = false})
+
+-- Extract block doesn't need visual mode
+vim.api.nvim_set_keymap("n", "<leader>rb", [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]], {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap("n", "<leader>rbf", [[ <Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]], {noremap = true, silent = true, expr = false})
+
+-- Inline variable can also pick up the identifier currently under the cursor without visual mode
+vim.api.nvim_set_keymap("n", "<leader>ri", [[ <Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], {noremap = true, silent = true, expr = false})
+
 
 
 -- vim.cmd [[call wilder#enable_cmdline_enter()
