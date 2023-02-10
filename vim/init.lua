@@ -1,18 +1,29 @@
--- Install packer
-local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-local is_bootstrap = false
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  is_bootstrap = true
-  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-  vim.cmd [[packadd packer.nvim]]
-end
+-- [[ Basic Keymaps ]]
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
+-- Install lazy
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 vim.g.polyglot_disabled = {'markdown'}
 
 -- stylua: ignore start
-require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim' -- Package manager
-  use {
+require('lazy').setup({
+  'wbthomason/packer.nvim', -- Package manager
+  {
     'themercorp/themer.lua', -- Multiple themes, including jellybeans
     config = function()
       -- Custom colors for hlsearch
@@ -23,55 +34,55 @@ require('packer').startup(function(use)
       -- Custom color for CmpItemMenu
       vim.cmd [[highlight CmpItemMenu guifg=#fabada]]
     end
-  }
+  },
 
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
-  use 'tpope/vim-fugitive' -- Git commands in nvim
-  use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
-  use 'tpope/vim-unimpaired' -- Fugitive-companion to interact with github
-  use 'tpope/vim-repeat'
+  'tpope/vim-commentary',
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-fugitive', -- Git commands in nvim
+  'tpope/vim-rhubarb', -- Fugitive-companion to interact with github
+  'tpope/vim-unimpaired', -- Fugitive-companion to interact with github
+  'tpope/vim-repeat',
 
-  use { "kylechui/nvim-surround",
+  { "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = function()
       require("nvim-surround").setup({
         -- Configuration here, or leave empty to use defaults
       })
     end
-  }
-  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- Add git related info in the signs columns and popups
-  use 'AndrewRadev/switch.vim'
-  use 'nvim-treesitter/nvim-treesitter' -- Highlight, edit, and navigate code
-  use 'nvim-treesitter/nvim-treesitter-textobjects' -- Additional textobjects for treesitter
+  },
+  { 'lewis6991/gitsigns.nvim', dependencies = { 'nvim-lua/plenary.nvim' } }, -- Add git related info in the signs columns and popups
+  'AndrewRadev/switch.vim',
+  'nvim-treesitter/nvim-treesitter', -- Highlight, edit, and navigate code
+  'nvim-treesitter/nvim-treesitter-textobjects', -- Additional textobjects for treesitter
 
-  use {
+  {
     "ThePrimeagen/refactoring.nvim",
-    requires = {
+    dependencies = {
       {"nvim-lua/plenary.nvim"},
       {"nvim-treesitter/nvim-treesitter"}
     }
-  }
-  use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
-  use { "williamboman/mason.nvim" }
-  use { "williamboman/mason-lspconfig.nvim" }
-  use 'jose-elias-alvarez/null-ls.nvim'
+  },
+  'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
+  { "williamboman/mason.nvim" },
+  { "williamboman/mason-lspconfig.nvim" },
+  'jose-elias-alvarez/null-ls.nvim',
 
-  use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } } -- Autocompletion
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-git'
-  use 'hrsh7th/cmp-nvim-lsp-signature-help'
-  use 'andersevenrud/cmp-tmux'
-  use 'onsails/lspkind.nvim'
+  { 'hrsh7th/nvim-cmp', dependencies = { 'hrsh7th/cmp-nvim-lsp' } }, -- Autocompletion
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-git',
+  'hrsh7th/cmp-nvim-lsp-signature-help',
+  'andersevenrud/cmp-tmux',
+  'onsails/lspkind.nvim',
 
-  use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } } -- Snippet Engine and Snippet Expansion
-  use "rafamadriz/friendly-snippets"
-  use "benfowler/telescope-luasnip.nvim"
+  { 'L3MON4D3/LuaSnip', dependencies = { 'saadparwaiz1/cmp_luasnip' } }, -- Snippet Engine and Snippet Expansion
+  "rafamadriz/friendly-snippets",
+  "benfowler/telescope-luasnip.nvim",
 
-  use { 'kyazdani42/nvim-web-devicons' } -- Fancier statusline
-  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } -- Fancier statusline
-  use {
+  { 'kyazdani42/nvim-web-devicons' }, -- Fancier statusline
+  { 'nvim-lualine/lualine.nvim', dependencies = { 'kyazdani42/nvim-web-devicons', opt = true } }, -- Fancier statusline
+  {
     'kdheepak/tabline.nvim',
     config = function()
       require 'tabline'.setup {
@@ -96,57 +107,48 @@ require('packer').startup(function(use)
         set sessionoptions+=tabpages,globals " store tabpages and globals in session
       ]]
     end,
-    requires = { { 'hoob3rt/lualine.nvim', opt = true }, { 'kyazdani42/nvim-web-devicons', opt = true } }
-  }
-  use 'p00f/nvim-ts-rainbow' -- Rainbow braces
-  use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
-  use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- Fuzzy Finder (files, lsp, etc)
-  use 'rking/ag.vim' -- Search for thing
-  use { "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" } -- Show code context
-  use 'ethanholz/nvim-lastplace'
+    dependencies = { { 'nvim-lualine/lualine.nvim', opt = true }, { 'kyazdani42/nvim-web-devicons', opt = true } }
+  },
+  'p00f/nvim-ts-rainbow', -- Rainbow braces
+  'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines
+  { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' } }, -- Fuzzy Finder (files, lsp, etc)
+  'rking/ag.vim', -- Search for thing
+  "SmiteshP/nvim-navic", dependencies = "neovim/nvim-lspconfig", -- Show code context
+  'ethanholz/nvim-lastplace',
 
-  use 'vim-scripts/matchit.zip' -- Better % matching
-  use 'mhinz/vim-sayonara' -- Smart logic to close buffers
-  use 'mong8se/actually.nvim' -- Open files with partial names
+  'vim-scripts/matchit.zip', -- Better % matching
+  'mhinz/vim-sayonara', -- Smart logic to close buffers
+  'mong8se/actually.nvim', -- Open files with partial names
 
-  use 'christoomey/vim-sort-motion' -- gs to sort things
-  use 'gelguy/wilder.nvim' -- Better wildmenu
-  use 'stsewd/isort.nvim'
+  'christoomey/vim-sort-motion', -- gs to sort things
+  'gelguy/wilder.nvim', -- Better wildmenu
+  'stsewd/isort.nvim',
 
-  use 'junegunn/vim-easy-align' -- Align code
-  use 'junegunn/vim-peekaboo' -- Show regs
-  use {
+  'junegunn/vim-easy-align', -- Align code
+  'junegunn/vim-peekaboo', -- Show regs
+  {
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
-  }
+  },
 
   -- Programming languages
-  use {
+  {
     'hashivim/vim-terraform',
     config = function()
       vim.g.terraform_fmt_on_save = true
     end
-  }
-  use 'juliosueiras/vim-terraform-completion'
+  },
+  'juliosueiras/vim-terraform-completion',
 
-  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 }
+  -- Fuzzy Finder Algorithm which dependencies local dependencies to be built. Only load if `make` is available
+  { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 },
 
-  -- Textobjects
-  use 'kana/vim-textobj-user'
-  use 'glts/vim-textobj-comment'
-  use 'kana/vim-textobj-entire'
-  use 'kana/vim-textobj-indent'
-  use 'kana/vim-textobj-line'
-  use 'beloglazov/vim-textobj-quotes'
-  use 'sgur/vim-textobj-parameter'
+  'tommcdo/vim-exchange',
+  'kevinhwang91/nvim-bqf',
 
-  use 'tommcdo/vim-exchange'
-  use 'kevinhwang91/nvim-bqf'
-
-  use 'stevearc/dressing.nvim'
-  use 'NvChad/nvim-colorizer.lua'
-  use {
+  'stevearc/dressing.nvim',
+  'NvChad/nvim-colorizer.lua',
+  {
     'AckslD/nvim-trevJ.lua',
     config = 'require("trevj").setup()', -- optional call for configurating non-default filetypes etc
 
@@ -161,39 +163,35 @@ require('packer').startup(function(use)
         function() require('trevj').format_at_cursor() end
       )
     end,
-  }
-  use 'justinmk/vim-dirvish' -- Better directory navigation
-  use 'azabiong/vim-highlighter' -- Highlight specific words
+  },
+  'justinmk/vim-dirvish', -- Better directory navigation
+  'azabiong/vim-highlighter', -- Highlight specific words
 
-  use 'sheerun/vim-polyglot'
-  use 'ixru/nvim-markdown'
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+  'ixru/nvim-markdown',
+  ({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
     setup = function() 
       vim.g.vim_markdown_conceal=0
       vim.g.mkdp_filetypes = { "markdown" } 
     end,
-    ft = { "markdown" }, })
-  use {
+    ft = { "markdown" }, }),
+  {
     'luk400/vim-jukit',
     setup = function()
       vim.g.jukit_mappings = 1
     end
-  }
+  },
 
-  use {
+  {
     'jinh0/eyeliner.nvim',
     config = function()
       require'eyeliner'.setup {
         highlight_on_key = true
       }
     end
-  }
+  },
 
 
-  if is_bootstrap then
-    require('packer').sync()
-  end
-end)
+})
 
 
 -- stylua: ignore end
@@ -267,13 +265,6 @@ vim.o.ttimeoutlen = 100
 
 -- System clipboard
 vim.o.clipboard = 'unnamed,unnamedplus'
-
--- [[ Basic Keymaps ]]
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
 -- Edit this file
 vim.keymap.set('n', '<leader>ev', ':edit $MYVIMRC <cr>', { silent = true })
