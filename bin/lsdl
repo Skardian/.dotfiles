@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 SOURCE="$HOME/Downloads/"
-HERE=${1:-5}
+COUNT=${1:-5}
 
-FILES=$(ls -lArt ${SOURCE} | grep -v -e " .^" | tail -$HERE)
+FILES=$(ls -lArth ${SOURCE} | grep -v -e " .^" | tail -$COUNT)
 
 echo "$FILES"

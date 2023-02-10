@@ -30,3 +30,5 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+
+alias gcurl='curl --header "Authorization: Bearer $(gcloud auth print-identity-token)"'
