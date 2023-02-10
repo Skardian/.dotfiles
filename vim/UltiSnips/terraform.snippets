@@ -1,9 +1,0 @@
-
-snippet debug
-resource "null_resource" "debug" {
-  provisioner "local-exec" {
-    command = "echo \${${1:<resource>}}"
-  }
-}$0
-
-endsnippet
