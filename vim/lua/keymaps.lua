@@ -16,13 +16,13 @@ vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Quick save and quit
-vim.keymap.set("n", "<leader>q", ":Sayonara!<cr>")
-vim.keymap.set("n", "<leader>Q", ":qa!<cr>")
-vim.keymap.set("n", "<leader>w", ":w<cr>")
-vim.keymap.set("n", "<leader>c", ":close<cr>")
+vim.keymap.set("n", "<leader>q", "<cmd>Sayonara!<cr>")
+vim.keymap.set("n", "<leader>Q", "<cmd>qa!<cr>")
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
+vim.keymap.set("n", "<leader>c", "<cmd>close<cr>")
 
 -- Close buffer
-vim.keymap.set("n", "<leader>c", ":close<cr>")
+vim.keymap.set("n", "<leader>c", "<cmd>close<cr>")
 
 -- Reselect after indent
 vim.keymap.set("v", "<", "<gv")
@@ -36,11 +36,11 @@ vim.keymap.set("c", "<c-a>", "<home>")
 vim.keymap.set("c", "<c-e>", "<end>")
 
 -- Set filetype
-vim.keymap.set("n", "<leader>ft", ":Telescope filetypes<cr>")
+vim.keymap.set("n", "<leader>ft", "<cmd>Telescope filetypes<cr>")
 
 -- Buffer navigation
-vim.keymap.set("n", "<leader>n", ":bn<cr>")
-vim.keymap.set("n", "<leader>p", ":bp<cr>")
+vim.keymap.set("n", "<leader>n", "<cmd>bn<cr>")
+vim.keymap.set("n", "<leader>p", "<cmd>bp<cr>")
 
 -- Fast switch
 vim.g.switch_mapping = "-"
