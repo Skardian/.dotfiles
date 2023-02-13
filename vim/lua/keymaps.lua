@@ -1,6 +1,3 @@
--- Edit this file
-vim.keymap.set("n", "<leader>ev", ":edit $MYVIMRC <cr>", { silent = true })
-
 -- Disable space default behavior
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
