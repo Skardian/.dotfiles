@@ -18,6 +18,7 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
+require("keymaps")
 
 require("lazy").setup({
 	spec = {
@@ -56,43 +57,41 @@ require("lazy").setup({
 		},
 	},
 })
---
---
--- -- [[ Setting options ]]
--- vim.o.autoread = true -- Reload files on change
--- vim.o.breakindent = true -- Enable break indent
--- vim.o.cpoptions = vim.o.cpoptions .. '$' -- Add $ on text change to reduce text shifting around
--- vim.o.mouse = 'a' -- Enable mouse mode
--- vim.wo.number = true -- Make line numbers default
--- vim.o.undofile = true -- Save undo history
--- vim.o.gdefault = true -- /g is active on :s
--- vim.o.hidden = true -- Hidden buffers
--- vim.o.scrolloff = 1 -- Start scrolling before last line
--- vim.o.backup = false -- No backup, we use git
--- vim.o.swapfile = false -- No swap
--- vim.o.cursorline = true
--- vim.o.numberwidth = 3
--- vim.o.termguicolors = true
--- vim.o.splitright = true
--- vim.o.splitbelow = true
---
--- local no_comments_oO_group = vim.api.nvim_create_augroup('no_comments_oO', { clear = true })
--- vim.api.nvim_create_autocmd('TextYankPost', {
---   callback = function()
---     vim.o.formatoptions = vim.o.formatoptions:gsub('o', '') -- Don't start newline with comment with oO
---   end,
---   group = no_comments_oO_group,
---   pattern = '*',
--- })
---
---
--- -- Searching config
--- vim.o.hlsearch = true
--- vim.o.ignorecase = true
--- vim.o.smartcase = true
--- vim.o.incsearch = true
--- vim.o.magic = true
---
+
+-- [[ Setting options ]]
+vim.o.autoread = true -- Reload files on change
+vim.o.breakindent = true -- Enable break indent
+vim.o.cpoptions = vim.o.cpoptions .. "$" -- Add $ on text change to reduce text shifting around
+vim.o.mouse = "a" -- Enable mouse mode
+vim.wo.number = true -- Make line numbers default
+vim.o.undofile = true -- Save undo history
+vim.o.gdefault = true -- /g is active on :s
+vim.o.hidden = true -- Hidden buffers
+vim.o.scrolloff = 1 -- Start scrolling before last line
+vim.o.backup = false -- No backup, we use git
+vim.o.swapfile = false -- No swap
+vim.o.cursorline = true
+vim.o.numberwidth = 3
+vim.o.termguicolors = true
+vim.o.splitright = true
+vim.o.splitbelow = true
+
+local no_comments_oO_group = vim.api.nvim_create_augroup("no_comments_oO", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.o.formatoptions = vim.o.formatoptions:gsub("o", "") -- Don't start newline with comment with oO
+	end,
+	group = no_comments_oO_group,
+	pattern = "*",
+})
+
+-- Searching config
+vim.o.hlsearch = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.incsearch = true
+vim.o.magic = true
+
 -- -- Decrease update time
 -- vim.o.updatetime = 50
 -- vim.wo.signcolumn = 'yes'
@@ -203,26 +202,6 @@ require("lazy").setup({
 --     }
 --   }
 -- })
---
--- -- Enable colored `lukas-reineke/indent-blankline.nvim`
--- -- See `:help indent_blankline.txt`
--- vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
--- vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
--- vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
--- vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
--- vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
--- vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
--- require("indent_blankline").setup {
---   show_trailing_blankline_indent = false,
---   char_highlight_list = {
---     "IndentBlanklineIndent1",
---     "IndentBlanklineIndent2",
---     "IndentBlanklineIndent3",
---     "IndentBlanklineIndent4",
---     "IndentBlanklineIndent5",
---     "IndentBlanklineIndent6",
---   },
--- }
 --
 -- -- Gitsigns
 -- -- See `:help gitsigns.txt`
