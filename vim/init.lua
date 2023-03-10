@@ -40,7 +40,18 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  checker = {
+    -- automatically check for plugin updates
+    enabled = true,
+    concurrency = nil, ---@type number? set to 1 to check for updates very slowly
+    notify = false, -- get a notification when new updates are found
+    frequency = 3600, -- check for updates every hour
+  },
+  change_detection = {
+    -- automatically check for config file changes and reload the ui
+    enabled = true,
+    notify = false, -- get a notification when changes are found
+  },
   performance = {
     rtp = {
       -- disable some rtp plugins
@@ -107,6 +118,11 @@ vim.o.ttimeoutlen = 100
 -- System clipboard
 vim.o.clipboard = "unnamed,unnamedplus"
 
+vim.diagnostic.config({
+  float = {
+    source = 'always',
+  },
+})
 
 -- -- Enable telescope fzf native, if installed
 -- pcall(require('telescope').load_extension, 'fzf')
