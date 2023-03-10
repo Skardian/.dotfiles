@@ -19,10 +19,6 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set("n", "<leader>q", "<cmd>Sayonara!<cr>")
 vim.keymap.set("n", "<leader>Q", "<cmd>qa!<cr>")
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
-vim.keymap.set("n", "<leader>c", "<cmd>close<cr>")
-
--- Close buffer
-vim.keymap.set("n", "<leader>c", "<cmd>close<cr>")
 
 -- Reselect after indent
 vim.keymap.set("v", "<", "<gv")
@@ -51,6 +47,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-f>", "<C-f>zz")
 vim.keymap.set("n", "<C-b>", "<C-b>zz")
 
--- -- Git
--- vim.keymap.set("n", "<leader>gB", ":Gitsigns toggle_current_line_blame<cr>")
--- vim.keymap.set("n", "<leader>gb", ":Git blame<cr>")
+-- UI
+vim.keymap.set("n", "<leader>ub", "<cmd>BlamerToggle<cr>")
+vim.keymap.set("n", "<leader>uc", "<cmd>set list!<cr>")
+vim.keymap.set("n", "<leader>uI", "<cmd>IndentBlanklineToggle<cr>")
