@@ -14,7 +14,7 @@ fpath=(~/.dotfiles/zsh/completion $fpath)
 
 plugins=(
     aws
-    # asdf
+    asdf
     docker
     gpg-agent
     httpie
