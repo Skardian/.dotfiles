@@ -6,8 +6,9 @@ local git_branch='%{$fg[cyan]%}$(git_prompt_info)%{$reset_color%}'
 local tf_workspace='%{$fg[magenta]%}$(tf_prompt_info)'
 local aws_workspace='$(aws_prompt_info)'
 local now='$(now)'
+local venv='$(venv)'
 
-PROMPT="${user_host}:${current_dir}${tf_workspace}${aws_workspace} ${rvm_ruby}
+PROMPT="${venv}${user_host}:${current_dir}${tf_workspace}${aws_workspace} ${rvm_ruby}
 ${git_branch} %B$%b "
 RPS1="${now}${return_code}"
 
@@ -27,6 +28,14 @@ function tf_prompt_info() {
 function aws_prompt_info() {
     if [ -n "$AWS_PROFILE" ]; then
       echo " \e[38;5;214m[$AWS_PROFILE]"
+    fi
+}
+
+function venv() {
+    if [ -n "$VIRTUAL_ENV" ]; then
+      echo "($(basename $VIRTUAL_ENV)) "
+    elif [ -n "$CONDA_DEFAULT_ENV" ]; then
+      echo "($CONDA_DEFAULT_ENV) "
     fi
 }
 
