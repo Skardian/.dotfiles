@@ -4,7 +4,7 @@ return {
     opts = {
       defaults = {
         autocmds = true, -- lazyvim.config.autocmds
-        keymaps = false, -- lazyvim.config.keymaps
+        keymaps = true, -- lazyvim.config.keymaps
         options = true, -- lazyvim.config.options
       },
     }
@@ -23,7 +23,6 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
-
     opts = {
       defaults = {
         mappings = {
@@ -34,13 +33,13 @@ return {
       },
     },
 
-    -- dependencies = {
-    --   "nvim-telescope/telescope-fzf-native.nvim",
-    --   build = "make",
-    --   config = function()
-    --     require("telescope").load_extension("fzf")
-    --   end,
-    -- },
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      config = function()
+        require("telescope").load_extension("fzf")
+      end,
+    },
   },
 
   {

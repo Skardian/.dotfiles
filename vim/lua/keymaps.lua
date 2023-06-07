@@ -15,11 +15,11 @@ vim.keymap.set("c", "kj", "<cr>")
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Quick save and quit
+-- -- Quick save and quit
 vim.keymap.set("n", "<leader>q", "<cmd>Sayonara!<cr>")
 vim.keymap.set("n", "<leader>Q", "<cmd>qa!<cr>")
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
-
+--
 -- Reselect after indent
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
@@ -46,8 +46,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-f>", "<C-f>zz")
 vim.keymap.set("n", "<C-b>", "<C-b>zz")
-
--- UI
-vim.keymap.set("n", "<leader>ub", "<cmd>BlamerToggle<cr>")
-vim.keymap.set("n", "<leader>uc", "<cmd>set list!<cr>")
-vim.keymap.set("n", "<leader>uI", "<cmd>IndentBlanklineToggle<cr>")
+--
+-- -- UI
+-- vim.keymap.set("n", "<leader>ub", "<cmd>BlamerToggle<cr>")
+-- vim.keymap.set("n", "<leader>uc", "<cmd>set list!<cr>")
+-- vim.keymap.set("n", "<leader>uI", "<cmd>IndentBlanklineToggle<cr>")
