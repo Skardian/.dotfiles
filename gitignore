@@ -6,8 +6,10 @@ tags.temp
 *.log
 local_bin
 .idea/
+.vscode/
 .terraform
 terraform.tfstate.d
 .mypy_cache
 .DS_Store
 .jukit/
+.env
